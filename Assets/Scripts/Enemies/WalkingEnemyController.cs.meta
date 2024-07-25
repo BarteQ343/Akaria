@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ca2613408ad552347a9a1b79ad17553d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Slidey: {fileID: 6200000, guid: 2ca28fec9a994234381a49ac377caa17, type: 2}
+  - NotSlidey: {fileID: 6200000, guid: 4ad74060c59a32e4aa4fbc9460ca5c99, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
