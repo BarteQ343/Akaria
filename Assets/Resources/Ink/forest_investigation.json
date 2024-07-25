@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["\n","#","^speaker: Tom","/#","^That should be far enough. I better report to Andrew.","\n","ev",true,"/ev",{"VAR=":"quest_completed","re":true},"done",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev",false,{"VAR=":"quest_started"},false,{"VAR=":"quest_completed"},false,{"VAR=":"quest_ended"},"/ev","end",null],"#f":1}],"listDefs":{}}

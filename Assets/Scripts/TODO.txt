@@ -1,0 +1,13 @@
+0. DeathTrigger nie działa na przeciwników, not a big deal, but would be nice to fix !!DONE!!
+0. Animacje gracza się nie resetują do idle na niektórych colliderach, very important to fix (czemu to zawsze animacje?) (znaleziony powód - prędkość na x się nie zeruje, mimo tego, że postać się zatrzymuje. I still have no fucking clue why that happens as it only does on some colliders but it's a start) !!DONE!!
+1. Czasem jeśli gracz dostanie dmg w powietrzu to się blokuje. Actually, czasem gracz generalnie się blokuje po tym jak dostanie dmg, najpewniej wina zablokowanej animacji (czemu to ZAWSZE muszą być animacje?!). Fix ASAP !!DONE!!
+1.1 Dodać knockback, I think it'll make more sense !!WIP/NEED FEEDBACK!!
+2. Przejście do kolejnego poziomu/ekranu "You win" (must have but medium priority)
+3. Pauza i menu pauzy, z którego można wrócić do gry albo do menu głównego (medium-low priority)
+4. System zapisów (low priority)
+5. Ustawienia (low priority) (we probably will need them at some point but I'm not sure we need them at all for now)
+6. Oświetlenie sceny (medium-high priority)
+0. Apteczka/coś do odnawia życia (high priority) !!DONE!!
+7. Add a variable to control the enemy awerness from editor (low priority)
+8. Dostosuj część skryptu przeciwko blokowaniu się na ścianach, żeby schody były schodami, a nie zjeżdzalniami (low priority)
+9. We NEED an input buffer (medium priority)
