@@ -1,4 +1,0 @@
-repository "Akaria@StudioShiny@cloud"
-  path "/"
-    br "/main"
-    co "/main"
