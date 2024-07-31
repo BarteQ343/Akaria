@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
 			//anim.ResetTrigger("Run");
 			anim.SetTrigger("Walk");
 		}
-		if (r2d.velocity.x == 0 && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
+		if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
 		{
 			/*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
 				|| (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
