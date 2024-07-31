@@ -33,7 +33,10 @@ public class WalkingEnemyController : MonoBehaviour
 	CapsuleCollider2D player;
 	PlayerHealthController playerHealthController;
 	private int goBackCounter = 0;
-	private float playerAwerness = 1;
+	float playerAwerness;
+	[SerializeField] float playerAwernessIdle = 1;
+	[SerializeField] float playerAwernessHunting = 2;
+	[SerializeField] float detectionDistance = 2.5f;
 	HealthController healthController;
 	enum EnemyState
 	{
@@ -59,6 +62,7 @@ public class WalkingEnemyController : MonoBehaviour
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		originalPosition = t.position;
 		anim = GetComponent<Animator>();
+		playerAwerness = playerAwernessIdle;
 	}
 	public static void DrawDebugCircle(Vector3 center, float radius, int segments, Color color, float duration = 0, bool depthTest = true)
 	{
@@ -77,29 +81,6 @@ public class WalkingEnemyController : MonoBehaviour
 			prevPoint = newPoint;
 		}
 	}
-	void FixAttack(Collider2D[] checkPlayer, Collider2D[] checkPlayerClose, Collider2D[] checkPlayerVeryClose)
-	{
-		if (currentState == EnemyState.Attack &&
-			(!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") || !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2")))
-		{
-			//print("Following to fix a bug");
-			if (checkPlayerVeryClose.Length > 0 && checkPlayerClose.Length > 0)
-			{
-				currentState = EnemyState.ReturnToOriginalPosition;
-			}
-			else if (checkPlayerVeryClose.Length < 0 && checkPlayerClose.Length > 0)
-			{
-				Collider2D[] checkPlayerAgain = Physics2D.OverlapCircleAll(transform.position, 2.5f * playerAwerness, playerLayer);
-				Collider2D[] checkPlayerCloseAgain = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 0.5f, 0), 2.5f * 0.3f, playerLayer);
-				Collider2D[] checkPlayerVeryCloseAgain = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 0.5f, 0), 0.01f, playerLayer);
-				FixAttack(checkPlayerAgain, checkPlayerCloseAgain, checkPlayerVeryCloseAgain);
-			}
-			else if (checkPlayerVeryClose.Length < 0 && checkPlayerClose.Length < 0 && checkPlayer.Length > 0)
-			{
-				currentState = EnemyState.FollowPlayer;
-			}
-		}
-	}
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.L)) {
@@ -113,16 +94,14 @@ public class WalkingEnemyController : MonoBehaviour
 		// Check for obstacles and player
 		RaycastHit2D hitSide = Physics2D.Raycast(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0, 0), facingRight ? Vector2.right : Vector2.left, 0.2f);
 		RaycastHit2D hitFront = Physics2D.Raycast(RaycastPosLow, facingRight ? Vector2.right : Vector2.left, obstacleCheckDistance);
-		RaycastHit2D attackPlayer = Physics2D.Raycast(RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0), facingRight ? Vector2.right : Vector2.left, 1.5f, playerLayer);
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Enemies");
 		Debug.DrawLine(RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0), (RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0)) + (facingRight ? Vector3.right : Vector3.left) * 1.5f, Color.blue);
 		Debug.DrawLine(RaycastPosLow, RaycastPosLow + (facingRight ? Vector3.right : Vector3.left) * obstacleCheckDistance, Color.blue);
-		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(transform.position, 2.5f * playerAwerness, playerLayer);
-		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(transform.position + new Vector3(0,0.5f,0), 2.5f * 0.3f, playerLayer);
-		Collider2D[] checkPlayerVeryClose = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 0.5f, 0), 0.01f, playerLayer);
-		DrawDebugCircle(transform.position, 2.5f * playerAwerness, 32, Color.red);
-		DrawDebugCircle(transform.position + new Vector3(0, 0.5f, 0), 2.5f * 0.3f, 32, Color.red);
-		DrawDebugCircle(transform.position + new Vector3(0, 0.5f, 0), 0.01f, 32, Color.red);
+		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), detectionDistance * playerAwerness, playerLayer);
+		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer);
+		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.red);
+		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, 32, Color.red);
+		
 
 		if (hitSide.collider != null)
 		{
@@ -131,7 +110,6 @@ public class WalkingEnemyController : MonoBehaviour
 		{
 			r2d.sharedMaterial = NotSlidey;
 		}
-		FixAttack(checkPlayer, checkPlayerClose, checkPlayerVeryClose);
 		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
 		{
 			currentState = EnemyState.Dead;
@@ -147,7 +125,7 @@ public class WalkingEnemyController : MonoBehaviour
 					}
 					else
 					{
-						playerAwerness = 1;
+						playerAwerness = playerAwernessIdle;
 						Idle();
 					}
 				StopCoroutine(WaitBeforeReturning());
@@ -160,7 +138,7 @@ public class WalkingEnemyController : MonoBehaviour
 					// Check if the collider belongs to the player
 					if (collider.CompareTag("Player"))
 					{
-						playerAwerness = 2;
+						playerAwerness = playerAwernessHunting;
 						goBackCounter = 0;
 						StopCoroutine(WaitBeforeReturning());
 						if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
@@ -191,7 +169,7 @@ public class WalkingEnemyController : MonoBehaviour
 
 			case EnemyState.ReturnToOriginalPosition:
 				//print("Fuck go back");
-				if (checkPlayer.Length > 0 && checkPlayerVeryClose.Length <= 0 && checkPlayerClose.Length <= 0) 
+				if (checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
 				{ 
 					currentState = EnemyState.FollowPlayer;
 					//print("Following instead of returning");
@@ -206,7 +184,7 @@ public class WalkingEnemyController : MonoBehaviour
 				break;
 			case EnemyState.Attack:
 				//print("Rattle'em boys!");
-				if (anim.GetBool("Idle") || anim.GetBool("Walk"))
+				if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
 				{
 					anim.SetBool("Idle", false);
 					anim.SetBool("Walk", false);
@@ -308,7 +286,7 @@ public class WalkingEnemyController : MonoBehaviour
 			{
 				anim.SetTrigger("Idle");
 			}
-			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 0.5f, 0), 2.5f * 0.3f, playerLayer).Length <= 0)
+			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{
 				currentState = EnemyState.FollowPlayer;
 				//print("Following after missing");
@@ -334,7 +312,7 @@ public class WalkingEnemyController : MonoBehaviour
 			{
 				anim.SetTrigger("Idle");
 			}
-			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(0, 0.5f, 0), 2.5f * 0.3f, playerLayer).Length <= 0)
+			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{
 				currentState = EnemyState.FollowPlayer;
 			}
