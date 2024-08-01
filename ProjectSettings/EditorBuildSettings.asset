@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: b90a80f4719e3f84487e4d10eb2eba4b
+  - enabled: 1
+    path: Assets/Scenes/For Jacob/Poziom1.unity
+    guid: fb6d9c14e5427d24bba6f4820672fdec
+  - enabled: 1
+    path: Assets/Scenes/For Jacob/Poziom2.unity
+    guid: faf67e32a40717340b9e2b2eedcd5b33
+  - enabled: 1
+    path: Assets/Scenes/For Jacob/Poziom3.unity
+    guid: f547b64d307d5a249b47a4139f760a0a
   m_configObjects: {}
