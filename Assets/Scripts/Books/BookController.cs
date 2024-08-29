@@ -8,7 +8,9 @@ public class BookController : MonoBehaviour
     public GameObject bookPanel;
     public TMP_Text bookText;
     public BookData bookData;  // Reference to the ScriptableObject
-    private bool isReading = false;
+    public bool isReading = false;
+    private bool isInRange = false;
+    public Rigidbody2D player;
 
     private void Start()
     {
@@ -20,16 +22,18 @@ public class BookController : MonoBehaviour
     private void Update()
     {
         // For testing purposes, we will use the "E" key to interact with the book
-        if (Input.GetKeyDown(KeyCode.E))
+        if (isInRange == true && Input.GetKeyDown(KeyCode.E))
         {
             if (isReading)
             {
                 CloseBook();
-            }
+                player.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+			}
             else
             {
                 OpenBook(bookData.bookText);
-            }
+				player.constraints = RigidbodyConstraints2D.FreezeAll;
+			}
         }
     }
 
@@ -53,6 +57,7 @@ public class BookController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isInRange = true;
             // Show an indicator to the player that they can interact with the book
             Debug.Log("Press 'E' to read the book.");
         }
@@ -62,6 +67,7 @@ public class BookController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isInRange = false;
             // Hide the interaction indicator
             Debug.Log("Left the book's interaction range.");
         }

@@ -581,6 +581,8 @@ MonoBehaviour:
   bookPanel: {fileID: 1731332192}
   bookText: {fileID: 907517248}
   bookData: {fileID: 11400000, guid: 47a8766fad118d549a027625877f6841, type: 2}
+  isReading: 0
+  player: {fileID: 1421378221}
 --- !u!61 &398498849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -640,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1725928641428807225, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226018608570725926, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
       propertyPath: m_Pivot.x
@@ -2746,6 +2748,11 @@ Transform:
   - {fileID: 1378123952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1421378221 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6601677527568627566, guid: a531acf2835d6b64e8f4e4f2a8d30429, type: 3}
+  m_PrefabInstance: {fileID: 1524311284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1425059897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1547175680949238419, guid: a531acf2835d6b64e8f4e4f2a8d30429, type: 3}
+      propertyPath: bookController
+      value: 
+      objectReference: {fileID: 398498848}
     - target: {fileID: 4342998894179071795, guid: a531acf2835d6b64e8f4e4f2a8d30429, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.13
@@ -2930,6 +2941,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 790760953}
+    - target: {fileID: 4449600913904284490, guid: a531acf2835d6b64e8f4e4f2a8d30429, type: 3}
+      propertyPath: bookController
+      value: 
+      objectReference: {fileID: 398498848}
     - target: {fileID: 5361385554389093420, guid: a531acf2835d6b64e8f4e4f2a8d30429, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -15239,7 +15254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 907517246}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1

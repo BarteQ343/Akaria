@@ -21,6 +21,7 @@ public class Attack : MonoBehaviour
 	public bool attackIsHappening = false;
 	public float attackRate = 2f;
 	float nextAttackTime = 0f;
+	public BookController bookController;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -133,7 +134,10 @@ public class Attack : MonoBehaviour
 
 	void ResetLock()
 	{
-		r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+		if(bookController.isReading == false)
+		{
+			r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+		}
 		//StartCoroutine(ResetCooldown());
 	}
 	public IEnumerator ResetCooldown()

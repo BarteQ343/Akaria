@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
 	private DustController dustEffect;
 	private float dashRate = 2f;
 	private float nextDashTime = 0f;
+	public BookController bookController;
 
 	// Start is called before the first frame update
 	void Start()
@@ -246,7 +247,7 @@ public class PlayerController : MonoBehaviour
 			anim.ResetTrigger("Stop");
 			anim.SetTrigger("Fall");
 		}
-		if(!anim.GetCurrentAnimatorStateInfo(0).IsName("AirAttack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+		if(!anim.GetCurrentAnimatorStateInfo(0).IsName("AirAttack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") && bookController.isReading == false)
 		{
 			r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
 		}
@@ -262,7 +263,10 @@ public class PlayerController : MonoBehaviour
 	}
 	void ResetLock()
 	{
-		r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+		if (bookController.isReading == false)
+		{
+			r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+		}
 	}
 	public bool checkIsGrounded()
 	{
