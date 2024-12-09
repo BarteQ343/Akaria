@@ -750,248 +750,279 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Book SpriteSheet_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 5472
         height: 4864
       spriteId: 19256e5deff470d41a230859bf3ae479
-    - name: Book SpriteSheet_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 48
         y: 64
         width: 5344
         height: 4688
       spriteId: 2a531599bbb085b41905d06f771d97f5
-    - name: Book SpriteSheet_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 48
         y: 462
         width: 2080
         height: 4354
       spriteId: dea85bb5de5b4b64baf7dbc3961fa557
-    - name: Book SpriteSheet_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 141
         y: 481
         width: 1894
         height: 4319
       spriteId: 8afd9babb35eb054ea990e610f125067
-    - name: Book SpriteSheet_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 66
         y: 76
         width: 2165
         height: 725
       spriteId: b3222492f9068df41aaa3357e9ca2ec7
-    - name: Book SpriteSheet_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 1019
         width: 5264
         height: 3628
       spriteId: e69341a5641112d48b762f3d1ea27435
-    - name: Book SpriteSheet_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 81
         y: 985
         width: 4337
         height: 2460
       spriteId: 2d4abc051f3191a41893d3e6a6c20f7d
-    - name: Book SpriteSheet_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 87
         y: 1021
         width: 4300
         height: 2367
       spriteId: c6985eee3db89b84bb13ab2322712d83
-    - name: Book SpriteSheet_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 1177
         y: 1686
         width: 3838
         height: 1045
       spriteId: 7f349935f05efcb458dd8c35fbd92d65
-    - name: Book SpriteSheet_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 1175
         y: 1679
         width: 3842
         height: 1103
       spriteId: 8afc08e0eac94504499beadd516edae2
-    - name: Book SpriteSheet_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 1176
         y: 1680
         width: 3840
         height: 1101
       spriteId: ee67c527851535a4a916229c433cc8cf
-    - name: Book SpriteSheet_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 1175
         y: 1686
         width: 3842
         height: 1072
       spriteId: 5a4eb40d490512c4c9412a849e78100f
-    - name: Book SpriteSheet_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 2712
         y: 1955
         width: 768
         height: 791
       spriteId: b9b6ac1e3d4f04e47828ddff96c2aa93
-    - name: Book SpriteSheet_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 3662
         width: 3694
         height: 956
       spriteId: 92c94013fe17a8c43acf5f1bd642e472
-    - name: Book SpriteSheet_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 94
         y: 3726
         width: 3692
         height: 902
       spriteId: 63ac9b952c597724dadafdc56bec8ee4
-    - name: Book SpriteSheet_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 103
         y: 3717
         width: 3632
         height: 902
       spriteId: 44900182013d1854f8b55a4520b30f01
-    - name: Book SpriteSheet_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 1244
         y: 4435
         width: 968
         height: 91
       spriteId: 5909a42b9723f7f4e86a2b5e4fb34aca
-    - name: Book SpriteSheet_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 111
         y: 3706
         width: 3667
         height: 836
       spriteId: 2d37fca21fe0ff544ba9425b4e6164dc
-    - name: Book SpriteSheet_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 575
         y: 3686
         width: 2851
         height: 834
       spriteId: f0242c698bdb9064a8b913044a8cdc06
-    - name: Book SpriteSheet_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 106
         y: 3690
         width: 3662
         height: 891
       spriteId: 142d2595592f7e449823b711d8250f10
-    - name: Book SpriteSheet_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 521
         y: 3728
         width: 3168
         height: 900
       spriteId: c78cb6c71131b3a4990a49c94ac4ebb8
-    - name: Book SpriteSheet_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 608
         y: 658
         width: 3237
         height: 3920
       spriteId: d8e3cf533c4f16a47a7acff04037e1fe
-    - name: Book SpriteSheet_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 733
         y: 3731
         width: 3104
         height: 836
       spriteId: d215c91960c88d54ba46a0b3b7b541fd
-    - name: Book SpriteSheet_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 202
         y: 4278
         width: 62
         height: 61
       spriteId: 5615238b8d91f0d4795a4e3eac623e7c
-    - name: Book SpriteSheet_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 216
         y: 4292
         width: 34
         height: 34
       spriteId: 5ac193fcd3358ad41a799d2004920df4
-    - name: Book SpriteSheet_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 204
         y: 4288
         width: 57
         height: 27
       spriteId: d5593c8e0db53f2479762486026ccdb8
-    - name: Book SpriteSheet_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 454
         y: 4345
         width: 260
         height: 191
       spriteId: e5c61d1b3e75bf245a464d17ec0c9a37
-    - name: Book SpriteSheet_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 454
         y: 4345
         width: 246
         height: 191
       spriteId: 2cf80e74b708ebb42ae6ea67705da9f0
-    - name: Book SpriteSheet_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 454
         y: 4345
         width: 218
         height: 191
       spriteId: f66642616d9410542a17d5b021e6d74e
-    - name: Book SpriteSheet_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 495
         y: 4417
         width: 213
         height: 85
       spriteId: de254e640c5201048ba820959f21ae53
-    - name: Book SpriteSheet_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 480
         y: 4433

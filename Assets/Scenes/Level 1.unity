@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -569,13 +568,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91696564041398339, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 91696564041398339, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1725928641428807225, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
     - target: {fileID: 1725928641428807225, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226018608570725926, guid: 6a261f2a63ded6444991b7be172ed6d9, type: 3}
       propertyPath: m_Pivot.x
@@ -3759,6 +3766,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53820800447402287, guid: fb10639dc3cc90b4e9fdb6e023b575da, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 302.60803
+      objectReference: {fileID: 0}
+    - target: {fileID: 53820800447402287, guid: fb10639dc3cc90b4e9fdb6e023b575da, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -78.413086
+      objectReference: {fileID: 0}
     - target: {fileID: 392894950406366264, guid: fb10639dc3cc90b4e9fdb6e023b575da, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4054,7 +4069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70713799975141589}
   - component: {fileID: 2291634633933109007}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Enemy collider 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23318,7 +23333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solidCollider: {fileID: 6867813273716146381}
-  defaultPassableThreshold: 0.5
+  defaultPassableThreshold: 0.4
   temporaryThresholdDuration: 0.2
   passableThresholdValue: 2
 --- !u!95 &4114441390866374245
@@ -23428,7 +23443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2376530500098748063}
   - component: {fileID: 2325279792829586396}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Enemy collider 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23462,7 +23477,7 @@ Transform:
   m_GameObject: {fileID: 1129369872390368783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.84, y: -32.49, z: 7.8888407}
+  m_LocalPosition: {x: -28.84, y: -32.79, z: 7.8888407}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70273,7 +70288,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05639386, y: -0.5178022}
+  m_Offset: {x: 0.052070737, y: -0.52644837}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -70284,7 +70299,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0632787, y: 1.1816255}
+  m_Size: {x: 2.071925, y: 1.1643331}
   m_EdgeRadius: 0
 --- !u!1 &6871145287334763765
 GameObject:
@@ -83254,7 +83269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5420521571587251310}
   - component: {fileID: 712649920960895624}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Enemy collider 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

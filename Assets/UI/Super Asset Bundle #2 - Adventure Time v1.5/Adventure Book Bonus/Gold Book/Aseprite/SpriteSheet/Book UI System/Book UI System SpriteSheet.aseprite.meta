@@ -230,40 +230,45 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Book UI System SpriteSheet_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 3920
         height: 2928
       spriteId: 5202594c2212e0d45b63375587cc3c1a
-    - name: Book UI System SpriteSheet_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 80
         width: 3792
         height: 2800
       spriteId: 00839bbb503989343a9f65e40ae6d1bf
-    - name: Book UI System SpriteSheet_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 124
         y: 136
         width: 3686
         height: 2632
       spriteId: 11cace088df2330408ee5797bbe954ca
-    - name: Book UI System SpriteSheet_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 128
         y: 1227
         width: 2800
         height: 1621
       spriteId: 34711f51b30bfdd42bd6db8c4b93c92a
-    - name: Book UI System SpriteSheet_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 148
         y: 1270
