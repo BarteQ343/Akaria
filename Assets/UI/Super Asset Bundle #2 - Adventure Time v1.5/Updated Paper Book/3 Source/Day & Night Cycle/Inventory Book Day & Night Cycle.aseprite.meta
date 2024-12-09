@@ -1530,560 +1530,630 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Inventory Book Day & Night Cycle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 0e99bc897830a4c4f87efc881be348f3
-    - name: Inventory Book Day & Night Cycle_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: df55394cba722c747b3f88f8db726466
-    - name: Inventory Book Day & Night Cycle_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 1fc9129e18e0f9d46b70954a8e725cba
-    - name: Inventory Book Day & Night Cycle_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: b19c8d0a467170046868d29adb1b2584
-    - name: Inventory Book Day & Night Cycle_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: baa3fa2a6c1096a4b8cc612d13edc60f
-    - name: Inventory Book Day & Night Cycle_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: ea891db92f281c84397c2a31be11e84d
-    - name: Inventory Book Day & Night Cycle_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: bcaba4a5eccbae4479d6b1e2353fd58c
-    - name: Inventory Book Day & Night Cycle_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 15945aaec1194f24aa495d41b15e3228
-    - name: Inventory Book Day & Night Cycle_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 2323754f836f4d442940c09b3c632902
-    - name: Inventory Book Day & Night Cycle_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 845328299511fd14ea256138bf6c87c5
-    - name: Inventory Book Day & Night Cycle_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: c6e8936478b707941aba3437849ae877
-    - name: Inventory Book Day & Night Cycle_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: e69c59883c4168c47a7788964a866c82
-    - name: Inventory Book Day & Night Cycle_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 1f507a6c3bf33d64b9d7b1dfa03b8df0
-    - name: Inventory Book Day & Night Cycle_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: ac139e7772e967348991a41a933c0fb3
-    - name: Inventory Book Day & Night Cycle_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 738da6b073762a14981e8d51cc7b3821
-    - name: Inventory Book Day & Night Cycle_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 4b3f5d00dbc4bd74ba86c316d0de9eae
-    - name: Inventory Book Day & Night Cycle_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 1cda5c7f8e083354ba34adc3d572343b
-    - name: Inventory Book Day & Night Cycle_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: cf145a62cbedac340bef2fe3b1a919f6
-    - name: Inventory Book Day & Night Cycle_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: e1ddff8fd89daa24bb1aa2cee4baa0d5
-    - name: Inventory Book Day & Night Cycle_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 153a54614e22cfa4bab95a64bc4012a2
-    - name: Inventory Book Day & Night Cycle_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: c7d0c98ef1093a54cba8ed3a1a7c760c
-    - name: Inventory Book Day & Night Cycle_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 2d657319e91399d448cdc168f4e6acea
-    - name: Inventory Book Day & Night Cycle_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: e9fa71734c7b2c844a100234cb794ee5
-    - name: Inventory Book Day & Night Cycle_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 7c493d8a17c686e46a6594f510cd99fb
-    - name: Inventory Book Day & Night Cycle_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 85a9b1b7647538949907edc5420ba63b
-    - name: Inventory Book Day & Night Cycle_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: f92bc50dd95ba1d41a3ae74468da72ea
-    - name: Inventory Book Day & Night Cycle_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: c70691eed81b77945b8f4ce6ecc82b8d
-    - name: Inventory Book Day & Night Cycle_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 133f0480c322a704dabe2be6e4a57646
-    - name: Inventory Book Day & Night Cycle_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: aedbc9a7c8fe3a943bc9b1ca064779eb
-    - name: Inventory Book Day & Night Cycle_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 9a9d215b9f676f047b0fc9e21acaf1a0
-    - name: Inventory Book Day & Night Cycle_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 491dbcf898ef8be4eb482025360216fd
-    - name: Inventory Book Day & Night Cycle_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 421d7c5020ac6c341a2c5f54d89830fe
-    - name: Inventory Book Day & Night Cycle_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: f63867a2263da524489dac76f567957a
-    - name: Inventory Book Day & Night Cycle_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: bf9bcb7fb2be7e244b0cb1f16b2b601a
-    - name: Inventory Book Day & Night Cycle_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: ad48841f373001f44bc563abb3b250d0
-    - name: Inventory Book Day & Night Cycle_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 95a3712d63f90504f9bf4510fb17b68b
-    - name: Inventory Book Day & Night Cycle_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 235d159dee0a0f648b73554b3c4f5d27
-    - name: Inventory Book Day & Night Cycle_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 387ecb58eb57e644a935eef783fc7bca
-    - name: Inventory Book Day & Night Cycle_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: c54bbd11e8249614babac797e4b65038
-    - name: Inventory Book Day & Night Cycle_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: e8cfc52511dbf5c469fafab2a1b41a23
-    - name: Inventory Book Day & Night Cycle_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 235e5c8ecef2d3343b1a9a755712c92c
-    - name: Inventory Book Day & Night Cycle_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 422542bc55bb5a74c9ffefb30167b2f1
-    - name: Inventory Book Day & Night Cycle_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 8ed14cefd42d32a47973b3326017cf8c
-    - name: Inventory Book Day & Night Cycle_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: d3475faeccc1c3c408f9040a407bd193
-    - name: Inventory Book Day & Night Cycle_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: fd842e076afcffc478638b81883e5c39
-    - name: Inventory Book Day & Night Cycle_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: eb29e2dd977cd6145b78c4b616760c02
-    - name: Inventory Book Day & Night Cycle_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 7b1dc97f67a970643842dec4e8d8dde1
-    - name: Inventory Book Day & Night Cycle_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: ea752a2dacce0884d967ec63473e6661
-    - name: Inventory Book Day & Night Cycle_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: a165d3afba6f06745866228f80740eaf
-    - name: Inventory Book Day & Night Cycle_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 67d149268c4f4104b9e0d828af3e0f61
-    - name: Inventory Book Day & Night Cycle_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 4558d7cfa79d2d74bb6ae6e6edfd6deb
-    - name: Inventory Book Day & Night Cycle_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: ae62040be00823942a858a958424dc93
-    - name: Inventory Book Day & Night Cycle_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: d4c1afcfae868364a9d6e609957d0276
-    - name: Inventory Book Day & Night Cycle_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 63487de7f6d1dfe4b82030298d6159b6
-    - name: Inventory Book Day & Night Cycle_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: d03b3d6de1014254d8b4dff8feaeed79
-    - name: Inventory Book Day & Night Cycle_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 7382180cb7239234d839c2807704c6bb
-    - name: Inventory Book Day & Night Cycle_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 84e205c84f8f43249943dfe34ec54ba3
-    - name: Inventory Book Day & Night Cycle_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 14f1b0ff3856a004d8b00a644c9e149b
-    - name: Inventory Book Day & Night Cycle_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 1e1730e2093e7b042b9c364ea774c15d
-    - name: Inventory Book Day & Night Cycle_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 10042755ab9fcfc4ca6dbebad6e5d16e
-    - name: Inventory Book Day & Night Cycle_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 1a9835f1f9bdc2a4493dca8e4f4ad9f0
-    - name: Inventory Book Day & Night Cycle_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: c7c5e72cb5413b94cacbc2c4c22218a5
-    - name: Inventory Book Day & Night Cycle_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 22f1530ae8fee2a479b123df7ae535a4
-    - name: Inventory Book Day & Night Cycle_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 084acc6ee75934249b58a06d27fd535b
-    - name: Inventory Book Day & Night Cycle_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: dc0efc3e39bdced4882ed37a5e444e12
-    - name: Inventory Book Day & Night Cycle_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 749f2737c2fc8664f859a56efed87946
-    - name: Inventory Book Day & Night Cycle_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: b16593e899e2f864fa6888c74228a114
-    - name: Inventory Book Day & Night Cycle_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 140b00a3556b0154888c4fd88ff67fba
-    - name: Inventory Book Day & Night Cycle_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
       spriteId: 0e906e2140cffb04fb4abb4f6c22fd80
-    - name: Inventory Book Day & Night Cycle_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9

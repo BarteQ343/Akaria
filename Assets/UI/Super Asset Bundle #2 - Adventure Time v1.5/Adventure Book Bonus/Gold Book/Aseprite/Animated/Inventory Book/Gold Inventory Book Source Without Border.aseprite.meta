@@ -2070,776 +2070,873 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Gold Inventory Book Source Without Border_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 272
         y: 91
         width: 320
         height: 412
       spriteId: 050a1f08d78165e4da5c6e53cea69f64
-    - name: Gold Inventory Book Source Without Border_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 304
         y: 91
         width: 320
         height: 412
       spriteId: f91f57e368ea9df438369a6ba15539e9
-    - name: Gold Inventory Book Source Without Border_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 320
         y: 96
         width: 320
         height: 426
       spriteId: 598d13f404ff41c44a24815661fd8d6f
-    - name: Gold Inventory Book Source Without Border_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 368
         y: 96
         width: 320
         height: 480
       spriteId: 68941d298beab9a4d9e9028d01df2d57
-    - name: Gold Inventory Book Source Without Border_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 111
         y: 96
         width: 593
         height: 481
       spriteId: 462a4149815a34444950d7d4c78cb56b
-    - name: Gold Inventory Book Source Without Border_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 01d5bfcece0dabe4eaea3dd0f02cdfdd
-    - name: Gold Inventory Book Source Without Border_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 28adf92f4bae6204cbf678bb06ab25ce
-    - name: Gold Inventory Book Source Without Border_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 111
         y: 96
         width: 593
         height: 481
       spriteId: e4c9d654f06c47844a729bab3390b140
-    - name: Gold Inventory Book Source Without Border_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 368
         y: 96
         width: 320
         height: 480
       spriteId: 6f3c05fa10706794e8cb34561f36da5b
-    - name: Gold Inventory Book Source Without Border_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 320
         y: 96
         width: 320
         height: 426
       spriteId: 2479649d00e927c44b2c718a1705acb9
-    - name: Gold Inventory Book Source Without Border_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 304
         y: 91
         width: 320
         height: 412
       spriteId: b5296a7c0fcae4748bab67114458e513
-    - name: Gold Inventory Book Source Without Border_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 272
         y: 91
         width: 320
         height: 412
       spriteId: ba6e4408b83894a4381d7fe737141d8d
-    - name: Gold Inventory Book Source Without Border_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: af8e6ab33629c2f47bdaaa5a7ff3f340
-    - name: Gold Inventory Book Source Without Border_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
       spriteId: b9f49eb11936cda44be79fd2b5e53801
-    - name: Gold Inventory Book Source Without Border_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
       spriteId: af9fca261b7f9614e89cbfb9bd39fee2
-    - name: Gold Inventory Book Source Without Border_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
       spriteId: 6be929c6ee2e12e42add902abed00fd2
-    - name: Gold Inventory Book Source Without Border_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
       spriteId: 60a2933e223c2c64a8bc12c154931c1f
-    - name: Gold Inventory Book Source Without Border_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
       spriteId: 0f82367d448b8294bbde8a6accb78d7f
-    - name: Gold Inventory Book Source Without Border_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
       spriteId: d558dce6210d07549928d398eb67b493
-    - name: Gold Inventory Book Source Without Border_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 2838c1e21cdb1da48bee1aefdc6ce128
-    - name: Gold Inventory Book Source Without Border_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 93a711375b4718c4ea8807d0ac0fd80b
-    - name: Gold Inventory Book Source Without Border_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
       spriteId: a6aa30aa236216a4d91cd674de415260
-    - name: Gold Inventory Book Source Without Border_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
       spriteId: 6cc52078ed7c3af48a8b7bf40ad80d26
-    - name: Gold Inventory Book Source Without Border_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
       spriteId: fd5d24642fee565409a32b20d60c51f2
-    - name: Gold Inventory Book Source Without Border_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
       spriteId: b3cc38c7f7562b147b12ef1e401e0d6b
-    - name: Gold Inventory Book Source Without Border_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
       spriteId: 915386345aa07764aaa93297b6646ebc
-    - name: Gold Inventory Book Source Without Border_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
       spriteId: 2d2ad2569ed3583439b79da4902c9c06
-    - name: Gold Inventory Book Source Without Border_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 369ca4dc1b5570d4291abf232908e622
-    - name: Gold Inventory Book Source Without Border_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: a1e410672c4ca934a97556d495e61795
-    - name: Gold Inventory Book Source Without Border_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
       spriteId: 97a3354b63379fb4ca61c74d7ea2a613
-    - name: Gold Inventory Book Source Without Border_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
       spriteId: 9a1e313fbd3b18147baaca5fb345519a
-    - name: Gold Inventory Book Source Without Border_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
       spriteId: 74b98d6e469ede74dacefad3c8438a66
-    - name: Gold Inventory Book Source Without Border_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
       spriteId: 395a8e8fa5ff1a541a9c136a44011a68
-    - name: Gold Inventory Book Source Without Border_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
       spriteId: 1a70b0a5d4d2517409701d0d62f3b53e
-    - name: Gold Inventory Book Source Without Border_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
       spriteId: e1a9afc94f7a8124192d277cf8a82d31
-    - name: Gold Inventory Book Source Without Border_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 26664c31221be344ab648b6cbcf07257
-    - name: Gold Inventory Book Source Without Border_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: f53198be14885de4aa891ca934724108
-    - name: Gold Inventory Book Source Without Border_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
       spriteId: c372c42d636d821489343234d00d17a0
-    - name: Gold Inventory Book Source Without Border_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
       spriteId: 082799053a8648b46be3cfd1944bfe6f
-    - name: Gold Inventory Book Source Without Border_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
       spriteId: b8233c788c79e4d43a93be0ddf9d22d4
-    - name: Gold Inventory Book Source Without Border_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
       spriteId: f5ddfbf78dac2b0488e71e802fe75ba5
-    - name: Gold Inventory Book Source Without Border_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
       spriteId: bce10049394f3e94fbee662e5e19fe1f
-    - name: Gold Inventory Book Source Without Border_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
       spriteId: 1f744839cfd58ac409cb82777de504a4
-    - name: Gold Inventory Book Source Without Border_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 053565b33d949d54389fde6c60e38ce4
-    - name: Gold Inventory Book Source Without Border_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: efecaad91879b2c418c5a226712079d4
-    - name: Gold Inventory Book Source Without Border_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: debaf589ac874424b8311034c372011b
-    - name: Gold Inventory Book Source Without Border_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 57
         width: 656
         height: 481
       spriteId: 56f785714b1853b4bb47ea6b787c0821
-    - name: Gold Inventory Book Source Without Border_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 1833212509cdbf34b82426c948423af1
-    - name: Gold Inventory Book Source Without Border_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 46395244fcc2383438fe455c9db1317c
-    - name: Gold Inventory Book Source Without Border_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 60acbbe82dc49ce47b8a7990da515abf
-    - name: Gold Inventory Book Source Without Border_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 25e2d04b169378447b8eefe97695a435
-    - name: Gold Inventory Book Source Without Border_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 282f714fedca34d43aa30907aeedc1af
-    - name: Gold Inventory Book Source Without Border_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 528b055e4cf098a448b9e09310cb06c3
-    - name: Gold Inventory Book Source Without Border_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 57
         width: 656
         height: 481
       spriteId: 6289563db8503cd4f88bf7e231fc0baa
-    - name: Gold Inventory Book Source Without Border_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: edb3c131fcaacee4cab96fb29ce582dc
-    - name: Gold Inventory Book Source Without Border_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: f07261eb6d74dca41bd91c01560b563c
-    - name: Gold Inventory Book Source Without Border_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: ba1ef759d3cf7754bb78ef290e82fd16
-    - name: Gold Inventory Book Source Without Border_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: e1e68bdd979c6514e85dabb013473b02
-    - name: Gold Inventory Book Source Without Border_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
       spriteId: 2bd832a3f43c0b7439be29ca2907fe1f
-    - name: Gold Inventory Book Source Without Border_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 659
         height: 412
       spriteId: 23dc4f842321f0d4d8fa7124a3d7d608
-    - name: Gold Inventory Book Source Without Border_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: fd8d56906818030469c807a3562aad38
-    - name: Gold Inventory Book Source Without Border_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: c5f904f57466b474996dd16a373284fa
-    - name: Gold Inventory Book Source Without Border_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 6426ee38c3d27cb45bcca9a1b9ab9f30
-    - name: Gold Inventory Book Source Without Border_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: f449f16b9fff78c41956d8ffe3f68113
-    - name: Gold Inventory Book Source Without Border_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: f52e5e59eb746b648b6947655e34f1d3
-    - name: Gold Inventory Book Source Without Border_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 9b14f322321b4724eb0bc8950f22e6de
-    - name: Gold Inventory Book Source Without Border_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 687
         height: 412
       spriteId: bc7cee22038864a41859becce40a36a8
-    - name: Gold Inventory Book Source Without Border_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 13e7bb434bef4c943a17c83ac75793e7
-    - name: Gold Inventory Book Source Without Border_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: ed04a8bf8d37db346ae4b33503ea66bd
-    - name: Gold Inventory Book Source Without Border_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 8b71198c3cd94af47b3039349145e844
-    - name: Gold Inventory Book Source Without Border_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 0059cd14124ecf54189bd1c18f220f36
-    - name: Gold Inventory Book Source Without Border_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: f911018ff2463e24983ab61a9a702280
-    - name: Gold Inventory Book Source Without Border_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 17e472fc29896934798b52f25bd9d6b4
-    - name: Gold Inventory Book Source Without Border_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: 060eb05b7c75df149bd31d0ebfc1a6e7
-    - name: Gold Inventory Book Source Without Border_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: f8d6ee0955770634c9229061b1dcd8dc
-    - name: Gold Inventory Book Source Without Border_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: 0d101221ed703854681958e75904adfb
-    - name: Gold Inventory Book Source Without Border_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: ffe43ec06b6d78c4f9b89f74131dfb38
-    - name: Gold Inventory Book Source Without Border_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: e4177e117932d3e4d8404883a7b53eed
-    - name: Gold Inventory Book Source Without Border_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: e612f75932e85db4095c42317ec31c6e
-    - name: Gold Inventory Book Source Without Border_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: 6540720ca1309fc4481141e1bc0016c4
-    - name: Gold Inventory Book Source Without Border_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: 700d211b56d58064098e5dfbab853812
-    - name: Gold Inventory Book Source Without Border_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
       spriteId: 23829cae2848f3a44983904c04a626f9
-    - name: Gold Inventory Book Source Without Border_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 582cf635fd4559a4f9a0584f81baaf3a
-    - name: Gold Inventory Book Source Without Border_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 6e384d1d93902b84dbfd2fc6b1d15c42
-    - name: Gold Inventory Book Source Without Border_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 09cf5db829329a24590ae8680a971924
-    - name: Gold Inventory Book Source Without Border_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 7bf5c348d2d2cec488185025cc9b64ec
-    - name: Gold Inventory Book Source Without Border_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 5f700c27b173f2b4cad7794a6628f670
-    - name: Gold Inventory Book Source Without Border_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
       spriteId: 658a11a78f311534e9a4fdeeb876cf0b
-    - name: Gold Inventory Book Source Without Border_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 687
         height: 412
       spriteId: f2bde93a5cad6524b8ddcfe2157f514d
-    - name: Gold Inventory Book Source Without Border_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: c9be411007d6dc44283b0737ee4c1379
-    - name: Gold Inventory Book Source Without Border_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: bfdb8d2982308e2419f8ed9bdd1b52e3
-    - name: Gold Inventory Book Source Without Border_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 7fa4f49604c6fbc4eaca95e9d1315fe5
-    - name: Gold Inventory Book Source Without Border_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 3509f96aceabf764c81beca931ba0201
-    - name: Gold Inventory Book Source Without Border_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 7267d18a2fd1e164db711bd1700ac1be
-    - name: Gold Inventory Book Source Without Border_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
       spriteId: 3bd20169e962ea54abcb719c53f33664
-    - name: Gold Inventory Book Source Without Border_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 659
         height: 412
       spriteId: c0815a803c2238549916786a0be04b21
-    - name: Gold Inventory Book Source Without Border_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91

@@ -3810,1472 +3810,1656 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Inventory Book Without Border_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 267
         y: 128
         width: 336
         height: 421
       spriteId: 3293aaf2e8ad9ba419c28c5941ee556e
-    - name: Inventory Book Without Border_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 283
         y: 128
         width: 336
         height: 441
       spriteId: 7097a07d4b1035d45a720e0aecc09f46
-    - name: Inventory Book Without Border_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 299
         y: 128
         width: 336
         height: 507
       spriteId: 73af540be3f33054c8586a4b468df746
-    - name: Inventory Book Without Border_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 112
         y: 123
         width: 619
         height: 516
       spriteId: 1d7213d842a3bd248a46b975ec4c8a12
-    - name: Inventory Book Without Border_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: e89c3c220a2668d4f9116b9d303bfd41
-    - name: Inventory Book Without Border_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: debf5d7391b405f478249ed10485daef
-    - name: Inventory Book Without Border_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 112
         y: 123
         width: 619
         height: 516
       spriteId: 1273d5e37edcead40b89fd2a0dbcb5d0
-    - name: Inventory Book Without Border_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 299
         y: 128
         width: 336
         height: 507
       spriteId: 949c52b247b4c484993aa54d0cf8b0f4
-    - name: Inventory Book Without Border_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 283
         y: 128
         width: 336
         height: 441
       spriteId: fb111abff37db1e4dae476a458556f5e
-    - name: Inventory Book Without Border_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 267
         y: 128
         width: 336
         height: 421
       spriteId: 5d21983ef692e214aa6878b9e0c9f7f0
-    - name: Inventory Book Without Border_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 430
         y: 123
         width: 37
         height: 418
       spriteId: 051caa93f3835ba40bf029cd6de1a882
-    - name: Inventory Book Without Border_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 336
         y: 123
         width: 225
         height: 456
       spriteId: 31d9940e3b8982b40b683ce05bb4de36
-    - name: Inventory Book Without Border_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 158
         y: 123
         width: 581
         height: 484
       spriteId: 2cd64f83e0d353f40bfe097ad7030f94
-    - name: Inventory Book Without Border_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 1ca47453048ed624aa3eea40e96a2c0e
-    - name: Inventory Book Without Border_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 7495acbcf56d3d14fb66aae5a3907a3c
-    - name: Inventory Book Without Border_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 158
         y: 123
         width: 581
         height: 484
       spriteId: 3d05934fc86402f4db6ef5568ad8c1d6
-    - name: Inventory Book Without Border_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 336
         y: 123
         width: 225
         height: 456
       spriteId: 17f144b6a287ea549a4688b706d8eceb
-    - name: Inventory Book Without Border_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 430
         y: 123
         width: 37
         height: 418
       spriteId: cfa88b3e2806d0f44a2a63b25d6a8e88
-    - name: Inventory Book Without Border_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 56e50bc8523af0c40b0ddf652f7889f0
-    - name: Inventory Book Without Border_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 421
       spriteId: 489fd47f6bf402f45a8b7c4241dab19d
-    - name: Inventory Book Without Border_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 441
       spriteId: 0b18a317ce5bc1a44a37ded696959a23
-    - name: Inventory Book Without Border_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 432
       spriteId: 48a23cf2ca17c8a458f3f269d1ac45c9
-    - name: Inventory Book Without Border_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: afecafde5cb897d4b9459eecd49e3c80
-    - name: Inventory Book Without Border_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 1e41f8c80093ebe478a42bb36c32e08b
-    - name: Inventory Book Without Border_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: d38a6f62ce84a704d891f099c9aefba1
-    - name: Inventory Book Without Border_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 4776c3deceda5494da7bc06d4da75fbc
-    - name: Inventory Book Without Border_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 7e8d724353daf6b48b4df2249f7c5a6c
-    - name: Inventory Book Without Border_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 2be727c1ad8a12640a1cb16889a640f0
-    - name: Inventory Book Without Border_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 421
       spriteId: 4f9d740f1e5a7c94582b7eb841f84fe2
-    - name: Inventory Book Without Border_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 441
       spriteId: 6d55b1102c444f84691e721f3e5396bd
-    - name: Inventory Book Without Border_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 432
       spriteId: 871a810025f08bc4aa943c8381a24d87
-    - name: Inventory Book Without Border_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: 875265392d2e5c64e9d9bca2755b59ee
-    - name: Inventory Book Without Border_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: e01651328cf41224f939fd7a44a73148
-    - name: Inventory Book Without Border_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: e8bb6e168b3470949a6ae931b51d5d8c
-    - name: Inventory Book Without Border_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: ea450e87578c4074facbb61ebb279eb7
-    - name: Inventory Book Without Border_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: a60147023bc62844398f726694f61a87
-    - name: Inventory Book Without Border_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: f62556e7a7266854183ab93e9b5ffc27
-    - name: Inventory Book Without Border_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 428
       spriteId: f05443f820bae8648b53a7fd3442dfc1
-    - name: Inventory Book Without Border_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 453
       spriteId: 8dbec2f33b628c14881151f1528e6007
-    - name: Inventory Book Without Border_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 457
       spriteId: f6a0ee2765d472249bc1bd3065bf2325
-    - name: Inventory Book Without Border_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 450
       spriteId: f5e1856dd91dbbf4a8713afd9480b48f
-    - name: Inventory Book Without Border_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: 1191a422ba33f404fb02962057a76920
-    - name: Inventory Book Without Border_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 419
       spriteId: 0c2e076f920cc484e91ff2977f08eeb9
-    - name: Inventory Book Without Border_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: d3ba95f5bf343f748b2592d07ae44ba0
-    - name: Inventory Book Without Border_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 633be28b603cc8b4d89ce133d8cf0402
-    - name: Inventory Book Without Border_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 428
       spriteId: 41d62864840e2c84387196227da604e0
-    - name: Inventory Book Without Border_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 453
       spriteId: d39e69bd8780d6c48ab1554fa0f8ffde
-    - name: Inventory Book Without Border_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 457
       spriteId: 2d31a377727d96140ad5ee05d008e756
-    - name: Inventory Book Without Border_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 450
       spriteId: f21e540e4d65ce14daa565eada1a7c39
-    - name: Inventory Book Without Border_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: c0cbd7dc77c114047a768e339b55cf4c
-    - name: Inventory Book Without Border_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 419
       spriteId: fb3d501e713eb574fba0560ebf4095ff
-    - name: Inventory Book Without Border_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 2377ca1763c24de419ef56518385b02d
-    - name: Inventory Book Without Border_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: f958724a6903bce4aa5520c64e246555
-    - name: Inventory Book Without Border_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 419
       spriteId: c31373dd9e38a454fb79c0f04517bfb8
-    - name: Inventory Book Without Border_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: 32e2e91c64cfeff4f8d8ac6d2dd045d5
-    - name: Inventory Book Without Border_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 450
       spriteId: a81b03ad46188a542aa785bdfe3c0525
-    - name: Inventory Book Without Border_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 457
       spriteId: acae388615dec7b42a4fc104539f1b98
-    - name: Inventory Book Without Border_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 453
       spriteId: 72953488b76cf504583eedcdf322d1b0
-    - name: Inventory Book Without Border_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 428
       spriteId: 8a9915fb8f363114297517ad7f5f643e
-    - name: Inventory Book Without Border_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: e0c92e0b3a1c45b4cb3e26bb7d587639
-    - name: Inventory Book Without Border_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 50395a0216d40e44ca0efc49d63b1475
-    - name: Inventory Book Without Border_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 419
       spriteId: 09c421b9c7a4ad94093afb5e88d7288a
-    - name: Inventory Book Without Border_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 429
       spriteId: ef66b324f976736479039e310d535af2
-    - name: Inventory Book Without Border_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 450
       spriteId: 8e41784f9032d61429970807cc8bbe6f
-    - name: Inventory Book Without Border_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 457
       spriteId: 9498c8e338d60804192bb324fad1c44a
-    - name: Inventory Book Without Border_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 453
       spriteId: 6372133837eb5b948a09394640adeff2
-    - name: Inventory Book Without Border_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 428
       spriteId: 6010cfc8f174b09409dcb95b2648e9d5
-    - name: Inventory Book Without Border_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 3a9a5cf0811407442b6cef691d699d53
-    - name: Inventory Book Without Border_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: e65e63eb7b4192a4e86154f1fdc55b0e
-    - name: Inventory Book Without Border_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: f96eb382cedfc064eb816653888a3d31
-    - name: Inventory Book Without Border_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: eaa47defa1e859d41a97614f1f33a4fe
-    - name: Inventory Book Without Border_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 067ffeee8050da4499b7d080c262a877
-    - name: Inventory Book Without Border_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 24f19dc320068cb4ca39bc85c72b91d2
-    - name: Inventory Book Without Border_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 61213937d454f724887df64005372841
-    - name: Inventory Book Without Border_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: b6dd036add8948845be663d77c14e3cb
-    - name: Inventory Book Without Border_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: de93ef5bb6f44af418a809271aa7b95e
-    - name: Inventory Book Without Border_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: d86af8a677a4ade478b8a1734de8f59f
-    - name: Inventory Book Without Border_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4a27c4c4081a3c245bf3b594f0480e2d
-    - name: Inventory Book Without Border_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4db99953902c705409364148a7b128d1
-    - name: Inventory Book Without Border_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 7b170352891294441915f5e065292cf0
-    - name: Inventory Book Without Border_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a5b2771914029844fbcf7ca5ea56f724
-    - name: Inventory Book Without Border_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: e380dd577093a774a86cdf854de4580e
-    - name: Inventory Book Without Border_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 2c3045866d74d014eb209ae7f7cfe8f0
-    - name: Inventory Book Without Border_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 8ae76cce4bf592444af1f32b8d196739
-    - name: Inventory Book Without Border_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: aeae7170f1d5af543b88a7f2158fd965
-    - name: Inventory Book Without Border_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: f5d4c7524d72b0844872a03ec0cdf18e
-    - name: Inventory Book Without Border_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: c384b3e1cbcb93f46ba72f9351c46b29
-    - name: Inventory Book Without Border_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 737f31eb448550d469f54aaa15346a20
-    - name: Inventory Book Without Border_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: ea5e99c9a5ff55742bf40471d08cd619
-    - name: Inventory Book Without Border_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 480e3ec49b92b9d44ae70ffed558f1c0
-    - name: Inventory Book Without Border_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 027b4574fd467804dbce4850fddae02b
-    - name: Inventory Book Without Border_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: e1f17270622bea54aa87ff753102070c
-    - name: Inventory Book Without Border_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: d317f53dfcf32ca4caa4d58568e83512
-    - name: Inventory Book Without Border_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4ea17546b414d9545bfadc32ec72cb69
-    - name: Inventory Book Without Border_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: be7be2b691dd2c94b83021ddca783d4e
-    - name: Inventory Book Without Border_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 23de691f216a64540b41f6e6c81db5d8
-    - name: Inventory Book Without Border_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: c7f3035861d102c43812bdf64747e880
-    - name: Inventory Book Without Border_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 564933927702d4548bcf5334ca093f61
-    - name: Inventory Book Without Border_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 3095e181db63d2444b750b695ae5b32f
-    - name: Inventory Book Without Border_Frame_109
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 0df869b82deabca4f8225735b6ae5f17
-    - name: Inventory Book Without Border_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 279655b31ead3ee478bbfef90d563752
-    - name: Inventory Book Without Border_Frame_111
+    - name: Frame_111
       frameIndex: 111
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 587eba4981de6c24aa082d558da06711
-    - name: Inventory Book Without Border_Frame_112
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a2e0324631c863346952de2ddd51f769
-    - name: Inventory Book Without Border_Frame_113
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: aee543cce326da24f94d73ad21138564
-    - name: Inventory Book Without Border_Frame_115
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: c6a83f27083e2004c91df5e0189ddd5b
-    - name: Inventory Book Without Border_Frame_116
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 5f01813aa36fb0643838e95b0da71cc3
-    - name: Inventory Book Without Border_Frame_117
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: e9b5a8b71bf3a5847b1f1f7c5e668d87
-    - name: Inventory Book Without Border_Frame_118
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 325d1e9a6c862b744808c826d83d4bcd
-    - name: Inventory Book Without Border_Frame_119
+    - name: Frame_119
       frameIndex: 119
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: c44d39e1d5d2b324e8da16bf8bb8c2f2
-    - name: Inventory Book Without Border_Frame_120
+    - name: Frame_120
       frameIndex: 120
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a5e8ccf44e371654c8a01ea3deefbe7f
-    - name: Inventory Book Without Border_Frame_121
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: d887c32b635bc9445aef08f59b0e77c5
-    - name: Inventory Book Without Border_Frame_122
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: e4a5ac10f84f5394c874547370c9a885
-    - name: Inventory Book Without Border_Frame_123
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 486cc20d7810efd439ef943bd2945050
-    - name: Inventory Book Without Border_Frame_124
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 41bd46643e4cb7b42a14f7b0a7aeef22
-    - name: Inventory Book Without Border_Frame_125
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 15c8fe54977211e40a0db940329f15a3
-    - name: Inventory Book Without Border_Frame_126
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 9a4dfef38d555cf4eb2c89b1196817af
-    - name: Inventory Book Without Border_Frame_127
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 126574a836f56a14dae99dfa092cd899
-    - name: Inventory Book Without Border_Frame_128
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 49c51774335833f429ce5f9dda9c5036
-    - name: Inventory Book Without Border_Frame_129
+    - name: Frame_129
       frameIndex: 129
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 719c1cd306052d044997d3f7778bbe1a
-    - name: Inventory Book Without Border_Frame_130
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 9a57d61011f7f2443bc245af47a5d944
-    - name: Inventory Book Without Border_Frame_131
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: f1207ced07eba884b8decdecb76448ca
-    - name: Inventory Book Without Border_Frame_132
+    - name: Frame_132
       frameIndex: 132
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4bf886e65b2160f4a8c4188edac2b7b9
-    - name: Inventory Book Without Border_Frame_133
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: fc878b8d6e4fb20409db120b7238e56b
-    - name: Inventory Book Without Border_Frame_134
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a58ab8a145ced1f4887aa845aa8b787d
-    - name: Inventory Book Without Border_Frame_135
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4531df3cd99ab9b448968c995f24cfb2
-    - name: Inventory Book Without Border_Frame_136
+    - name: Frame_136
       frameIndex: 136
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 9c8b8b1a3a592fb42a672f6bcc364bad
-    - name: Inventory Book Without Border_Frame_137
+    - name: Frame_137
       frameIndex: 137
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 3b4b0cc8615655a42aaf20503f36920d
-    - name: Inventory Book Without Border_Frame_138
+    - name: Frame_138
       frameIndex: 138
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 72f6c27b72c68a64ab65fde52495143f
-    - name: Inventory Book Without Border_Frame_139
+    - name: Frame_139
       frameIndex: 139
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 5eb79fa8e78b01b4a993ccbfd8e65292
-    - name: Inventory Book Without Border_Frame_140
+    - name: Frame_140
       frameIndex: 140
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: d038e92902b000247a124f1fb083fc59
-    - name: Inventory Book Without Border_Frame_141
+    - name: Frame_141
       frameIndex: 141
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 84cf81efad7c8c0418b5fb880ebb3105
-    - name: Inventory Book Without Border_Frame_142
+    - name: Frame_142
       frameIndex: 142
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 407025e0ac5f43e4a8693640f06f2b60
-    - name: Inventory Book Without Border_Frame_143
+    - name: Frame_143
       frameIndex: 143
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a0d31e5eeb6d5d84ba142174912dba0f
-    - name: Inventory Book Without Border_Frame_144
+    - name: Frame_144
       frameIndex: 144
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: aac113880dd8d3e4cbf1efb50f4f7cde
-    - name: Inventory Book Without Border_Frame_145
+    - name: Frame_145
       frameIndex: 145
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 2fe884af5b67c75489636261fad77169
-    - name: Inventory Book Without Border_Frame_146
+    - name: Frame_146
       frameIndex: 146
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 54fd0b7f11b1e1a43a4f12d2aff7a296
-    - name: Inventory Book Without Border_Frame_147
+    - name: Frame_147
       frameIndex: 147
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 863e684045a18eb4fb68b37044f920d7
-    - name: Inventory Book Without Border_Frame_148
+    - name: Frame_148
       frameIndex: 148
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: ae55453138d5779429fbd120c1059f3e
-    - name: Inventory Book Without Border_Frame_149
+    - name: Frame_149
       frameIndex: 149
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 59493d32f8dfa3f45839ae1c2d70d77e
-    - name: Inventory Book Without Border_Frame_150
+    - name: Frame_150
       frameIndex: 150
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 47b24449ca408254ead4028f14032904
-    - name: Inventory Book Without Border_Frame_152
+    - name: Frame_152
       frameIndex: 152
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: e6214ac010fae944facce4e39a7b7c96
-    - name: Inventory Book Without Border_Frame_153
+    - name: Frame_153
       frameIndex: 153
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 57257b5ba415e444694a832064d02a98
-    - name: Inventory Book Without Border_Frame_154
+    - name: Frame_154
       frameIndex: 154
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 4734c52c1cd7d774cb7bfd771ddd99a7
-    - name: Inventory Book Without Border_Frame_155
+    - name: Frame_155
       frameIndex: 155
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 17aabb6625fa8f84c985d9990d6cbfae
-    - name: Inventory Book Without Border_Frame_156
+    - name: Frame_156
       frameIndex: 156
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 9c33f55d345c52f4b8788a027d7f4f59
-    - name: Inventory Book Without Border_Frame_157
+    - name: Frame_157
       frameIndex: 157
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: eb6b1478781c8794581fefcb7d35f8f2
-    - name: Inventory Book Without Border_Frame_158
+    - name: Frame_158
       frameIndex: 158
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 828a4d5f3db194d459d92467936a366d
-    - name: Inventory Book Without Border_Frame_159
+    - name: Frame_159
       frameIndex: 159
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 1c00162f708ea2e46b90c62a63c3f940
-    - name: Inventory Book Without Border_Frame_160
+    - name: Frame_160
       frameIndex: 160
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: a1671a1778270bc48976e87580610eb7
-    - name: Inventory Book Without Border_Frame_161
+    - name: Frame_161
       frameIndex: 161
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 695
         height: 416
       spriteId: 84f8bbd1ca7011341b9cf21f267840ad
-    - name: Inventory Book Without Border_Frame_163
+    - name: Frame_163
       frameIndex: 163
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: a726d8f4c46b07b4caaa56a7baf61e74
-    - name: Inventory Book Without Border_Frame_164
+    - name: Frame_164
       frameIndex: 164
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 267310c50866a9c42aa6d428dda789a1
-    - name: Inventory Book Without Border_Frame_165
+    - name: Frame_165
       frameIndex: 165
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: f084b079912401d48abb1f192d497ff4
-    - name: Inventory Book Without Border_Frame_166
+    - name: Frame_166
       frameIndex: 166
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 690
         height: 416
       spriteId: 964a308cbeeec8c4fbc471204ded18ad
-    - name: Inventory Book Without Border_Frame_167
+    - name: Frame_167
       frameIndex: 167
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: dc7cd791fad9230479468cb6f5e205da
-    - name: Inventory Book Without Border_Frame_168
+    - name: Frame_168
       frameIndex: 168
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 1045c7e3f6476a2408e89ce18a62734b
-    - name: Inventory Book Without Border_Frame_169
+    - name: Frame_169
       frameIndex: 169
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 42f54f8048844a64c855d656ce678c94
-    - name: Inventory Book Without Border_Frame_170
+    - name: Frame_170
       frameIndex: 170
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: f02e53057904880498952d19b35c7cd7
-    - name: Inventory Book Without Border_Frame_171
+    - name: Frame_171
       frameIndex: 171
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 85c9339bd8157064b89e22cacf3cf91e
-    - name: Inventory Book Without Border_Frame_172
+    - name: Frame_172
       frameIndex: 172
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: bdcc646b0f0ef4047bde4e9ef2df4119
-    - name: Inventory Book Without Border_Frame_173
+    - name: Frame_173
       frameIndex: 173
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 690
         height: 416
       spriteId: 02d117d0b9cbc0a47b374bc8e2bc4ef0
-    - name: Inventory Book Without Border_Frame_174
+    - name: Frame_174
       frameIndex: 174
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 3943051a92836ea4d984497014f5f6a6
-    - name: Inventory Book Without Border_Frame_175
+    - name: Frame_175
       frameIndex: 175
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 51c2ff6351e83354f81149db6a68b478
-    - name: Inventory Book Without Border_Frame_176
+    - name: Frame_176
       frameIndex: 176
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: b0b56675058265941874fb5071b9f339
-    - name: Inventory Book Without Border_Frame_177
+    - name: Frame_177
       frameIndex: 177
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: afc41899586e35c4c87a4b1d6c117c45
-    - name: Inventory Book Without Border_Frame_178
+    - name: Frame_178
       frameIndex: 178
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 91203652b08f80d40ac333cc458ba25f
-    - name: Inventory Book Without Border_Frame_179
+    - name: Frame_179
       frameIndex: 179
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 3dc57470da17e5248a24bf4352fcb606
-    - name: Inventory Book Without Border_Frame_181
+    - name: Frame_181
       frameIndex: 181
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 753aab2108a81384faeb470569a69def
-    - name: Inventory Book Without Border_Frame_182
+    - name: Frame_182
       frameIndex: 182
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 0fe11bac6fe5993419aac3e1d05d691d
-    - name: Inventory Book Without Border_Frame_183
+    - name: Frame_183
       frameIndex: 183
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: d21e0329031c8db488d43e316d2d4dfd
-    - name: Inventory Book Without Border_Frame_184
+    - name: Frame_184
       frameIndex: 184
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 7afb58d492251ac4397cdb6213e10a7e
-    - name: Inventory Book Without Border_Frame_185
+    - name: Frame_185
       frameIndex: 185
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 036807641f0d8c74daaa07921c7d9acd
-    - name: Inventory Book Without Border_Frame_186
+    - name: Frame_186
       frameIndex: 186
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 686
         height: 416
       spriteId: 5f0133a89020df449bc7657411a436ca
-    - name: Inventory Book Without Border_Frame_187
+    - name: Frame_187
       frameIndex: 187
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 690
         height: 416
       spriteId: cd839d4dc6b125d499f72a03227ba3e4
-    - name: Inventory Book Without Border_Frame_188
+    - name: Frame_188
       frameIndex: 188
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 4988d1547fc84ab4685c72d224892d74
-    - name: Inventory Book Without Border_Frame_189
+    - name: Frame_189
       frameIndex: 189
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 9d3ea313976576647b0f67445363b15b
-    - name: Inventory Book Without Border_Frame_190
+    - name: Frame_190
       frameIndex: 190
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: c8752518f806d8943aa2cda70f283452
-    - name: Inventory Book Without Border_Frame_191
+    - name: Frame_191
       frameIndex: 191
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 17a7c8104bd29d145b5f16020e5a9c8f
-    - name: Inventory Book Without Border_Frame_192
+    - name: Frame_192
       frameIndex: 192
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: 15bfe8ed3ceef5e4c9abe7ed76564bf4
-    - name: Inventory Book Without Border_Frame_193
+    - name: Frame_193
       frameIndex: 193
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: ad5645ca603331848949201fcd7f5ef0
-    - name: Inventory Book Without Border_Frame_194
+    - name: Frame_194
       frameIndex: 194
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 690
         height: 416
       spriteId: 157668c5f66958c4bb9a6574a94c4c10
-    - name: Inventory Book Without Border_Frame_195
+    - name: Frame_195
       frameIndex: 195
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 698
         height: 416
       spriteId: ffc5c322a94173145b74ec73c605e223
-    - name: Inventory Book Without Border_Frame_196
+    - name: Frame_196
       frameIndex: 196
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123
         width: 661
         height: 416
       spriteId: 2f456112cceef2a4287c1526b6af7e69
-    - name: Inventory Book Without Border_Frame_197
+    - name: Frame_197
       frameIndex: 197
+      additiveSortOrder: 0
       cellRect:
         x: 118
         y: 123

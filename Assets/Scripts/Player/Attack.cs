@@ -41,7 +41,7 @@ public class Attack : MonoBehaviour
 		bool isGrounded = _controller.checkIsGrounded();
 		if (Time.time >= nextAttackTime)
 		{
-			if (Input.GetKeyDown(KeyCode.Mouse0))
+			if (Input.GetKeyDown(KeyCode.Mouse0) && Time.timeScale > 0)
 			{
 				attackIsHappening = true;
 				//attackCooldown = true;
