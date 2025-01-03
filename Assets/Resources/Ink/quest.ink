@@ -54,6 +54,7 @@ I'm counting on you!
 -> END
 
 === quest_complete ===
+~ quest_ended = true
 # speaker: Tom
 I'm back.
 # speaker: Andrew
