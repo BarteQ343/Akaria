@@ -1,26 +1,10 @@
 INCLUDE globals.ink
 
--> talk_to_andrew
-
-=== talk_to_andrew ===
-{quest_ended:
--> quest_end
-- else:
--> questing 
-}
-
-=== questing ===
-{quest_completed: 
--> quest_complete
-- else: 
--> questing_2
-}
-
-=== questing_2 === 
-{quest_started:
--> placeholder_dialogue
-- else:
--> start
+{forest_investigation_quest_status:
+    - 0: -> start
+    - 1: -> placeholder_dialogue
+    - 2: -> quest_complete
+    - else: -> quest_end
 }
 
 === start ===
@@ -37,7 +21,7 @@ Well, that's too bad. If you change your mind, you know where to find me.
 -> END
 
 === yes_work ===
-~ quest_started = true
+~ forest_investigation_quest_status = 1
 # speaker: Tom
 Maybe. What do you need?
 # speaker: Andrew
@@ -54,7 +38,7 @@ I'm counting on you!
 -> END
 
 === quest_complete ===
-~ quest_ended = true
+~ forest_investigation_quest_status = 3
 # speaker: Tom
 I'm back.
 # speaker: Andrew

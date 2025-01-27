@@ -12,7 +12,7 @@ public class ForestTrigger : MonoBehaviour
 
             // Start the forest investigation dialogue
             var dialogueController = DialogueController.GetInstance();
-            dialogueController.EnterDialogueMode(Resources.Load<TextAsset>("Ink/forest_investigation"));
+            dialogueController.EnterDialogueMode(Resources.Load<TextAsset>("Dialogue/Dialogues/forest_investigation"));
 
             // Change the quest_completed variable to true
             var story = dialogueController.currentStory;
