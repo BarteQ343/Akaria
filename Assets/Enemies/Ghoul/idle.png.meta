@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6255e6c4e05f4f4bbca25290313ae5f
+guid: 2747d57c519f10e4da3af943a68dd50a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 800
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,55 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arm_swing_0
+      name: idle_0
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1
-        width: 54
-        height: 96
-      alignment: 9
-      pivot: {x: 0.8013854, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a810617af892ec648852218ac3eab270
-      internalID: -833243631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_1
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 1
-        width: 49
-        height: 106
-      alignment: 9
-      pivot: {x: 0.8925283, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7e63b546f450b44ba26e202d1443153
-      internalID: 2121960600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_3
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 1
-        width: 22
-        height: 63
+        x: 0
+        y: 0
+        width: 176
+        height: 504
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 419f57bf196bd62489989301e4af1375
-      internalID: -620177861
+      spriteID: 15466b4b9991b88409eb9f5faf2213d9
+      internalID: 1829711022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arm_swing_4
+      name: idle_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1
-        width: 35
-        height: 61
+        x: 176
+        y: 0
+        width: 176
+        height: 504
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f099526e3bbf1e845a7218dff0369d09
-      internalID: -557323234
+      spriteID: af7e1ef88977b0b49b01c0830d7cd4fc
+      internalID: -2004985457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arm_swing_5
+      name: idle_2
       rect:
         serializedVersion: 2
-        x: 189
-        y: 2
-        width: 58
-        height: 75
+        x: 352
+        y: 0
+        width: 176
+        height: 504
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,104 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33c3d7fb2beba74428b27b32b813a80b
-      internalID: 1519819020
+      spriteID: 1df30310ce7437643b3c45d868fedc69
+      internalID: 1774021680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arm_swing_6
+      name: idle_3
       rect:
         serializedVersion: 2
-        x: 422
-        y: 1
-        width: 46
-        height: 92
-      alignment: 9
-      pivot: {x: 0.8538009, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6127e2f3bc440244da9095c59518fe62
-      internalID: -1273453419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_7
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 1
-        width: 43
-        height: 65
-      alignment: 9
-      pivot: {x: 0.8211386, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19e645746d389b84f87c9fc01042cf37
-      internalID: -1517984895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_10
-      rect:
-        serializedVersion: 2
-        x: 598
-        y: 1
-        width: 41
-        height: 62
-      alignment: 9
-      pivot: {x: 0.77666044, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: face3e3380ac2884798b9d12696e5c54
-      internalID: -2112578930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_11
-      rect:
-        serializedVersion: 2
-        x: 683
-        y: 1
-        width: 38
-        height: 55
-      alignment: 9
-      pivot: {x: 0.7553711, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e21f135d7bade31458a15ced4a7ce3b5
-      internalID: 1204174572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_12
-      rect:
-        serializedVersion: 2
-        x: 783
-        y: 1
-        width: 22
-        height: 63
+        x: 528
+        y: 0
+        width: 176
+        height: 504
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bdf86289db3dc041a8e244ec65318bc
-      internalID: 1004805157
+      spriteID: cc4e8190317480144a84af4aa5564f37
+      internalID: 1605476385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 176
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7dadb69fbbf8949a2a4a0e97ca7dd5
+      internalID: 1397626717
       vertices: []
       indices: 
       edges: []
@@ -330,19 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arm_swing_0: -833243631
-      arm_swing_1: 2121960600
-      arm_swing_10: -2112578930
-      arm_swing_11: 1204174572
-      arm_swing_12: 1004805157
-      arm_swing_2: 1798627332
-      arm_swing_3: -620177861
-      arm_swing_4: -557323234
-      arm_swing_5: 1519819020
-      arm_swing_6: -1273453419
-      arm_swing_7: -1517984895
-      arm_swing_8: 1918030248
-      arm_swing_9: 1579972424
+      idle_0: 1829711022
+      idle_1: -2004985457
+      idle_2: 1774021680
+      idle_3: 1605476385
+      idle_4: 1397626717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

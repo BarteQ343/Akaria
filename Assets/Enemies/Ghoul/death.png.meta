@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6255e6c4e05f4f4bbca25290313ae5f
+guid: fe2cbfe252174a9458ee2c9bbd30468a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 800
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,211 +110,295 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arm_swing_0
+      name: death_0
       rect:
         serializedVersion: 2
-        x: 256
-        y: 1
-        width: 54
-        height: 96
-      alignment: 9
-      pivot: {x: 0.8013854, y: 0}
+        x: 278
+        y: 1023
+        width: 179
+        height: 506
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a810617af892ec648852218ac3eab270
-      internalID: -833243631
+      spriteID: 35a3a444fb8f4d144af03ddb39556ae9
+      internalID: -1804755761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arm_swing_1
+      name: death_1
       rect:
         serializedVersion: 2
-        x: 333
-        y: 1
-        width: 49
+        x: 855
+        y: 1023
+        width: 315
+        height: 386
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec47e5cf08031f24ca623b499bf7053f
+      internalID: 812486675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_2
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1023
+        width: 417
+        height: 459
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9384d8b41177ae34e8378025ad3d3597
+      internalID: 560193208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_3
+      rect:
+        serializedVersion: 2
+        x: 2286
+        y: 1023
+        width: 379
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e79d2d01a68b44cbe11c8df369f883
+      internalID: -1664358054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_4
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 1023
+        width: 274
+        height: 466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23a6f2525403c34b958f5dd702fe668
+      internalID: 1754164392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 511
+        width: 299
+        height: 410
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8195fe60164094ea8a2e27ea6c0d0d
+      internalID: -110409201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_6
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 511
+        width: 330
+        height: 394
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35c9083310f20c4395d8ffcff2a152f
+      internalID: 300192348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_7
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 511
+        width: 219
+        height: 443
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fdb0db9873b3b4389335fbd8c63cae
+      internalID: -2082584450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_8
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 511
+        width: 234
+        height: 434
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dd0d4b0280dd54981546d2d7f80c1b
+      internalID: -2026631247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_9
+      rect:
+        serializedVersion: 2
+        x: 2983
+        y: 511
+        width: 315
+        height: 314
+      alignment: 9
+      pivot: {x: 0.97, y: -0.00000019437948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d1698f7bca3ae4f8c97a7c3c03ebe5
+      internalID: -53560858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_10
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 371
+        height: 250
+      alignment: 9
+      pivot: {x: 0.97, y: -0.00000023649167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636e97c4e5952cd42af8f641d7c4d796
+      internalID: 128488615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 594
+        height: 129
+      alignment: 9
+      pivot: {x: 0.97, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011324b3f2d47084d9d5013960cc03f8
+      internalID: 1111423760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_12
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 0
+        width: 587
+        height: 137
+      alignment: 9
+      pivot: {x: 0.97, y: -0.0258952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e032d5647e0b1d4ab99176ec10edbf3
+      internalID: 1947679893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_13
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 0
+        width: 690
         height: 106
       alignment: 9
-      pivot: {x: 0.8925283, y: 0}
+      pivot: {x: 0.97, y: -0.033468325}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7e63b546f450b44ba26e202d1443153
-      internalID: 2121960600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_3
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 1
-        width: 22
-        height: 63
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 419f57bf196bd62489989301e4af1375
-      internalID: -620177861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_4
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 1
-        width: 35
-        height: 61
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f099526e3bbf1e845a7218dff0369d09
-      internalID: -557323234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_5
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 2
-        width: 58
-        height: 75
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33c3d7fb2beba74428b27b32b813a80b
-      internalID: 1519819020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_6
-      rect:
-        serializedVersion: 2
-        x: 422
-        y: 1
-        width: 46
-        height: 92
-      alignment: 9
-      pivot: {x: 0.8538009, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6127e2f3bc440244da9095c59518fe62
-      internalID: -1273453419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_7
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 1
-        width: 43
-        height: 65
-      alignment: 9
-      pivot: {x: 0.8211386, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19e645746d389b84f87c9fc01042cf37
-      internalID: -1517984895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_10
-      rect:
-        serializedVersion: 2
-        x: 598
-        y: 1
-        width: 41
-        height: 62
-      alignment: 9
-      pivot: {x: 0.77666044, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: face3e3380ac2884798b9d12696e5c54
-      internalID: -2112578930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_11
-      rect:
-        serializedVersion: 2
-        x: 683
-        y: 1
-        width: 38
-        height: 55
-      alignment: 9
-      pivot: {x: 0.7553711, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e21f135d7bade31458a15ced4a7ce3b5
-      internalID: 1204174572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arm_swing_12
-      rect:
-        serializedVersion: 2
-        x: 783
-        y: 1
-        width: 22
-        height: 63
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bdf86289db3dc041a8e244ec65318bc
-      internalID: 1004805157
+      spriteID: 91b81fe905064f9449e270b7f9f48b24
+      internalID: -1830378530
       vertices: []
       indices: 
       edges: []
@@ -330,19 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arm_swing_0: -833243631
-      arm_swing_1: 2121960600
-      arm_swing_10: -2112578930
-      arm_swing_11: 1204174572
-      arm_swing_12: 1004805157
-      arm_swing_2: 1798627332
-      arm_swing_3: -620177861
-      arm_swing_4: -557323234
-      arm_swing_5: 1519819020
-      arm_swing_6: -1273453419
-      arm_swing_7: -1517984895
-      arm_swing_8: 1918030248
-      arm_swing_9: 1579972424
+      death_0: -1804755761
+      death_1: 812486675
+      death_10: 128488615
+      death_11: 1111423760
+      death_12: 1947679893
+      death_13: -1830378530
+      death_2: 560193208
+      death_3: -1664358054
+      death_4: 1754164392
+      death_5: -110409201
+      death_6: 300192348
+      death_7: -2082584450
+      death_8: -2026631247
+      death_9: -53560858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
