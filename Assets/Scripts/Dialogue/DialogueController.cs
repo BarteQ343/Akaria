@@ -21,7 +21,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private GameObject[] choices;
 
     [Header("Globals Ink File")]
-    [SerializeField] private TextAsset globalsInkFile; // Changed to TextAsset
+    [SerializeField] private TextAsset loadGlobalsFile; 
 
     private TextMeshProUGUI[] choicesText;
     public Story currentStory;
@@ -39,7 +39,7 @@ public class DialogueController : MonoBehaviour
         instance = this;
 
         // Pass the TextAsset directly
-        dialogueVariables = new DialogueVariables(globalsInkFile);
+        dialogueVariables = new DialogueVariables(loadGlobalsFile);
     }
 
     public static DialogueController GetInstance()

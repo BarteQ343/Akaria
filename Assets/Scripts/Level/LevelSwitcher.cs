@@ -8,7 +8,7 @@ public class LevelSwitcher : MonoBehaviour
 	[Header("Visual Cue")]
 	[SerializeField] private GameObject visualCue;
 	public Animator anim;
-	[Header("Wybór poziomu")]
+	[Header("WybÃ³r poziomu")]
 	[SerializeField] private string scene;
 	private bool isInRange = false;
 
