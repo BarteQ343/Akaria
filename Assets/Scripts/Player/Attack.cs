@@ -12,6 +12,7 @@ public class Attack : MonoBehaviour
 	public LayerMask layerMask;
 	CapsuleCollider2D mainCollider;
 	HealthController healthController;
+	GhoulHealthController ghoulHealthController;
 	[SerializeField]
 	private int playerDamage;
 	[HideInInspector]
@@ -153,28 +154,50 @@ public class Attack : MonoBehaviour
 		Debug.DrawLine(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0), transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0) + (facingRight ? Vector3.right : Vector3.left) * 0.6f, Color.red);
 		Debug.DrawLine(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0), transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0) + (facingRight ? new Vector3(1, -1, 0) : new Vector3(-1, -1, 0)) * 0.5f, Color.red);
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Player");
-		if ((hit1.collider != null && hit1.collider.CompareTag("Enemy")) || (hit2.collider != null && hit2.collider.CompareTag("Enemy")) || (hit3.collider != null && hit3.collider.CompareTag("Enemy")))
+		if ((hit1.collider != null && hit1.collider.CompareTag("Ghoul")) || (hit2.collider != null && hit2.collider.CompareTag("Ghoul")) || (hit3.collider != null && hit3.collider.CompareTag("Ghoul")))
 		{
-			if (hit1.collider != null && hit1.collider.CompareTag("Enemy"))
+			if (hit1.collider != null && hit1.collider.CompareTag("Ghoul"))
 			{
-				healthController = hit1.collider.transform.gameObject.GetComponent<HealthController>();
+				ghoulHealthController = hit1.collider.transform.gameObject.GetComponent<GhoulHealthController>();
 				print(healthController);
-				healthController.TakeDamage(playerDamage);
+				ghoulHealthController.TakeDamage(playerDamage);
 			}
-			else if (hit2.collider != null && hit2.collider.CompareTag("Enemy"))
+			else if (hit2.collider != null && hit2.collider.CompareTag("Ghoul"))
 			{
 				print(hit2.collider.transform.gameObject);
-				healthController = hit2.collider.transform.gameObject.GetComponent<HealthController>();
-				print(healthController);
-				healthController.TakeDamage(playerDamage);
-			}
-			else if (hit3.collider != null && hit3.collider.CompareTag("Enemy"))
+                ghoulHealthController = hit2.collider.transform.gameObject.GetComponent<GhoulHealthController>();
+                print(healthController);
+                ghoulHealthController.TakeDamage(playerDamage);
+            }
+			else if (hit3.collider != null && hit3.collider.CompareTag("Ghoul"))
 			{
-				healthController = hit3.collider.transform.gameObject.GetComponent<HealthController>();
-				print(healthController);
-				healthController.TakeDamage(playerDamage);
-			}
-		}
-		healthController = null;
+                ghoulHealthController = hit3.collider.transform.gameObject.GetComponent<GhoulHealthController>();
+                print(healthController);
+                ghoulHealthController.TakeDamage(playerDamage);
+            }
+		} else if ((hit1.collider != null && hit1.collider.CompareTag("Enemy")) || (hit2.collider != null && hit2.collider.CompareTag("Enemy")) || (hit3.collider != null && hit3.collider.CompareTag("Enemy")))
+        {
+            if (hit1.collider != null && hit1.collider.CompareTag("Enemy"))
+            {
+                healthController = hit1.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+            else if (hit2.collider != null && hit2.collider.CompareTag("Enemy"))
+            {
+                print(hit2.collider.transform.gameObject);
+                healthController = hit2.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+            else if (hit3.collider != null && hit3.collider.CompareTag("Enemy"))
+            {
+                healthController = hit3.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+        }
+        healthController = null;
+		ghoulHealthController = null;
 	}
 }

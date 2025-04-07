@@ -21,8 +21,9 @@ public class GhoulHealthController : MonoBehaviour
 	Animator anim;
 	Rigidbody2D r2d;
 	GhoulWalkingEnemyController enemyController;
-	// Start is called before the first frame update
-	void Start()
+	public string enemyType = "Ghoul";
+    // Start is called before the first frame update
+    void Start()
 	{
 		enemyController = GetComponent<GhoulWalkingEnemyController>();
 		health = startingHealth * healthMult;
