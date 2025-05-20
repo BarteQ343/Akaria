@@ -14,14 +14,6 @@ public class ForestTrigger : MonoBehaviour
             var dialogueController = DialogueController.GetInstance();
             dialogueController.EnterDialogueMode(Resources.Load<TextAsset>("Dialogue/Dialogues/forest_investigation"));
 
-            // Change the quest_completed variable to true
-            var story = dialogueController.currentStory;
-            if (story != null)
-            {
-                story.variablesState["quest_completed"] = true;
-                Debug.Log("quest_completed variable set to: " + story.variablesState["quest_completed"]);
-            }
-
             // Disable the trigger
             gameObject.SetActive(false);
         }
