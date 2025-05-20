@@ -33,11 +33,11 @@ public class HealthController : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		health -= (damage * defenceMult);
-		anim.ResetTrigger("Walk");
-		anim.ResetTrigger("Idle");
-		anim.ResetTrigger("Attack1");
-		anim.ResetTrigger("Attack2");
-		anim.SetTrigger("Take damage");
+		anim.SetBool("Walk", false);
+		anim.SetBool("Idle", false);
+		anim.SetBool("Attack1", false);
+		anim.SetBool("Attack2", false);
+		anim.SetBool("Take damage", true);
 		int pushDirection;
 		if (enemyController.facingRight == true)
 		{
@@ -55,11 +55,11 @@ public class HealthController : MonoBehaviour
 		if (other.GetComponent<BoxCollider2D>() == DeathTrigger)
 		{
 			health = 0;
-			anim.ResetTrigger("Walk");
-			anim.ResetTrigger("Idle");
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
-			anim.SetTrigger("Take damage");
+			anim.SetBool("Walk", false);
+			anim.SetBool("Idle", false);
+			anim.SetBool("Attack1", false);
+			anim.SetBool("Attack2", false);
+			anim.SetBool("Take damage", true);
 			CheckDeath();
 			Debug.Log("Ded");
 		}
@@ -68,8 +68,8 @@ public class HealthController : MonoBehaviour
 	{
 		if (health <= 0)
 		{
-			anim.ResetTrigger("Take damage");
-			anim.SetTrigger("Die");
+			anim.SetBool("Take damage", false);
+			anim.SetBool("Die", true);
 		}
 	}
 	public IEnumerator Despawn()
@@ -82,8 +82,8 @@ public class HealthController : MonoBehaviour
 	{
 		if (health > 0)
 		{
-			anim.ResetTrigger("Take damage");
-			anim.SetTrigger("Idle");
+			anim.SetBool("Take damage", false);
+			anim.SetBool("Idle", true);
 		}
 	}
 }

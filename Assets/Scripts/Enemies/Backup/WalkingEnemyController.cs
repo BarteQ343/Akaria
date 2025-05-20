@@ -188,7 +188,7 @@ public class WalkingEnemyController : MonoBehaviour
 				{
 					anim.SetBool("Idle", false);
 					anim.SetBool("Walk", false);
-					anim.SetTrigger("Attack1");
+					anim.SetBool("Attack1", true);
 				}
 				StopCoroutine(WaitBeforeReturning());
 				break;
@@ -210,17 +210,24 @@ public class WalkingEnemyController : MonoBehaviour
 	{
 		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
 		{
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Idle");
-			anim.SetTrigger("Walk");
+			anim.SetBool("Attack1", false);
+			anim.SetBool("Attack2", false);
+			anim.SetBool("Idle", false);
+			anim.SetBool("Walk", true);
 		}
 		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
 	}
 
 	void TurnAround()
 	{
-		facingRight = !facingRight;
+		if (t.localScale.x > 0)
+		{
+			facingRight = false;
+		} else
+		{
+			facingRight = true;
+		}
+		//facingRight = !facingRight;
 		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z);
 	}
 
@@ -228,11 +235,11 @@ public class WalkingEnemyController : MonoBehaviour
 	{
 		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
 		{
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Walk");
-			anim.SetTrigger("Idle");
-		}
+            anim.SetBool("Attack1", false);
+            anim.SetBool("Attack2", false);
+            anim.SetBool("Walk", false);
+            anim.SetBool("Idle", true);
+        }
 	}
 	
 	void ComeBack(Collider2D frontCast)
@@ -276,15 +283,15 @@ public class WalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(10);
-			anim.ResetTrigger("Attack1");
-			anim.SetTrigger("Attack2");
+			anim.SetBool("Attack1", false);
+			anim.SetBool("Attack2", true);
 		} else if (attackPlayer.collider != player)
 		{
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
+			anim.SetBool("Attack1", false);
+			anim.SetBool("Attack2", false);
 			if (!anim.GetBool("Walk"))
 			{
-				anim.SetTrigger("Idle");
+				anim.SetBool("Idle", true);
 			}
 			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{
@@ -301,16 +308,16 @@ public class WalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(10);
-			anim.ResetTrigger("Attack2");
-			anim.SetTrigger("Attack1");
+			anim.SetBool("Attack2", false);
+			anim.SetBool("Attack1", true);
 		}
 		else if (attackPlayer.collider != player)
 		{
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
+			anim.SetBool("Attack1", false);
+			anim.SetBool("Attack2", false);
 			if (!anim.GetBool("Walk"))
 			{
-				anim.SetTrigger("Idle");
+				anim.SetBool("Idle", true);
 			}
 			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{

@@ -48,56 +48,101 @@ public class Attack : MonoBehaviour
 				//attackCooldown = true;
 				//StopCoroutine(ResetCooldown());
 				nextAttackTime = Time.time + 1f / attackRate;
-				if (!isGrounded)
+				if (gameObject.name == "Player")
 				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Fall");
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Jump");
-					anim.ResetTrigger("Stop");
-					anim.SetTrigger("AirAttack");
-					lastAttack = 0;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && (lastAttack == 0 || lastAttack == 3))
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.SetTrigger("Attack");
-					lastAttack = 1;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && lastAttack == 1)
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.ResetTrigger("Attack");
-					anim.SetTrigger("Attack2");
-					lastAttack = 2;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && lastAttack == 2)
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.ResetTrigger("Attack3");
-					anim.SetTrigger("Attack3");
-					lastAttack = 3;
-					//StopCoroutine(ResetCooldown());
-				}
-				if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
-				{
-					lastAttack = 0;
-				}
+                    if (!isGrounded)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Fall");
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Jump");
+                        anim.ResetTrigger("Stop");
+                        anim.SetTrigger("AirAttack");
+                        lastAttack = 0;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && (lastAttack == 0 || lastAttack == 3))
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.SetTrigger("Attack");
+                        lastAttack = 1;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && lastAttack == 1)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.ResetTrigger("Attack");
+                        anim.SetTrigger("Attack2");
+                        lastAttack = 2;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && lastAttack == 2)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.ResetTrigger("Attack3");
+                        anim.SetTrigger("Attack3");
+                        lastAttack = 3;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+                    {
+                        lastAttack = 0;
+                    }
+                }
+				if (gameObject.name == "Tavor")
+                {
+                    if (lastAttack == 0 || lastAttack == 3)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack3");
+                        anim.SetTrigger("attack1");
+                        lastAttack = 1;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (lastAttack == 1)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack1");
+                        anim.SetTrigger("attack2");
+                        lastAttack = 2;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (lastAttack == 2)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack2");
+                        anim.SetTrigger("attack3");
+                        lastAttack = 3;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("take_damage"))
+                    {
+                        lastAttack = 0;
+                    }
+                }
 			}
-		
 		}
 	}
 	void ResetLastAttack()
@@ -107,29 +152,61 @@ public class Attack : MonoBehaviour
 	void ResetAnims()
 	{
 		bool isGrounded = _controller.checkIsGrounded();
-		if (isGrounded)
+		if (gameObject.name == "Player")
 		{
-			anim.ResetTrigger("AirAttack");
-			anim.ResetTrigger("Fall");
-			anim.ResetTrigger("Attack");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Attack3");
-			anim.ResetTrigger("Jump");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Stop");
-			attackIsHappening = false;
-		}
-		else
+            if (isGrounded)
+            {
+                anim.ResetTrigger("AirAttack");
+                anim.ResetTrigger("Fall");
+                anim.ResetTrigger("Attack");
+                anim.ResetTrigger("Attack2");
+                anim.ResetTrigger("Attack3");
+                anim.ResetTrigger("Jump");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Stop");
+                attackIsHappening = false;
+            }
+            else
+            {
+                anim.ResetTrigger("AirAttack");
+                anim.ResetTrigger("Attack");
+                anim.ResetTrigger("Attack2");
+                anim.ResetTrigger("Attack3");
+                anim.ResetTrigger("Jump");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Fall");
+                attackIsHappening = false;
+            }
+        } else if (gameObject.name == "Tavor")
 		{
-			anim.ResetTrigger("AirAttack");
-			anim.ResetTrigger("Attack");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Attack3");
-			anim.ResetTrigger("Jump");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Fall");
-			attackIsHappening = false;
-		}
+            if (isGrounded)
+            {
+                anim.ResetTrigger("land");
+                anim.ResetTrigger("dash");
+                anim.ResetTrigger("fall");
+                anim.ResetTrigger("attack1");
+                anim.ResetTrigger("attack2");
+                anim.ResetTrigger("attack3");
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("run");
+                anim.SetTrigger("idle");
+                attackIsHappening = false;
+            }
+            else
+            {
+                anim.ResetTrigger("run");
+                anim.ResetTrigger("land");
+                anim.ResetTrigger("dash");
+                anim.ResetTrigger("attack1");
+                anim.ResetTrigger("attack2");
+                anim.ResetTrigger("attack3");
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("idle");
+                anim.SetTrigger("fall");
+                attackIsHappening = false;
+            }
+        }
+		
 	}
 
 	void ResetLock()
