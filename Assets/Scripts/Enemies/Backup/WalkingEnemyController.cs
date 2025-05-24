@@ -25,7 +25,8 @@ public class WalkingEnemyController : MonoBehaviour
 	float obstacleCheckDistance = 0.5f;
 	float raycastDistance = 1f;
 	public LayerMask playerLayer;
-	Vector3 originalPosition;
+    public LayerMask playerAndGroundLayer;
+    Vector3 originalPosition;
 	[SerializeField]
 	public RaycastHit2D hitFront;
 	[SerializeField]
@@ -38,7 +39,8 @@ public class WalkingEnemyController : MonoBehaviour
 	[SerializeField] float playerAwernessHunting = 2;
 	[SerializeField] float detectionDistance = 2.5f;
 	HealthController healthController;
-	enum EnemyState
+    bool playerSeen = false;
+    enum EnemyState
 	{
 		Idle,
 		FollowPlayer,
@@ -101,9 +103,32 @@ public class WalkingEnemyController : MonoBehaviour
 		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer);
 		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.red);
 		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, 32, Color.red);
-		
+        if (checkPlayer.Length > 0)
+        {
+            Vector2 PlayerHeadPos = (Vector2)player.transform.position + new Vector2(0, 0.85f);
+            Vector2 PlayerBodyPos = (Vector2)player.transform.position + new Vector2(0, 0.5f);
+            Vector2 PlayerFeetPos = (Vector2)player.transform.position;
+            RaycastHit2D Line1 = Physics2D.Linecast(RaycastPos, PlayerHeadPos, playerAndGroundLayer);
+            RaycastHit2D Line2 = Physics2D.Linecast(RaycastPos, PlayerBodyPos, playerAndGroundLayer);
+            RaycastHit2D Line3 = Physics2D.Linecast(RaycastPos, PlayerFeetPos, playerAndGroundLayer);
+            Debug.DrawLine(RaycastPos, PlayerHeadPos);
+            Debug.DrawLine(RaycastPos, PlayerBodyPos);
+            Debug.DrawLine(RaycastPos, PlayerFeetPos);
+            if (Line1.collider == player || Line2.collider == player || Line3.collider == player)
+            {
+                playerSeen = true;
+            }
+            else
+            {
+                playerSeen = false;
+            }
+        }
+        else
+        {
+            playerSeen = false;
+        }
 
-		if (hitSide.collider != null)
+        if (hitSide.collider != null)
 		{
 			r2d.sharedMaterial = Slidey;
 		} else
@@ -118,7 +143,7 @@ public class WalkingEnemyController : MonoBehaviour
 		{
 			case EnemyState.Idle:
 				//print("I'm just krillin'");
-					if (checkPlayer.Length > 0)
+					if (playerSeen == true && checkPlayer.Length > 0)
 					{
 						currentState = EnemyState.FollowPlayer;
 						//print("Following after idling");
@@ -169,7 +194,7 @@ public class WalkingEnemyController : MonoBehaviour
 
 			case EnemyState.ReturnToOriginalPosition:
 				//print("Fuck go back");
-				if (checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
+				if (playerSeen == true && checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
 				{ 
 					currentState = EnemyState.FollowPlayer;
 					//print("Following instead of returning");
@@ -186,9 +211,9 @@ public class WalkingEnemyController : MonoBehaviour
 				//print("Rattle'em boys!");
 				if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
 				{
-					anim.SetBool("Idle", false);
-					anim.SetBool("Walk", false);
-					anim.SetBool("Attack1", true);
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
+					anim.SetTrigger("Attack1");
 				}
 				StopCoroutine(WaitBeforeReturning());
 				break;
@@ -210,10 +235,10 @@ public class WalkingEnemyController : MonoBehaviour
 	{
 		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
 		{
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Idle", false);
-			anim.SetBool("Walk", true);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
+			anim.ResetTrigger("Idle");
+			anim.SetTrigger("Walk");
 		}
 		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
 	}
@@ -235,10 +260,10 @@ public class WalkingEnemyController : MonoBehaviour
 	{
 		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
 		{
-            anim.SetBool("Attack1", false);
-            anim.SetBool("Attack2", false);
-            anim.SetBool("Walk", false);
-            anim.SetBool("Idle", true);
+            anim.ResetTrigger("Attack1");
+            anim.ResetTrigger("Attack2");
+            anim.ResetTrigger("Walk");
+            anim.SetTrigger("Idle");
         }
 	}
 	
@@ -283,15 +308,15 @@ public class WalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(10);
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", true);
+			anim.ResetTrigger("Attack1");
+			anim.SetTrigger("Attack2");
 		} else if (attackPlayer.collider != player)
 		{
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
 			if (!anim.GetBool("Walk"))
 			{
-				anim.SetBool("Idle", true);
+				anim.SetTrigger("Idle");
 			}
 			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{
@@ -308,16 +333,16 @@ public class WalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(10);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Attack1", true);
+			anim.ResetTrigger("Attack2");
+			anim.SetTrigger("Attack1");
 		}
 		else if (attackPlayer.collider != player)
 		{
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
 			if (!anim.GetBool("Walk"))
 			{
-				anim.SetBool("Idle", true);
+				anim.SetTrigger("Idle");
 			}
 			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{

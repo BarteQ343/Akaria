@@ -25,6 +25,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	float obstacleCheckDistance = 0.5f;
 	float raycastDistance = 1f;
 	public LayerMask playerLayer;
+	public LayerMask playerAndGroundLayer;
 	Vector3 originalPosition;
 	[SerializeField]
 	public RaycastHit2D hitFront;
@@ -41,6 +42,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	[SerializeField] bool isEating = false;
 	HealthController healthController;
 	bool canAttack = true;
+	bool playerSeen = false;
 	enum EnemyState
 	{
 		Idle,
@@ -67,9 +69,9 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		originalPosition = t.position;
 		anim = GetComponent<Animator>();
 		if (isEating == false)
-        {
-            playerAwerness = playerAwernessIdle;
-        } else if (isEating == true) 
+		{
+			playerAwerness = playerAwernessIdle;
+		} else if (isEating == true) 
 		{
 			playerAwerness = playerAwernessEating;
 		}
@@ -111,7 +113,30 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), 0.4f, playerLayer);
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.green);
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), 0.4f, 32, Color.red);
-		
+		if (checkPlayer.Length > 0)
+		{
+			Vector2 PlayerHeadPos = (Vector2)player.transform.position + new Vector2(0, 0.85f);
+			Vector2 PlayerBodyPos = (Vector2)player.transform.position + new Vector2(0,0.5f);
+			Vector2 PlayerFeetPos = (Vector2)player.transform.position;
+			RaycastHit2D Line1 = Physics2D.Linecast(RaycastPos, PlayerHeadPos, playerAndGroundLayer);
+			RaycastHit2D Line2 = Physics2D.Linecast(RaycastPos, PlayerBodyPos, playerAndGroundLayer);
+			RaycastHit2D Line3 = Physics2D.Linecast(RaycastPos, PlayerFeetPos, playerAndGroundLayer);
+			Debug.DrawLine(RaycastPos, PlayerHeadPos);
+			Debug.DrawLine(RaycastPos, PlayerBodyPos);
+			Debug.DrawLine(RaycastPos, PlayerFeetPos);
+			if (Line1.collider == player || Line2.collider == player || Line3.collider == player)
+			{
+				playerSeen = true;
+			} else
+			{
+				playerSeen = false;
+			}
+		} else
+		{
+			playerSeen = false;
+		}
+
+		//print(currentState);
 
 		if (hitSide.collider != null)
 		{
@@ -127,11 +152,11 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		switch (currentState)
 		{
 			case EnemyState.Idle:
-				//print("I'm just krillin'");
-					if (checkPlayer.Length > 0 && canAttack == true)
+				print("I'm just krillin'");
+					if (playerSeen == true && checkPlayer.Length > 0 && canAttack == true)
 					{
-						currentState = EnemyState.FollowPlayer;
-						//print("Following after idling");
+						print("Following after idling");
+						currentState = EnemyState.FollowPlayer;	
 					}
 					else
 					{
@@ -171,9 +196,9 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 					if (checkPlayerClose.Length > 0 && canAttack == true)
 					{
 						if (Random.Range(0,100) < 80)
-                        {
-                            currentState = EnemyState.LightAttack;
-                        }
+						{
+							currentState = EnemyState.LightAttack;
+						}
 						else
 						{
 							currentState = EnemyState.HeavyAttack;
@@ -182,18 +207,18 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 				}
 				if (checkPlayer.Length == 0 && goBackCounter == 0)
 				{
-					//print("Where'd he go?");
+					print("Where'd he go?");
 					StartCoroutine(WaitBeforeReturning());
 					goBackCounter++;
 				}
 				break;
 
 			case EnemyState.ReturnToOriginalPosition:
-				//print("Fuck go back");
-				if (checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
-				{ 
+				print("Fuck go back");
+				if (playerSeen == true && checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
+				{
+					print("Following instead of returning");
 					currentState = EnemyState.FollowPlayer;
-					//print("Following instead of returning");
 				} else
 				{
 					goToPosition(hitFront.collider, originalPosition, 0);
@@ -206,34 +231,34 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 			case EnemyState.LightAttack:
 				//print("Rattle'em boys!");
 				isEating = false;
-                if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
-                {
-                    TurnAround();
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
 				{
-					anim.SetBool("Idle", false);
-					anim.SetBool("Walk", false);
-					anim.SetBool("Attack1", true);
+					TurnAround();
+				}
+				if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				{
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
+					anim.SetTrigger("Attack1");
 				}
 				StopCoroutine(WaitBeforeReturning());
 				break;
-            case EnemyState.HeavyAttack:
-                //print("Rattle'em boys!");
-                isEating = false;
-                if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
-                {
-                    TurnAround();
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
-                {
-                    anim.SetBool("Idle", false);
-                    anim.SetBool("Walk", false);
-                    anim.SetBool("Attack2", true);
-                }
-                StopCoroutine(WaitBeforeReturning());
-                break;
-            case EnemyState.Dead:
+			case EnemyState.HeavyAttack:
+				//print("Rattle'em boys!");
+				isEating = false;
+				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
+				{
+					TurnAround();
+				}
+				if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				{
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
+					anim.SetTrigger("Attack2");
+				}
+				StopCoroutine(WaitBeforeReturning());
+				break;
+			case EnemyState.Dead:
 				StopAllCoroutines();
 				StartCoroutine(healthController.Despawn());
 				break;
@@ -252,10 +277,10 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
 		{
 			isEating = false;
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Idle", false);
-			anim.SetBool("Walk", true);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
+			anim.ResetTrigger("Idle");
+			anim.SetTrigger("Walk");
 		}
 		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
 	}
@@ -270,18 +295,18 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	{
 		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
 		{
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Walk", false);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
+			anim.ResetTrigger("Walk");
 			if (isEating == true)
-            {
-                playerAwerness = playerAwernessEating;
-                anim.SetBool("Eating corpse", true);
+			{
+				playerAwerness = playerAwernessEating;
+				anim.SetTrigger("Eating corpse");
 			} else if (isEating == false)
-            {
-                playerAwerness = playerAwernessIdle;
-                anim.SetBool("Idle", true);
-            }
+			{
+				playerAwerness = playerAwernessIdle;
+				anim.SetTrigger("Idle");
+			}
 		}
 	}
 	
@@ -318,12 +343,12 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		yield return new WaitForSeconds(3f); // Adjust waiting time as needed
 		currentState = EnemyState.ReturnToOriginalPosition;
 	}
-    IEnumerator AttackCooldown()
-    {
-        yield return new WaitForSeconds(1f); // Adjust cooldown as needed
-        canAttack = true;
-    }
-    void CheckForHit()
+	IEnumerator AttackCooldown()
+	{
+		yield return new WaitForSeconds(1f); // Adjust cooldown as needed
+		canAttack = true;
+	}
+	void CheckForHit()
 	{
 		Vector3 RaycastPos = new Vector3(t.position.x, t.position.y + 0.7f, t.position.z);
 		RaycastHit2D attackPlayer = Physics2D.Raycast(RaycastPos, facingRight ? Vector2.right : Vector2.left, 1, playerLayer);
@@ -333,12 +358,12 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			playerHealthController.TakeDamage(10);
 		}
-		anim.SetBool("Attack1", false);
+		anim.ResetTrigger("Attack1");
 		currentState = EnemyState.FollowPlayer;
-		anim.SetBool("Attack1", false);
+		anim.ResetTrigger("Attack1");
 		if (!anim.GetBool("Walk"))
 		{
-			anim.SetBool("Idle", true);
+			anim.SetTrigger("Idle");
 		}
 		StartCoroutine(AttackCooldown());
 	}
@@ -351,22 +376,22 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(20);
-        }
-        anim.SetBool("Attack2", false);
-        currentState = EnemyState.FollowPlayer;
-        anim.SetBool("Attack2", false);
-        if (!anim.GetBool("Walk"))
-        {
-            anim.SetBool("Idle", true);
-        }
-        StartCoroutine(AttackCooldown());
-    }
+		}
+		anim.ResetTrigger("Attack2");
+		currentState = EnemyState.FollowPlayer;
+		anim.ResetTrigger("Attack2");
+		if (!anim.GetBool("Walk"))
+		{
+			anim.SetTrigger("Idle");
+		}
+		StartCoroutine(AttackCooldown());
+	}
 	public void SetState(string state)
 	{
 		if (state == "Idle")
-        {
-            currentState = EnemyState.Idle;
-        }
+		{
+			currentState = EnemyState.Idle;
+		}
 		if (state == "FollowPlayer") { 
 			currentState = EnemyState.FollowPlayer;
 		}
@@ -378,11 +403,11 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			currentState = EnemyState.LightAttack;
 		}
-        if (state == "HeavyAttack")
-        {
-            currentState = EnemyState.HeavyAttack;
-        }
-        if (state == "Dead")
+		if (state == "HeavyAttack")
+		{
+			currentState = EnemyState.HeavyAttack;
+		}
+		if (state == "Dead")
 		{
 			currentState = EnemyState.Dead;
 		}
