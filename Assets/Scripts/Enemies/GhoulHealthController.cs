@@ -22,8 +22,7 @@ public class GhoulHealthController : MonoBehaviour
 	Rigidbody2D r2d;
 	GhoulWalkingEnemyController enemyController;
 	public string enemyType = "Ghoul";
-    // Start is called before the first frame update
-    void Start()
+	void Start()
 	{
 		enemyController = GetComponent<GhoulWalkingEnemyController>();
 		health = startingHealth * healthMult;
@@ -38,7 +37,7 @@ public class GhoulHealthController : MonoBehaviour
 		anim.SetBool("Idle", false);
 		anim.SetBool("Attack1", false);
 		anim.SetBool("Attack2", false);
-        CheckDeath();
+		CheckDeath();
 		int pushDirection;
 		if (enemyController.facingRight == true)
 		{
@@ -60,7 +59,7 @@ public class GhoulHealthController : MonoBehaviour
 			anim.SetBool("Idle", false);
 			anim.SetBool("Attack1", false);
 			anim.SetBool("Attack2", false);
-            CheckDeath();
+			CheckDeath();
 			Debug.Log("Ded");
 		}
 	}
@@ -70,11 +69,11 @@ public class GhoulHealthController : MonoBehaviour
 		{
 			anim.SetBool("Die", true);
 		}
-        else
-        {
+		else
+		{
 			anim.SetBool("Take damage", true);
-        }
-    }
+		}
+	}
 	public IEnumerator Despawn()
 	{
 		yield return new WaitForSeconds(5f);
