@@ -22,24 +22,36 @@ public class DialogueController : MonoBehaviour
 
     [Header("Globals Ink File")]
     [SerializeField] private TextAsset loadGlobalsFile; 
+    [Header("Dialogue Scripts")]
+    [SerializeField] private DialogueVariables dialogueVariables;
 
     private TextMeshProUGUI[] choicesText;
     public Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueController instance;
     private EventSystem eventSystem;
-    private DialogueVariables dialogueVariables;
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
+            Destroy(this.gameObject);
+            return;
         }
-        instance = this;
-
-        // Pass the TextAsset directly
-        dialogueVariables = new DialogueVariables(loadGlobalsFile);
+    
+            if (dialogueVariables == null)
+        {
+            dialogueVariables = FindObjectOfType<DialogueVariables>();
+            if (dialogueVariables == null)
+            {
+                Debug.LogError("DialogueVariables not found in scene!");
+            }
+        }
     }
 
     public static DialogueController GetInstance()
@@ -106,7 +118,10 @@ public class DialogueController : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
         
-        dialogueVariables.StopListening(currentStory);
+        if (currentStory != null && dialogueVariables != null)
+        {
+            dialogueVariables.StopListening(currentStory);
+        }
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

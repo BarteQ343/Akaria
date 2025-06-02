@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
-using dialogueVariables;
+using System.Linq;
+
 
 // Attach this to a QuestManager GameObject
 public class QuestJournal : MonoBehaviour
@@ -25,11 +26,34 @@ public class QuestJournal : MonoBehaviour
 
     void Start()
     {
-        foreach (var quest in questDatabase.quests)
+        dialogueVariables = FindObjectOfType<DialogueVariables>();
+
+        if (dialogueVariables == null)
         {
-            previousQuestStatuses[quest.questID] = GetQuestStatus(quest.questID);
+            Debug.LogError("DialogueVariables not found in scene.");
+            return;
         }
+
+        StartCoroutine(WaitForVariables());
     }
+
+    private System.Collections.IEnumerator WaitForVariables()
+    {
+    // Wait until DialogueVariables has initialized the dictionary
+    while (dialogueVariables.variables == null)
+        yield return null;
+
+    Debug.Log("QuestJournal checked the variables, here they are:");
+    foreach (var kvp in dialogueVariables.variables)
+    {
+        Debug.Log($"{kvp.Key} = {kvp.Value}");
+    }
+
+    foreach (var quest in questDatabase.quests)
+    {
+        previousQuestStatuses[quest.questID] = GetQuestStatus(quest.questID);
+    }
+    }  
 
     void Update()
     {
@@ -63,7 +87,7 @@ public class QuestJournal : MonoBehaviour
             if (quest.visibleWhenStatuses.Contains(status))
             {
                 GameObject entry = Instantiate(questEntryPrefab, questListContainer.transform);
-                entry.GetComponentInChildren<Text>().text = quest.displayName;
+                entry.GetComponentInChildren<TextMeshProUGUI>().text = quest.displayName;
 
                 var button = entry.GetComponent<Button>();
                 button.onClick.AddListener(() => DisplayQuestDetails(quest));
@@ -81,13 +105,16 @@ public class QuestJournal : MonoBehaviour
 
     int GetQuestStatus(string questID)
     {
-        if (dialogueVariables.TryGetInt(questID, out int value))
+    if (dialogueVariables.variables.TryGetValue(questID, out var value))
+    {
+        if (value is IntValue intVal)
         {
-            return value;
+            return intVal.value;
         }
+    }
 
-        Debug.LogWarning($"Quest variable '{questID}' not found or not an int.");
-        return 0;
+    Debug.LogWarning($"Quest variable '{questID}' not found or not an int.");
+    return 0;
     }
 
     void UpdateQuestStatuses()
