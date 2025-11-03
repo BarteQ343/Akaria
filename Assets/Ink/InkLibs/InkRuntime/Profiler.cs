@@ -35,7 +35,7 @@ namespace Ink.Runtime
 		}
 
         /// <summary>
-        /// Generate a printable report based on the data recording during profiling.
+        /// Generate a Debug.Logable report based on the data recording during profiling.
         /// </summary>
 		public string Report() {
 			var sb = new StringBuilder();
@@ -118,7 +118,7 @@ namespace Ink.Runtime
 		}
 
         /// <summary>
-        /// Generate a printable report specifying the average and maximum times spent
+        /// Generate a Debug.Logable report specifying the average and maximum times spent
         /// stepping over different internal ink instruction types.
         /// This report type is primarily used to profile the ink engine itself rather
         /// than your own specific ink.
@@ -244,7 +244,7 @@ namespace Ink.Runtime
 	public class ProfileNode {
 
         /// <summary>
-        /// The key for the node corresponds to the printable name of the callstack element.
+        /// The key for the node corresponds to the Debug.Logable name of the callstack element.
         /// </summary>		
         public readonly string key;
 
@@ -329,7 +329,7 @@ namespace Ink.Runtime
 			}
 		}
 
-		void PrintHierarchy(StringBuilder sb, int indent)
+		void printHierarchy(StringBuilder sb, int indent)
 		{
 			Pad(sb, indent);
 
@@ -340,7 +340,7 @@ namespace Ink.Runtime
 			if( _nodes == null ) return;
 
 			foreach(var keyNode in descendingOrderedNodes) {
-				keyNode.Value.PrintHierarchy(sb, indent+1);
+				keyNode.Value.printHierarchy(sb, indent+1);
 			}
 		}
 
@@ -380,7 +380,7 @@ namespace Ink.Runtime
 		public override string ToString ()
 		{
 			var sb = new StringBuilder();
-			PrintHierarchy(sb, 0);
+			printHierarchy(sb, 0);
 			return sb.ToString();
 		}
 

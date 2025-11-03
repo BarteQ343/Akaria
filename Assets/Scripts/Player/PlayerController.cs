@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 	private Vector3 camOffset = new Vector3(0f, 0.6f, -10f);
 	private float camSmoothTime = 0.25f;
 	private Vector3 camVelocity = Vector3.zero;
-	[Header("Materia³y do poprawnej kolizji ze œcianami")]
+	[Header("Materiaï¿½y do poprawnej kolizji ze ï¿½cianami")]
 	[SerializeField]
 	private PhysicsMaterial2D Slidey;
 	[SerializeField]
@@ -35,10 +35,10 @@ public class PlayerController : MonoBehaviour
 	private bool hasDJumped = false;
 	private float airControlSpeed = 0.4f;
 	private float raycastDistance = 0.1f;
-	[Header("Warstwa dla schodów")]
+	[Header("Warstwa dla schodï¿½w")]
 	[SerializeField]
 	private LayerMask stairMask;
-	[Header("Warstwa pod³o¿a (Ground)")]
+	[Header("Warstwa podï¿½oï¿½a (Ground)")]
 	public LayerMask layerMask;
 	private Attack _attack;
 	private DustController dustEffect;
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 			
 		} else
 		{
-			if (isGrounded || r2d.velocity.magnitude < 0.01f)
+			if (isGrounded || r2d.linearVelocity.magnitude < 0.01f)
 			{
 				moveDirection = 0;
 			} 
@@ -94,14 +94,14 @@ public class PlayerController : MonoBehaviour
 			{
 				// If not grounded, apply air control only if the desired velocity is different
 				float targetVelocityX = moveDirection * maxSpeed;
-				if (Mathf.Abs(targetVelocityX - r2d.velocity.x) > airControlSpeed)
+				if (Mathf.Abs(targetVelocityX - r2d.linearVelocity.x) > airControlSpeed)
 				{
-					r2d.velocity = new Vector2(Mathf.MoveTowards(r2d.velocity.x, targetVelocityX*0.6f, airControlSpeed), r2d.velocity.y);
+					r2d.linearVelocity = new Vector2(Mathf.MoveTowards(r2d.linearVelocity.x, targetVelocityX*0.6f, airControlSpeed), r2d.linearVelocity.y);
 				}
 			}
 			else
 			{
-				r2d.velocity = new Vector2(moveDirection * maxSpeed, r2d.velocity.y);
+				r2d.linearVelocity = new Vector2(moveDirection * maxSpeed, r2d.linearVelocity.y);
 			}
 		}
 		// Jumping
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
 		if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && (!hasDJumped || isGrounded))
 		{
-			r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+			r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
 			if (!isGrounded)
 			{
 				hasDJumped = true;
@@ -215,16 +215,16 @@ public class PlayerController : MonoBehaviour
 		{
 			if (hitStairs.collider != null || hitStairs2.collider != null)
 			{
-				r2d.velocity -= new Vector2(0,0);
+				r2d.linearVelocity -= new Vector2(0,0);
 			} else
 			{
-				r2d.velocity += new Vector2(0, -0.2f);
+				r2d.linearVelocity += new Vector2(0, -0.2f);
 			}
 		}
 		// Handle animations for MC
 		if (gameObject.name == "Player")
 		{
-            if ((r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
+            if ((r2d.linearVelocity.x > 0.01f || r2d.linearVelocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
             {
                 anim.ResetTrigger("Jump");
                 anim.ResetTrigger("Fall");
@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
                 //anim.ResetTrigger("Run");
                 anim.SetTrigger("Walk");
             }
-            if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
+            if ((r2d.linearVelocity.x > -0.001f && r2d.linearVelocity.x < 0.001f) && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
             {
                 /*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
                     || (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
@@ -246,14 +246,14 @@ public class PlayerController : MonoBehaviour
                     anim.SetTrigger("Stop");
                 }
             }
-            if (r2d.velocity.y > 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
+            if (r2d.linearVelocity.y > 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
             {
                 anim.ResetTrigger("Fall");
                 anim.ResetTrigger("Run");
                 anim.ResetTrigger("Stop");
                 anim.SetTrigger("Jump");
             }
-            if (r2d.velocity.y < 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
+            if (r2d.linearVelocity.y < 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
             {
                 anim.ResetTrigger("Fall");
                 anim.ResetTrigger("Run");
@@ -267,7 +267,7 @@ public class PlayerController : MonoBehaviour
         } 
 		if (gameObject.name == "Tavor")
 		{
-            if ((r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
+            if ((r2d.linearVelocity.x > 0.01f || r2d.linearVelocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
             {
                 anim.ResetTrigger("jump");
                 anim.ResetTrigger("fall");
@@ -275,7 +275,7 @@ public class PlayerController : MonoBehaviour
                 //anim.ResetTrigger("Run");
                 anim.SetTrigger("run");
             }
-            if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("take_damage") == false || anim.GetBool("Die") == false))
+            if ((r2d.linearVelocity.x > -0.001f && r2d.linearVelocity.x < 0.001f) && isGrounded && (anim.GetBool("take_damage") == false || anim.GetBool("Die") == false))
             {
                 /*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
                     || (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
@@ -288,14 +288,14 @@ public class PlayerController : MonoBehaviour
                     anim.SetTrigger("idle");
                 }
             }
-            if (r2d.velocity.y > 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
+            if (r2d.linearVelocity.y > 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
             {
                 anim.ResetTrigger("fall");
                 anim.ResetTrigger("run");
                 anim.ResetTrigger("idle");
                 anim.SetTrigger("jump");
             }
-            if (r2d.velocity.y < 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
+            if (r2d.linearVelocity.y < 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
             {
                 anim.ResetTrigger("jump");
                 anim.ResetTrigger("run");
@@ -312,7 +312,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (gameObject.name == "Player")
 		{
-            if (r2d.velocity.x == 0 && isGrounded && !anim.GetBool("Die"))
+            if (r2d.linearVelocity.x == 0 && isGrounded && !anim.GetBool("Die"))
             {
                 anim.ResetTrigger("Hurt");
                 anim.SetTrigger("Stop");
@@ -320,7 +320,7 @@ public class PlayerController : MonoBehaviour
         }
 		if (gameObject.name == "Tavor")
 		{
-            if (r2d.velocity.x == 0 && isGrounded && !anim.GetBool("Die"))
+            if (r2d.linearVelocity.x == 0 && isGrounded && !anim.GetBool("Die"))
             {
                 anim.ResetTrigger("take_damage");
                 anim.SetTrigger("idle");

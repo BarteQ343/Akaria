@@ -56,7 +56,7 @@ public class Platform : MonoBehaviour
             float platformCenterY = platformPosition.y;
 
             float playerRelativeY = playerCenterY - platformCenterY;
-            //print(playerRelativeY);
+            //Debug.Log(playerRelativeY);
 
             // Check if the player is below the passable threshold
             return playerRelativeY <= passableThreshold;

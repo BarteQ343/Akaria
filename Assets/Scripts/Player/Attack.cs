@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 public class Attack : MonoBehaviour
 {
 	private Rigidbody2D r2d;
@@ -22,14 +22,16 @@ public class Attack : MonoBehaviour
 	public bool attackIsHappening = false;
 	public float attackRate = 2f;
 	float nextAttackTime = 0f;
-	// Start is called before the first frame update
-	void Start()
+    InputAction attackAction;
+    // Start is called before the first frame update
+    void Start()
 	{
 		r2d = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		_controller = GetComponent<PlayerController>();
 		mainCollider = GetComponent<CapsuleCollider2D>();
 		attackCooldown = false;
+        attackAction = InputSystem.actions.FindAction("Attack");
 	}
 
 	// Update is called once per frame
@@ -39,10 +41,10 @@ public class Attack : MonoBehaviour
 		{
 			attackCooldown = false;
 		}*/
-		bool isGrounded = _controller.checkIsGrounded();
+    bool isGrounded = _controller.checkIsGrounded();
 		if (Time.time >= nextAttackTime)
 		{
-			if (Input.GetKeyDown(KeyCode.Mouse0) && Time.timeScale > 0)
+			if (attackAction.IsPressed() && Time.timeScale > 0)
 			{
 				attackIsHappening = true;
 				//attackCooldown = true;
@@ -236,20 +238,20 @@ public class Attack : MonoBehaviour
 			if (hit1.collider != null && hit1.collider.CompareTag("Ghoul"))
 			{
 				ghoulHealthController = hit1.collider.transform.gameObject.GetComponent<GhoulHealthController>();
-				print(healthController);
+				Debug.Log(healthController);
 				ghoulHealthController.TakeDamage(playerDamage);
 			}
 			else if (hit2.collider != null && hit2.collider.CompareTag("Ghoul"))
 			{
-				print(hit2.collider.transform.gameObject);
+				Debug.Log(hit2.collider.transform.gameObject);
                 ghoulHealthController = hit2.collider.transform.gameObject.GetComponent<GhoulHealthController>();
-                print(healthController);
+                Debug.Log(healthController);
                 ghoulHealthController.TakeDamage(playerDamage);
             }
 			else if (hit3.collider != null && hit3.collider.CompareTag("Ghoul"))
 			{
                 ghoulHealthController = hit3.collider.transform.gameObject.GetComponent<GhoulHealthController>();
-                print(healthController);
+                Debug.Log(healthController);
                 ghoulHealthController.TakeDamage(playerDamage);
             }
 		} else if ((hit1.collider != null && hit1.collider.CompareTag("Enemy")) || (hit2.collider != null && hit2.collider.CompareTag("Enemy")) || (hit3.collider != null && hit3.collider.CompareTag("Enemy")))
@@ -257,24 +259,25 @@ public class Attack : MonoBehaviour
             if (hit1.collider != null && hit1.collider.CompareTag("Enemy"))
             {
                 healthController = hit1.collider.transform.gameObject.GetComponent<HealthController>();
-                print(healthController);
+                Debug.Log(healthController);
                 healthController.TakeDamage(playerDamage);
             }
             else if (hit2.collider != null && hit2.collider.CompareTag("Enemy"))
             {
-                print(hit2.collider.transform.gameObject);
+                Debug.Log(hit2.collider.transform.gameObject);
                 healthController = hit2.collider.transform.gameObject.GetComponent<HealthController>();
-                print(healthController);
+                Debug.Log(healthController);
                 healthController.TakeDamage(playerDamage);
             }
             else if (hit3.collider != null && hit3.collider.CompareTag("Enemy"))
             {
                 healthController = hit3.collider.transform.gameObject.GetComponent<HealthController>();
-                print(healthController);
+                Debug.Log(healthController);
                 healthController.TakeDamage(playerDamage);
             }
         }
         healthController = null;
 		ghoulHealthController = null;
 	}
+  
 }

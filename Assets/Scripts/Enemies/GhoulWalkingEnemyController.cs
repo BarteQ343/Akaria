@@ -10,7 +10,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	public float jumpHeight = 4.5f;
 	public float gravityScale = 1.5f;
 	
-	// Materia³y dla upewnienia siê, ¿e NPC nie zablokuje siê w œcianie
+	// Materiaï¿½y dla upewnienia siï¿½, ï¿½e NPC nie zablokuje siï¿½ w ï¿½cianie
 	[SerializeField]
 	private PhysicsMaterial2D Slidey;
 	[SerializeField]
@@ -72,7 +72,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		originalPosition = t.position;
 		anim = GetComponent<Animator>();
-		// Jeœli nasz ghoul zajada sobie cia³o bêdzie mniej skupiony i jego pole widzenia bêdzie mniejsze
+		// Jeï¿½li nasz ghoul zajada sobie ciaï¿½o bï¿½dzie mniej skupiony i jego pole widzenia bï¿½dzie mniejsze
 		if (isEating == false)
 		{
 			playerAwerness = playerAwernessIdle;
@@ -101,7 +101,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.L)) {
-			print(currentState);
+			Debug.Log(currentState);
 		}
 		int invertedMask = ~playerLayer.value;
 		invertedMask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
@@ -109,13 +109,13 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		Vector3 RaycastPos = new Vector3(t.position.x, t.position.y + 0.7f, t.position.z);
 		Vector3 RaycastPosLow = new Vector3(t.position.x, t.position.y + 0.05f, t.position.z);
 		CheckGrounded();
-		RaycastHit2D hitSide = Physics2D.Raycast(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0, 0), facingRight ? Vector2.right : Vector2.left, 0.2f); // hitSide istnieje dla sprawdzenia czy NPC nie "przytula" œciany
-		RaycastHit2D hitFront = Physics2D.Raycast(RaycastPosLow, facingRight ? Vector2.right : Vector2.left, obstacleCheckDistance, invertedMask); // hitFront sprawdza czy NPC nie bêdzie "przytula³" œciany (lub przeszkody)
+		RaycastHit2D hitSide = Physics2D.Raycast(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0, 0), facingRight ? Vector2.right : Vector2.left, 0.2f); // hitSide istnieje dla sprawdzenia czy NPC nie "przytula" ï¿½ciany
+		RaycastHit2D hitFront = Physics2D.Raycast(RaycastPosLow, facingRight ? Vector2.right : Vector2.left, obstacleCheckDistance, invertedMask); // hitFront sprawdza czy NPC nie bï¿½dzie "przytulaï¿½" ï¿½ciany (lub przeszkody)
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Enemies");
 		Debug.DrawLine(RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0), (RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0)) + (facingRight ? Vector3.right : Vector3.left) * 1.5f, Color.blue);
 		Debug.DrawLine(RaycastPosLow, RaycastPosLow + (facingRight ? Vector3.right : Vector3.left) * obstacleCheckDistance, Color.blue);
-		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, playerLayer); // checkPlayer to zasiêg widzenia przeciwnika, jeœli gracz jest w jego zasiêgu uruchamiaj¹ siê Linecasty poni¿ej, które sprawdzaj¹ czy gracz faktycznie jest widoczny, czy nie jest za jak¹œ przeszkod¹
-		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), 0.4f, playerLayer); // checkPlayerClose sprawdza czy gracz jest w zasiêgu ataku
+		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, playerLayer); // checkPlayer to zasiï¿½g widzenia przeciwnika, jeï¿½li gracz jest w jego zasiï¿½gu uruchamiajï¿½ siï¿½ Linecasty poniï¿½ej, ktï¿½re sprawdzajï¿½ czy gracz faktycznie jest widoczny, czy nie jest za jakï¿½ï¿½ przeszkodï¿½
+		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), 0.4f, playerLayer); // checkPlayerClose sprawdza czy gracz jest w zasiï¿½gu ataku
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.green);
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), 0.4f, 32, Color.red);
 		if (checkPlayer.Length > 0)
@@ -148,7 +148,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			r2d.sharedMaterial = NotSlidey;
 		}
-		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Die")) // Czêœæ funkcji uruchamiana jest z animacji, wiêc czêœæ elementów musi byæ uruchamiana poprzez sprawdzenie jaka animacja jest odgrywana
+		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Die")) // Czï¿½ï¿½ funkcji uruchamiana jest z animacji, wiï¿½c czï¿½ï¿½ elementï¿½w musi byï¿½ uruchamiana poprzez sprawdzenie jaka animacja jest odgrywana
 		{
 			currentState = EnemyState.Dead;
 		}
@@ -172,8 +172,8 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 				
 				if (playerSeen == true)
 				{
-					goBackCounter = 0; // Tym upewniam siê, ¿e Coroutine uruchomi siê tylko raz, trochê ni¿ej
-					StopCoroutine(WaitBeforeReturning()); // Coroutine s¹ wykorzystywane do resetu ró¿nych cooldownów
+					goBackCounter = 0; // Tym upewniam siï¿½, ï¿½e Coroutine uruchomi siï¿½ tylko raz, trochï¿½ niï¿½ej
+					StopCoroutine(WaitBeforeReturning()); // Coroutine sï¿½ wykorzystywane do resetu rï¿½nych cooldownï¿½w
 					PlayerPos = playerTransform.position;
 				}
 				goToPosition(hitFront.collider, PlayerPos, 0.5f);
@@ -210,7 +210,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 				break;
 			case EnemyState.LightAttack:
 				isEating = false;
-				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x)) // Porównuj¹c swoj¹ pozycjê do pozycji gracza, NPC wie kiedy gracz jest za nim i mo¿e siê odwróciæ
+				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x)) // Porï¿½wnujï¿½c swojï¿½ pozycjï¿½ do pozycji gracza, NPC wie kiedy gracz jest za nim i moï¿½e siï¿½ odwrï¿½ciï¿½
 				{
 					TurnAround();
 				}
@@ -245,7 +245,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	void CheckGrounded()
 	{
 		raycastDistance = 0.1f;
-		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f, 0, 0), Vector2.down, raycastDistance); // Raycasty hitDown sprawdzaj¹ czy NPC stoi na ziemi i czy jedna z jego nóg nie zwisa, co znaczy³oby, ¿e jest przed klifem
+		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f, 0, 0), Vector2.down, raycastDistance); // Raycasty hitDown sprawdzajï¿½ czy NPC stoi na ziemi i czy jedna z jego nï¿½g nie zwisa, co znaczyï¿½oby, ï¿½e jest przed klifem
 		RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(-0.2f, 0, 0), Vector2.down, raycastDistance);
 		Debug.DrawLine(transform.position + new Vector3(0.2f, 0, 0), transform.position + (new Vector3(0.2f, 0, 0) + Vector3.down) * raycastDistance, Color.blue); 
 		Debug.DrawLine(transform.position + new Vector3(-0.2f, 0, 0), transform.position + (new Vector3(-0.2f, 0, 0) + Vector3.down) * raycastDistance, Color.blue); 
@@ -255,7 +255,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 
 	void Move(int direction)
 	{
-		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
+		if (r2d.linearVelocity.x > 0.01f || r2d.linearVelocity.x < -0.01f)
 		{
 			isEating = false;
 			anim.ResetTrigger("Attack1");
@@ -263,23 +263,23 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 			anim.ResetTrigger("Idle");
 			anim.SetTrigger("Walk");
 		}
-		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
+		r2d.linearVelocity = new Vector2(direction * maxSpeed, r2d.linearVelocity.y);
 	}
 
 	void TurnAround()
 	{
 		facingRight = !facingRight;
-		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z); // Odwracanie siê polega na negowaniu skali x, dziêki czemu odwracaj¹ siê tak¿e kolizje
+		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z); // Odwracanie siï¿½ polega na negowaniu skali x, dziï¿½ki czemu odwracajï¿½ siï¿½ takï¿½e kolizje
 	}
 
 	void Idle()
 	{
-		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
+		if (r2d.linearVelocity.x < 0.01f || r2d.linearVelocity.x > -0.01f)
 		{
 			anim.ResetTrigger("Attack1");
 			anim.ResetTrigger("Attack2");
 			anim.ResetTrigger("Walk");
-			if (isEating == true) // Pomimo tego, ¿e po powrocie NPC nigdy nie wróci do jedzenia ten if upewnia siê, ¿e pocz¹tkowe zachowanie i animacja jedzenia nie zostan¹ nadpisane przez domyœlne zachowania
+			if (isEating == true) // Pomimo tego, ï¿½e po powrocie NPC nigdy nie wrï¿½ci do jedzenia ten if upewnia siï¿½, ï¿½e poczï¿½tkowe zachowanie i animacja jedzenia nie zostanï¿½ nadpisane przez domyï¿½lne zachowania
 			{
 				playerAwerness = playerAwernessEating;
 				anim.SetTrigger("Eating corpse");
@@ -310,7 +310,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 
 	void Jump()
 	{
-		r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+		r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
 		Move(facingRight ? 1 : -1);
 		isJumping = true;
 		StartCoroutine(ResetJump());
@@ -331,7 +331,7 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 		canAttack = true;
 	}
-	void CheckForHit() // Atak u¿ywa Raycastów na pozycji g³owy NPC do sprawdzenia trafienia. Te dwie funkcje s¹ uruchamiane kiedy animacja ataku dojdzie do odpowiednej klatki
+	void CheckForHit() // Atak uï¿½ywa Raycastï¿½w na pozycji gï¿½owy NPC do sprawdzenia trafienia. Te dwie funkcje sï¿½ uruchamiane kiedy animacja ataku dojdzie do odpowiednej klatki
 	{
 		Vector3 RaycastPos = new Vector3(t.position.x, t.position.y + 0.7f, t.position.z);
 		RaycastHit2D attackPlayer = Physics2D.Raycast(RaycastPos, facingRight ? Vector2.right : Vector2.left, 1, playerLayer);

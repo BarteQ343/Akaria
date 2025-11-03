@@ -1193,7 +1193,7 @@ namespace Ink.Runtime
                 return true;
             } 
 
-            // Start/end an expression evaluation? Or print out the result?
+            // Start/end an expression evaluation? Or Debug.Log out the result?
             else if( contentObj is ControlCommand ) {
                 var evalCommand = (ControlCommand) contentObj;
 

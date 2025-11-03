@@ -18,11 +18,11 @@ public class PauseMenu : MonoBehaviour
 
 	public void SaveGame()
 	{
-		print("Saved! \n(not actually, it does nothing yet)");
+		Debug.Log("Saved! \n(not actually, it does nothing yet)");
 	}
 	public void OpenSettings()
 	{
-		print("Here are the settings! \n(not actually, it does nothing yet)");
+		Debug.Log("Here are the settings! \n(not actually, it does nothing yet)");
 	}
 
 	public void BackToMenu()

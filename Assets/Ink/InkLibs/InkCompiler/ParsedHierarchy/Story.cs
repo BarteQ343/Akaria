@@ -379,9 +379,9 @@ namespace Ink.Parsed
 
 
 
-        void NameConflictError (Parsed.Object obj, string name, Parsed.Object existingObj, string typeNameToPrint)
+        void NameConflictError (Parsed.Object obj, string name, Parsed.Object existingObj, string typeNameToprint)
         {
-            obj.Error (typeNameToPrint+" '" + name + "': name has already been used for a " + existingObj.typeName.ToLower() + " on " +existingObj.debugMetadata);
+            obj.Error (typeNameToprint+" '" + name + "': name has already been used for a " + existingObj.typeName.ToLower() + " on " +existingObj.debugMetadata);
         }
 
         public static bool IsReservedKeyword (string name)
@@ -418,21 +418,21 @@ namespace Ink.Parsed
         // When the given symbol type level is reached, we early-out / return.
         public void CheckForNamingCollisions (Parsed.Object obj, Identifier identifier, SymbolType symbolType, string typeNameOverride = null)
         {
-            string typeNameToPrint = typeNameOverride ?? obj.typeName;
+            string typeNameToprint = typeNameOverride ?? obj.typeName;
             if (IsReservedKeyword (identifier?.name)) {
-                obj.Error ("'"+name + "' cannot be used for the name of a " + typeNameToPrint.ToLower() + " because it's a reserved keyword");
+                obj.Error ("'"+name + "' cannot be used for the name of a " + typeNameToprint.ToLower() + " because it's a reserved keyword");
                 return;
             }
 
             if (FunctionCall.IsBuiltIn (identifier?.name)) {
-                obj.Error ("'"+name + "' cannot be used for the name of a " + typeNameToPrint.ToLower() + " because it's a built in function");
+                obj.Error ("'"+name + "' cannot be used for the name of a " + typeNameToprint.ToLower() + " because it's a built in function");
                 return;
             }
 
             // Top level knots
             FlowBase knotOrFunction = ContentWithNameAtLevel (identifier?.name, FlowLevel.Knot) as FlowBase;
             if (knotOrFunction && (knotOrFunction != obj || symbolType == SymbolType.Arg)) {
-                NameConflictError (obj, identifier?.name, knotOrFunction, typeNameToPrint);
+                NameConflictError (obj, identifier?.name, knotOrFunction, typeNameToprint);
                 return;
             }
 
@@ -443,7 +443,7 @@ namespace Ink.Parsed
                 var listDefName = namedListDef.Key;
                 var listDef = namedListDef.Value;
                 if (identifier?.name == listDefName && obj != listDef && listDef.variableAssignment != obj) {
-                    NameConflictError (obj, identifier?.name, listDef, typeNameToPrint);
+                    NameConflictError (obj, identifier?.name, listDef, typeNameToprint);
                 }
 
                 // We don't check for conflicts between individual elements in
@@ -451,7 +451,7 @@ namespace Ink.Parsed
                 if (!(obj is ListElementDefinition)) {
                     foreach (var item in listDef.itemDefinitions) {
                         if (identifier?.name == item.name) {
-                            NameConflictError (obj, identifier?.name, item, typeNameToPrint);
+                            NameConflictError (obj, identifier?.name, item, typeNameToprint);
                         }
                     }
                 }
@@ -465,7 +465,7 @@ namespace Ink.Parsed
             VariableAssignment varDecl = null;
             if (variableDeclarations.TryGetValue(identifier?.name, out varDecl) ) {
                 if (varDecl != obj && varDecl.isGlobalDeclaration && varDecl.listDefinition == null) {
-                    NameConflictError (obj, identifier?.name, varDecl, typeNameToPrint);
+                    NameConflictError (obj, identifier?.name, varDecl, typeNameToprint);
                 }
             }
 
@@ -475,7 +475,7 @@ namespace Ink.Parsed
             var path = new Path (identifier);
             var targetContent = path.ResolveFromContext (obj);
             if (targetContent && targetContent != obj) {
-                NameConflictError (obj, identifier?.name, targetContent, typeNameToPrint);
+                NameConflictError (obj, identifier?.name, targetContent, typeNameToprint);
                 return;
             }
 
@@ -488,7 +488,7 @@ namespace Ink.Parsed
 				if (flow && flow.hasParameters) {
 					foreach (var arg in flow.arguments) {
 						if (arg.identifier?.name == identifier?.name) {
-							obj.Error (typeNameToPrint+" '" + name + "': Name has already been used for a argument to "+flow.identifier+" on " +flow.debugMetadata);
+							obj.Error (typeNameToprint+" '" + name + "': Name has already been used for a argument to "+flow.identifier+" on " +flow.debugMetadata);
 							return;
 						}
 					}

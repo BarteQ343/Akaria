@@ -12,7 +12,7 @@ public class CamFollow : MonoBehaviour
     void Update()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        print(mousePos);
+        Debug.Log(mousePos);
         Vector3 targetPos = (player.position + mousePos);
         targetPos.x = Mathf.Clamp(targetPos.x, -threshold + player.position.x, threshold + player.position.x);
         targetPos.y = Mathf.Clamp(targetPos.y, -threshold + player.position.y, threshold + player.position.y);
