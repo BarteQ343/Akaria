@@ -1,16 +1,12 @@
-// Required namespaces
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
-using System.Linq;
 
 
-// Attach this to a QuestManager GameObject
 public class QuestJournal : MonoBehaviour
 {
-    public InkStoryReference inkStoryRef; // Reference to the Ink story
     public QuestDatabase questDatabase; // ScriptableObject containing all QuestData
     public DialogueVariables dialogueVariables;
 
@@ -39,15 +35,15 @@ public class QuestJournal : MonoBehaviour
 
     private System.Collections.IEnumerator WaitForVariables()
     {
-    // Wait until DialogueVariables has initialized the dictionary
-    while (dialogueVariables.variables == null)
-        yield return null;
+        // Wait until DialogueVariables has initialized the dictionary
+        while (dialogueVariables.variables == null)
+            yield return null;
 
-    Debug.Log("QuestJournal checked the variables, here they are:");
-    foreach (var kvp in dialogueVariables.variables)
-    {
-        Debug.Log($"{kvp.Key} = {kvp.Value}");
-    }
+        Debug.Log("QuestJournal checked the variables, here they are:");
+        foreach (var kvp in dialogueVariables.variables)
+        {
+            Debug.Log($"{kvp.Key} = {kvp.Value}");
+        }
 
     foreach (var quest in questDatabase.quests)
     {
@@ -117,7 +113,7 @@ public class QuestJournal : MonoBehaviour
     return 0;
     }
 
-    void UpdateQuestStatuses()
+    void UpdateQuestStatuses() 
     {
         foreach (var quest in questDatabase.quests)
         {
@@ -125,7 +121,7 @@ public class QuestJournal : MonoBehaviour
             if (previousQuestStatuses[quest.questID] != currentStatus)
             {
                 if (quest.visibleWhenStatuses.Contains(currentStatus))
-                    ShowPopup("New quest: " + quest.displayName);
+                    ShowPopup("Quest updated: " + quest.displayName);
                 else if (quest.completedWhenStatuses.Contains(currentStatus))
                     ShowPopup("Quest completed: " + quest.displayName);
 
@@ -158,11 +154,4 @@ public class QuestData
     public string[] rewards;
     public List<int> visibleWhenStatuses; // When to show in journal
     public List<int> completedWhenStatuses; // When to mark as complete
-}
-
-// Helper to link to Ink story (you can customize how it's referenced)
-[System.Serializable]
-public class InkStoryReference
-{
-    public Story story; // Assign this at runtime when Ink is loaded
 }

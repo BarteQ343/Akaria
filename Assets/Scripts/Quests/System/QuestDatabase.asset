@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: QuestDatabase
   m_EditorClassIdentifier: Assembly-CSharp::QuestDatabase
   quests:
-  - questID: forest_investigation_quest_status
+  - questID: quest_debug_forest_investigation
     displayName: Forest Investigation
-    description: Something something forest check it
+    description: Something strange is happening in the forest. Check it.
     goals:
-    - Check the forest
-    - Go back
+    - '- Check the forest'
+    - '- Go back to Andrew'
     rewards:
     - 100g
     visibleWhenStatuses: 010000000200000003000000

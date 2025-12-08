@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-{forest_investigation_quest_status:
+{quest_debug_forest_investigation:
     - 0: -> start
     - 1: -> placeholder_dialogue
     - 2: -> quest_complete
@@ -21,7 +21,7 @@ Well, that's too bad. If you change your mind, you know where to find me.
 -> END
 
 === yes_work ===
-~ forest_investigation_quest_status = 1
+~ quest_debug_forest_investigation = 1
 # speaker: Tom
 Maybe. What do you need?
 # speaker: Andrew
@@ -38,7 +38,7 @@ I'm counting on you!
 -> END
 
 === quest_complete ===
-~ forest_investigation_quest_status = 3
+~ quest_debug_forest_investigation = 3
 # speaker: Tom
 I'm back.
 # speaker: Andrew
