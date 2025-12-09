@@ -72,7 +72,7 @@ public class PlayerHealthController : MonoBehaviour
 		Cursor.visible = false;
 	}
 	public void TakeDamage(int damage) {
-		if (!_attack.attackIsHappening && !anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+		if (!_attack.attackIsHappening && !anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt") && gameObject.name == "Player")
 		{
 			anim.ResetTrigger("Stop");
 			anim.ResetTrigger("Run");

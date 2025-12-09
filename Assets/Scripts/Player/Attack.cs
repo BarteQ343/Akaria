@@ -12,6 +12,7 @@ public class Attack : MonoBehaviour
 	public LayerMask layerMask;
 	CapsuleCollider2D mainCollider;
 	HealthController healthController;
+	GhoulHealthController ghoulHealthController;
 	[SerializeField]
 	private int playerDamage;
 	[HideInInspector]
@@ -47,56 +48,101 @@ public class Attack : MonoBehaviour
 				//attackCooldown = true;
 				//StopCoroutine(ResetCooldown());
 				nextAttackTime = Time.time + 1f / attackRate;
-				if (!isGrounded)
+				if (gameObject.name == "Player")
 				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Fall");
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Jump");
-					anim.ResetTrigger("Stop");
-					anim.SetTrigger("AirAttack");
-					lastAttack = 0;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && (lastAttack == 0 || lastAttack == 3))
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.SetTrigger("Attack");
-					lastAttack = 1;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && lastAttack == 1)
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.ResetTrigger("Attack");
-					anim.SetTrigger("Attack2");
-					lastAttack = 2;
-					//StopCoroutine(ResetCooldown());
-				}
-				else if (isGrounded && lastAttack == 2)
-				{
-					r2d.constraints = RigidbodyConstraints2D.FreezeAll;
-					anim.ResetTrigger("Walk");
-					anim.ResetTrigger("Run");
-					anim.ResetTrigger("Stop");
-					anim.ResetTrigger("Attack3");
-					anim.SetTrigger("Attack3");
-					lastAttack = 3;
-					//StopCoroutine(ResetCooldown());
-				}
-				if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
-				{
-					lastAttack = 0;
-				}
+                    if (!isGrounded)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Fall");
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Jump");
+                        anim.ResetTrigger("Stop");
+                        anim.SetTrigger("AirAttack");
+                        lastAttack = 0;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && (lastAttack == 0 || lastAttack == 3))
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.SetTrigger("Attack");
+                        lastAttack = 1;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && lastAttack == 1)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.ResetTrigger("Attack");
+                        anim.SetTrigger("Attack2");
+                        lastAttack = 2;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (isGrounded && lastAttack == 2)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("Walk");
+                        anim.ResetTrigger("Run");
+                        anim.ResetTrigger("Stop");
+                        anim.ResetTrigger("Attack3");
+                        anim.SetTrigger("Attack3");
+                        lastAttack = 3;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+                    {
+                        lastAttack = 0;
+                    }
+                }
+				if (gameObject.name == "Tavor")
+                {
+                    if (lastAttack == 0 || lastAttack == 3)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack3");
+                        anim.SetTrigger("attack1");
+                        lastAttack = 1;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (lastAttack == 1)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack1");
+                        anim.SetTrigger("attack2");
+                        lastAttack = 2;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    else if (lastAttack == 2)
+                    {
+                        r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                        anim.ResetTrigger("run");
+                        anim.ResetTrigger("fall");
+                        anim.ResetTrigger("idle");
+                        anim.ResetTrigger("jump");
+                        anim.ResetTrigger("attack2");
+                        anim.SetTrigger("attack3");
+                        lastAttack = 3;
+                        //StopCoroutine(ResetCooldown());
+                    }
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("take_damage"))
+                    {
+                        lastAttack = 0;
+                    }
+                }
 			}
-		
 		}
 	}
 	void ResetLastAttack()
@@ -106,29 +152,61 @@ public class Attack : MonoBehaviour
 	void ResetAnims()
 	{
 		bool isGrounded = _controller.checkIsGrounded();
-		if (isGrounded)
+		if (gameObject.name == "Player")
 		{
-			anim.ResetTrigger("AirAttack");
-			anim.ResetTrigger("Fall");
-			anim.ResetTrigger("Attack");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Attack3");
-			anim.ResetTrigger("Jump");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Stop");
-			attackIsHappening = false;
-		}
-		else
+            if (isGrounded)
+            {
+                anim.ResetTrigger("AirAttack");
+                anim.ResetTrigger("Fall");
+                anim.ResetTrigger("Attack");
+                anim.ResetTrigger("Attack2");
+                anim.ResetTrigger("Attack3");
+                anim.ResetTrigger("Jump");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Stop");
+                attackIsHappening = false;
+            }
+            else
+            {
+                anim.ResetTrigger("AirAttack");
+                anim.ResetTrigger("Attack");
+                anim.ResetTrigger("Attack2");
+                anim.ResetTrigger("Attack3");
+                anim.ResetTrigger("Jump");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Fall");
+                attackIsHappening = false;
+            }
+        } else if (gameObject.name == "Tavor")
 		{
-			anim.ResetTrigger("AirAttack");
-			anim.ResetTrigger("Attack");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Attack3");
-			anim.ResetTrigger("Jump");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Fall");
-			attackIsHappening = false;
-		}
+            if (isGrounded)
+            {
+                anim.ResetTrigger("land");
+                anim.ResetTrigger("dash");
+                anim.ResetTrigger("fall");
+                anim.ResetTrigger("attack1");
+                anim.ResetTrigger("attack2");
+                anim.ResetTrigger("attack3");
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("run");
+                anim.SetTrigger("idle");
+                attackIsHappening = false;
+            }
+            else
+            {
+                anim.ResetTrigger("run");
+                anim.ResetTrigger("land");
+                anim.ResetTrigger("dash");
+                anim.ResetTrigger("attack1");
+                anim.ResetTrigger("attack2");
+                anim.ResetTrigger("attack3");
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("idle");
+                anim.SetTrigger("fall");
+                attackIsHappening = false;
+            }
+        }
+		
 	}
 
 	void ResetLock()
@@ -153,28 +231,50 @@ public class Attack : MonoBehaviour
 		Debug.DrawLine(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0), transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0) + (facingRight ? Vector3.right : Vector3.left) * 0.6f, Color.red);
 		Debug.DrawLine(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0), transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0.6f, 0) + (facingRight ? new Vector3(1, -1, 0) : new Vector3(-1, -1, 0)) * 0.5f, Color.red);
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Player");
-		if ((hit1.collider != null && hit1.collider.CompareTag("Enemy")) || (hit2.collider != null && hit2.collider.CompareTag("Enemy")) || (hit3.collider != null && hit3.collider.CompareTag("Enemy")))
+		if ((hit1.collider != null && hit1.collider.CompareTag("Ghoul")) || (hit2.collider != null && hit2.collider.CompareTag("Ghoul")) || (hit3.collider != null && hit3.collider.CompareTag("Ghoul")))
 		{
-			if (hit1.collider != null && hit1.collider.CompareTag("Enemy"))
+			if (hit1.collider != null && hit1.collider.CompareTag("Ghoul"))
 			{
-				healthController = hit1.collider.transform.gameObject.GetComponent<HealthController>();
+				ghoulHealthController = hit1.collider.transform.gameObject.GetComponent<GhoulHealthController>();
 				print(healthController);
-				healthController.TakeDamage(playerDamage);
+				ghoulHealthController.TakeDamage(playerDamage);
 			}
-			else if (hit2.collider != null && hit2.collider.CompareTag("Enemy"))
+			else if (hit2.collider != null && hit2.collider.CompareTag("Ghoul"))
 			{
 				print(hit2.collider.transform.gameObject);
-				healthController = hit2.collider.transform.gameObject.GetComponent<HealthController>();
-				print(healthController);
-				healthController.TakeDamage(playerDamage);
-			}
-			else if (hit3.collider != null && hit3.collider.CompareTag("Enemy"))
+                ghoulHealthController = hit2.collider.transform.gameObject.GetComponent<GhoulHealthController>();
+                print(healthController);
+                ghoulHealthController.TakeDamage(playerDamage);
+            }
+			else if (hit3.collider != null && hit3.collider.CompareTag("Ghoul"))
 			{
-				healthController = hit3.collider.transform.gameObject.GetComponent<HealthController>();
-				print(healthController);
-				healthController.TakeDamage(playerDamage);
-			}
-		}
-		healthController = null;
+                ghoulHealthController = hit3.collider.transform.gameObject.GetComponent<GhoulHealthController>();
+                print(healthController);
+                ghoulHealthController.TakeDamage(playerDamage);
+            }
+		} else if ((hit1.collider != null && hit1.collider.CompareTag("Enemy")) || (hit2.collider != null && hit2.collider.CompareTag("Enemy")) || (hit3.collider != null && hit3.collider.CompareTag("Enemy")))
+        {
+            if (hit1.collider != null && hit1.collider.CompareTag("Enemy"))
+            {
+                healthController = hit1.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+            else if (hit2.collider != null && hit2.collider.CompareTag("Enemy"))
+            {
+                print(hit2.collider.transform.gameObject);
+                healthController = hit2.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+            else if (hit3.collider != null && hit3.collider.CompareTag("Enemy"))
+            {
+                healthController = hit3.collider.transform.gameObject.GetComponent<HealthController>();
+                print(healthController);
+                healthController.TakeDamage(playerDamage);
+            }
+        }
+        healthController = null;
+		ghoulHealthController = null;
 	}
 }

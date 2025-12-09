@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Warstwa dla schodów")]
 	[SerializeField]
 	private LayerMask stairMask;
-	[Header("Warstwa pod³o¿a (na razie Default)")]
+	[Header("Warstwa pod³o¿a (Ground)")]
 	public LayerMask layerMask;
 	private Attack _attack;
 	private DustController dustEffect;
@@ -109,9 +109,17 @@ public class PlayerController : MonoBehaviour
 		if (Time.time >= nextDashTime)
 		{
 			if (Input.GetKeyDown(KeyCode.LeftShift))
-			{
-				t.position += new Vector3(facingRight ? 1.5f : -1.5f, 0, 0);
-				anim.SetTrigger("Dash");
+            {
+                r2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                t.position += new Vector3(facingRight ? 1.5f : -1.5f, 0, 0);
+                if (gameObject.name == "Player")
+				{
+                    anim.SetTrigger("Dash");
+                } else
+                {
+					anim.ResetTrigger("run");
+                    anim.SetTrigger("dash");
+                }
 				nextDashTime = Time.time + 1f / dashRate;
 			}
 
@@ -154,7 +162,6 @@ public class PlayerController : MonoBehaviour
 
 		bool wasGrounded = isGrounded;
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-		// Check if player is grounded
 		isGrounded = false;
 		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f,0,0), Vector2.down, raycastDistance, layerMask);
 		RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(-0.2f, 0, 0), Vector2.down, raycastDistance, layerMask);
@@ -176,16 +183,21 @@ public class PlayerController : MonoBehaviour
 		}
 		if (wasGrounded != isGrounded)
 		{
-			/*if (isGrounded)
+			if (isGrounded)
 			{
 				// Landed !!!WIP/NEED FEEDBACK!!!
-				dustEffect.CreateDust("Land");
+				if (gameObject.name == "Tavor")
+                {
+                    anim.ResetTrigger("fall");
+					anim.SetTrigger("land");
+                }
 			}
 			else
-			{*/
+			{
 				// Jumped
 				dustEffect.CreateDust("Jump");
-			//}
+				
+			}
 		}
 		if ((hitSide.collider != null) || 
 			(hitSide1.collider != null) || 
@@ -209,56 +221,111 @@ public class PlayerController : MonoBehaviour
 				r2d.velocity += new Vector2(0, -0.2f);
 			}
 		}
-		// Handle animations
-		if ((r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
+		// Handle animations for MC
+		if (gameObject.name == "Player")
 		{
-			anim.ResetTrigger("Jump");
-			anim.ResetTrigger("Fall");
-			anim.ResetTrigger("Stop");
-			//anim.ResetTrigger("Run");
-			anim.SetTrigger("Walk");
-		}
-		if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
+            if ((r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
+            {
+                anim.ResetTrigger("Jump");
+                anim.ResetTrigger("Fall");
+                anim.ResetTrigger("Stop");
+                //anim.ResetTrigger("Run");
+                anim.SetTrigger("Walk");
+            }
+            if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("Hurt") == false || anim.GetBool("Die") == false))
+            {
+                /*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
+                    || (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
+                */
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Jump") || anim.GetCurrentAnimatorStateInfo(0).IsName("Fall") || anim.GetCurrentAnimatorStateInfo(0).IsName("Walk") || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                {
+                    anim.ResetTrigger("Jump");
+                    anim.ResetTrigger("Run");
+                    anim.ResetTrigger("Fall");
+                    anim.ResetTrigger("Walk");
+                    anim.SetTrigger("Stop");
+                }
+            }
+            if (r2d.velocity.y > 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
+            {
+                anim.ResetTrigger("Fall");
+                anim.ResetTrigger("Run");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Jump");
+            }
+            if (r2d.velocity.y < 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
+            {
+                anim.ResetTrigger("Fall");
+                anim.ResetTrigger("Run");
+                anim.ResetTrigger("Stop");
+                anim.SetTrigger("Fall");
+            }
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("AirAttack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+            {
+                r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+            }
+        } 
+		if (gameObject.name == "Tavor")
 		{
-			/*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
-				|| (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
-			*/
-			if (anim.GetCurrentAnimatorStateInfo(0).IsName("Jump") || anim.GetCurrentAnimatorStateInfo(0).IsName("Fall") || anim.GetCurrentAnimatorStateInfo(0).IsName("Walk") || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
-			{
-				anim.ResetTrigger("Jump");
-				anim.ResetTrigger("Run");
-				anim.ResetTrigger("Fall");
-				anim.ResetTrigger("Walk");
-				anim.SetTrigger("Stop");
-			}
-		}
-		if (r2d.velocity.y > 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
-		{
-			anim.ResetTrigger("Fall");
-			anim.ResetTrigger("Run");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Jump");
-		}
-		if (r2d.velocity.y < 0 && !isGrounded && !anim.GetBool("Attack") && (hitStairs.collider == null && hitStairs2.collider == null))
-		{
-			anim.ResetTrigger("Fall");
-			anim.ResetTrigger("Run");
-			anim.ResetTrigger("Stop");
-			anim.SetTrigger("Fall");
-		}
-		if(!anim.GetCurrentAnimatorStateInfo(0).IsName("AirAttack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
-		{
-			r2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
-		}
-
+            if ((r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f) && isGrounded && !_attack.attackIsHappening)
+            {
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("fall");
+                anim.ResetTrigger("idle");
+                //anim.ResetTrigger("Run");
+                anim.SetTrigger("run");
+            }
+            if ((r2d.velocity.x > -0.001f && r2d.velocity.x < 0.001f) && isGrounded && (anim.GetBool("take_damage") == false || anim.GetBool("Die") == false))
+            {
+                /*if ((anim.GetBool("Jump") || anim.GetBool("Fall") || anim.GetBool("Walk"))
+                    || (!anim.GetBool("Run") && !anim.GetBool("Stop") && !anim.GetBool("Jump") && !anim.GetBool("Fall") && !anim.GetBool("Attack") && !anim.GetBool("Die") && !anim.GetBool("Hurt") && !anim.GetBool("Attack2") && !anim.GetBool("Attack3") && !anim.GetBool("AirAttack") && !anim.GetBool("Walk")))
+                */
+                if ((anim.GetCurrentAnimatorStateInfo(0).IsName("jump") || anim.GetCurrentAnimatorStateInfo(0).IsName("run")) && !anim.GetCurrentAnimatorStateInfo(0).IsName("land"))
+                {
+                    anim.ResetTrigger("jump");
+                    anim.ResetTrigger("run");
+                    anim.ResetTrigger("fall");
+                    anim.SetTrigger("idle");
+                }
+            }
+            if (r2d.velocity.y > 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
+            {
+                anim.ResetTrigger("fall");
+                anim.ResetTrigger("run");
+                anim.ResetTrigger("idle");
+                anim.SetTrigger("jump");
+            }
+            if (r2d.velocity.y < 0 && !isGrounded && !anim.GetBool("attack1") && (hitStairs.collider == null && hitStairs2.collider == null))
+            {
+                anim.ResetTrigger("jump");
+                anim.ResetTrigger("run");
+                anim.ResetTrigger("idle");
+                anim.SetTrigger("fall");
+            }
+            /*if (!anim.GetCurrentAnimatorStateInfo(0).IsName("attack1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("attack3") && !anim.GetCurrentAnimatorStateInfo(0).IsName("dash"))
+            {
+				ResetLock();
+            }*/
+        }
 	}
 	void ResetHurt()
 	{
-		if (r2d.velocity.x == 0 && isGrounded && !anim.GetBool("Die"))
+		if (gameObject.name == "Player")
 		{
-			anim.ResetTrigger("Hurt");
-			anim.SetTrigger("Stop");
-		}
+            if (r2d.velocity.x == 0 && isGrounded && !anim.GetBool("Die"))
+            {
+                anim.ResetTrigger("Hurt");
+                anim.SetTrigger("Stop");
+            }
+        }
+		if (gameObject.name == "Tavor")
+		{
+            if (r2d.velocity.x == 0 && isGrounded && !anim.GetBool("Die"))
+            {
+                anim.ResetTrigger("take_damage");
+                anim.SetTrigger("idle");
+            }
+        }
 	}
 	void ResetLock()
 	{
@@ -272,5 +339,11 @@ public class PlayerController : MonoBehaviour
 	public bool facingDirection()
 	{
 		return facingRight;
+	}
+	void resetLand()
+	{
+		anim.ResetTrigger("dash");
+		anim.ResetTrigger("land");
+		anim.SetTrigger("idle");
 	}
 }
