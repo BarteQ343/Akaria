@@ -25,7 +25,8 @@ public class WalkingEnemyController : MonoBehaviour
 	float obstacleCheckDistance = 0.5f;
 	float raycastDistance = 1f;
 	public LayerMask playerLayer;
-	Vector3 originalPosition;
+    public LayerMask playerAndGroundLayer;
+    Vector3 originalPosition;
 	[SerializeField]
 	public RaycastHit2D hitFront;
 	[SerializeField]
@@ -38,7 +39,8 @@ public class WalkingEnemyController : MonoBehaviour
 	[SerializeField] float playerAwernessHunting = 2;
 	[SerializeField] float detectionDistance = 2.5f;
 	HealthController healthController;
-	enum EnemyState
+    bool playerSeen = false;
+    enum EnemyState
 	{
 		Idle,
 		FollowPlayer,
@@ -84,7 +86,7 @@ public class WalkingEnemyController : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.L)) {
-			print(currentState);
+			Debug.Log(currentState);
 		}
 
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
@@ -101,9 +103,32 @@ public class WalkingEnemyController : MonoBehaviour
 		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer);
 		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.red);
 		DrawDebugCircle(t.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, 32, Color.red);
-		
+        if (checkPlayer.Length > 0)
+        {
+            Vector2 PlayerHeadPos = (Vector2)player.transform.position + new Vector2(0, 0.85f);
+            Vector2 PlayerBodyPos = (Vector2)player.transform.position + new Vector2(0, 0.5f);
+            Vector2 PlayerFeetPos = (Vector2)player.transform.position;
+            RaycastHit2D Line1 = Physics2D.Linecast(RaycastPos, PlayerHeadPos, playerAndGroundLayer);
+            RaycastHit2D Line2 = Physics2D.Linecast(RaycastPos, PlayerBodyPos, playerAndGroundLayer);
+            RaycastHit2D Line3 = Physics2D.Linecast(RaycastPos, PlayerFeetPos, playerAndGroundLayer);
+            Debug.DrawLine(RaycastPos, PlayerHeadPos);
+            Debug.DrawLine(RaycastPos, PlayerBodyPos);
+            Debug.DrawLine(RaycastPos, PlayerFeetPos);
+            if (Line1.collider == player || Line2.collider == player || Line3.collider == player)
+            {
+                playerSeen = true;
+            }
+            else
+            {
+                playerSeen = false;
+            }
+        }
+        else
+        {
+            playerSeen = false;
+        }
 
-		if (hitSide.collider != null)
+        if (hitSide.collider != null)
 		{
 			r2d.sharedMaterial = Slidey;
 		} else
@@ -117,11 +142,11 @@ public class WalkingEnemyController : MonoBehaviour
 		switch (currentState)
 		{
 			case EnemyState.Idle:
-				//print("I'm just krillin'");
-					if (checkPlayer.Length > 0)
+				//Debug.Log("I'm just krillin'");
+					if (playerSeen == true && checkPlayer.Length > 0)
 					{
 						currentState = EnemyState.FollowPlayer;
-						//print("Following after idling");
+						//Debug.Log("Following after idling");
 					}
 					else
 					{
@@ -132,7 +157,7 @@ public class WalkingEnemyController : MonoBehaviour
 				break;
 
 			case EnemyState.FollowPlayer:
-				//print("Get that mf");
+				//Debug.Log("Get that mf");
 				foreach (Collider2D collider in checkPlayer)
 				{
 					// Check if the collider belongs to the player
@@ -161,18 +186,18 @@ public class WalkingEnemyController : MonoBehaviour
 				}
 				if (checkPlayer.Length == 0 && goBackCounter == 0)
 				{
-					//print("Where'd he go?");
+					//Debug.Log("Where'd he go?");
 					StartCoroutine(WaitBeforeReturning());
 					goBackCounter++;
 				}
 				break;
 
 			case EnemyState.ReturnToOriginalPosition:
-				//print("Fuck go back");
-				if (checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
+				//Debug.Log("Fuck go back");
+				if (playerSeen == true && checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
 				{ 
 					currentState = EnemyState.FollowPlayer;
-					//print("Following instead of returning");
+					//Debug.Log("Following instead of returning");
 				} else
 				{
 					ComeBack(hitFront.collider);
@@ -183,11 +208,11 @@ public class WalkingEnemyController : MonoBehaviour
 				}
 				break;
 			case EnemyState.Attack:
-				//print("Rattle'em boys!");
+				//Debug.Log("Rattle'em boys!");
 				if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
 				{
-					anim.SetBool("Idle", false);
-					anim.SetBool("Walk", false);
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
 					anim.SetTrigger("Attack1");
 				}
 				StopCoroutine(WaitBeforeReturning());
@@ -202,37 +227,44 @@ public class WalkingEnemyController : MonoBehaviour
 	{
 		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f, 0, 0), Vector2.down, raycastDistance);
 		RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(-0.2f, 0, 0), Vector2.down, raycastDistance);
-		//print(hitDown.collider);
+		//Debug.Log(hitDown.collider);
 		isGrounded = hitDown.collider != null || hitDown2.collider != null;
 	} 
 
 	void Move(int direction)
 	{
-		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
+		if (r2d.linearVelocity.x > 0.01f || r2d.linearVelocity.x < -0.01f)
 		{
 			anim.ResetTrigger("Attack1");
 			anim.ResetTrigger("Attack2");
 			anim.ResetTrigger("Idle");
 			anim.SetTrigger("Walk");
 		}
-		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
+		r2d.linearVelocity = new Vector2(direction * maxSpeed, r2d.linearVelocity.y);
 	}
 
 	void TurnAround()
 	{
-		facingRight = !facingRight;
+		if (t.localScale.x > 0)
+		{
+			facingRight = false;
+		} else
+		{
+			facingRight = true;
+		}
+		//facingRight = !facingRight;
 		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z);
 	}
 
 	void Idle()
 	{
-		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
+		if (r2d.linearVelocity.x < 0.01f || r2d.linearVelocity.x > -0.01f)
 		{
-			anim.ResetTrigger("Attack1");
-			anim.ResetTrigger("Attack2");
-			anim.ResetTrigger("Walk");
-			anim.SetTrigger("Idle");
-		}
+            anim.ResetTrigger("Attack1");
+            anim.ResetTrigger("Attack2");
+            anim.ResetTrigger("Walk");
+            anim.SetTrigger("Idle");
+        }
 	}
 	
 	void ComeBack(Collider2D frontCast)
@@ -252,7 +284,7 @@ public class WalkingEnemyController : MonoBehaviour
 
 	void Jump()
 	{
-		r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+		r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
 		Move(facingRight ? 1 : -1);
 		isJumping = true;
 		StartCoroutine(ResetJump());
@@ -289,7 +321,7 @@ public class WalkingEnemyController : MonoBehaviour
 			if (Physics2D.OverlapCircleAll(transform.position + new Vector3(facingRight ? 0.3f : -0.3f, 0.5f, 0), 0.4f, playerLayer).Length <= 0)
 			{
 				currentState = EnemyState.FollowPlayer;
-				//print("Following after missing");
+				//Debug.Log("Following after missing");
 			}
 		}
 	}

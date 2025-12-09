@@ -60,9 +60,9 @@ namespace Ink
 
             // If the expression contains a function call, then it could produce a text side effect,
             // in which case it needs a newline on the end. e.g.
-            //  ~ printMyName()
-            //  ~ x = 1 + returnAValueAndAlsoPrintStuff()
-            // If no text gets printed, then the extra newline will have to be culled later.
+            //  ~ Debug.LogMyName()
+            //  ~ x = 1 + returnAValueAndAlsoDebug.LogStuff()
+            // If no text gets Debug.Loged, then the extra newline will have to be culled later.
             // Multiple newlines on the output will be removed, so there will be no "leak" for
             // long running calculations. It's disappointingly messy though :-/
             if (result.Find<FunctionCall>() != null ) {

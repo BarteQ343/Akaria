@@ -9,22 +9,26 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	public float maxSpeed = 1.4f;
 	public float jumpHeight = 4.5f;
 	public float gravityScale = 1.5f;
-
+	
+	// Materia�y dla upewnienia si�, �e NPC nie zablokuje si� w �cianie
 	[SerializeField]
 	private PhysicsMaterial2D Slidey;
 	[SerializeField]
 	private PhysicsMaterial2D NotSlidey;
+	// Inicjalizacja zmiennych
 	public bool facingRight = true;
 	Collider2D mainCollider;
 	Rigidbody2D r2d;
-	Transform t;
+	Transform t; 
 	Transform playerTransform;
 	Animator anim;
 	public bool isGrounded = false;
+	public bool isHanging = false;
 	bool isJumping = false;
 	float obstacleCheckDistance = 0.5f;
 	float raycastDistance = 1f;
 	public LayerMask playerLayer;
+	public LayerMask playerAndGroundLayer;
 	Vector3 originalPosition;
 	[SerializeField]
 	public RaycastHit2D hitFront;
@@ -41,6 +45,8 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	[SerializeField] bool isEating = false;
 	HealthController healthController;
 	bool canAttack = true;
+	bool playerSeen = false; 
+	Vector3 PlayerPos = Vector3.zero;
 	enum EnemyState
 	{
 		Idle,
@@ -66,10 +72,11 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		originalPosition = t.position;
 		anim = GetComponent<Animator>();
+		// Je�li nasz ghoul zajada sobie cia�o b�dzie mniej skupiony i jego pole widzenia b�dzie mniejsze
 		if (isEating == false)
-        {
-            playerAwerness = playerAwernessIdle;
-        } else if (isEating == true) 
+		{
+			playerAwerness = playerAwernessIdle;
+		} else if (isEating == true) 
 		{
 			playerAwerness = playerAwernessEating;
 		}
@@ -94,24 +101,45 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.L)) {
-			print(currentState);
+			Debug.Log(currentState);
 		}
-
+		int invertedMask = ~playerLayer.value;
+		invertedMask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 		Vector3 RaycastPos = new Vector3(t.position.x, t.position.y + 0.7f, t.position.z);
 		Vector3 RaycastPosLow = new Vector3(t.position.x, t.position.y + 0.05f, t.position.z);
 		CheckGrounded();
-		// Check for obstacles and player
-		RaycastHit2D hitSide = Physics2D.Raycast(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0, 0), facingRight ? Vector2.right : Vector2.left, 0.2f);
-		RaycastHit2D hitFront = Physics2D.Raycast(RaycastPosLow, facingRight ? Vector2.right : Vector2.left, obstacleCheckDistance);
+		RaycastHit2D hitSide = Physics2D.Raycast(transform.position + new Vector3(facingRight ? 0.2f : -0.2f, 0, 0), facingRight ? Vector2.right : Vector2.left, 0.2f); // hitSide istnieje dla sprawdzenia czy NPC nie "przytula" �ciany
+		RaycastHit2D hitFront = Physics2D.Raycast(RaycastPosLow, facingRight ? Vector2.right : Vector2.left, obstacleCheckDistance, invertedMask); // hitFront sprawdza czy NPC nie b�dzie "przytula�" �ciany (lub przeszkody)
 		mainCollider.gameObject.layer = LayerMask.NameToLayer("Enemies");
 		Debug.DrawLine(RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0), (RaycastPos + new Vector3(facingRight ? -0.7f : 0.7f, 0, 0)) + (facingRight ? Vector3.right : Vector3.left) * 1.5f, Color.blue);
 		Debug.DrawLine(RaycastPosLow, RaycastPosLow + (facingRight ? Vector3.right : Vector3.left) * obstacleCheckDistance, Color.blue);
-		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, playerLayer);
-		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), 0.4f, playerLayer);
+		Collider2D[] checkPlayer = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, playerLayer); // checkPlayer to zasi�g widzenia przeciwnika, je�li gracz jest w jego zasi�gu uruchamiaj� si� Linecasty poni�ej, kt�re sprawdzaj� czy gracz faktycznie jest widoczny, czy nie jest za jak�� przeszkod�
+		Collider2D[] checkPlayerClose = Physics2D.OverlapCircleAll(t.position + new Vector3(0, 0.5f, 0), 0.4f, playerLayer); // checkPlayerClose sprawdza czy gracz jest w zasi�gu ataku
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), detectionDistance * playerAwerness, 32, Color.green);
 		DrawDebugCircle(t.position + new Vector3(0, 0.5f, 0), 0.4f, 32, Color.red);
-		
+		if (checkPlayer.Length > 0)
+		{
+			Vector2 PlayerHeadPos = (Vector2)player.transform.position + new Vector2(0, 0.85f);
+			Vector2 PlayerBodyPos = (Vector2)player.transform.position + new Vector2(0,0.5f);
+			Vector2 PlayerFeetPos = (Vector2)player.transform.position;
+			RaycastHit2D Line1 = Physics2D.Linecast(RaycastPos, PlayerHeadPos, playerAndGroundLayer);
+			RaycastHit2D Line2 = Physics2D.Linecast(RaycastPos, PlayerBodyPos, playerAndGroundLayer);
+			RaycastHit2D Line3 = Physics2D.Linecast(RaycastPos, PlayerFeetPos, playerAndGroundLayer);
+			Debug.DrawLine(RaycastPos, PlayerHeadPos);
+			Debug.DrawLine(RaycastPos, PlayerBodyPos);
+			Debug.DrawLine(RaycastPos, PlayerFeetPos);
+			if (Line1.collider == player || Line2.collider == player || Line3.collider == player)
+			{
+				playerSeen = true;
+			} else
+			{
+				playerSeen = false;
+			}
+		} else
+		{
+			playerSeen = false;
+		}
 
 		if (hitSide.collider != null)
 		{
@@ -120,18 +148,17 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			r2d.sharedMaterial = NotSlidey;
 		}
-		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Die")) // Cz�� funkcji uruchamiana jest z animacji, wi�c cz�� element�w musi by� uruchamiana poprzez sprawdzenie jaka animacja jest odgrywana
 		{
 			currentState = EnemyState.Dead;
 		}
 		switch (currentState)
 		{
 			case EnemyState.Idle:
-				//print("I'm just krillin'");
-					if (checkPlayer.Length > 0 && canAttack == true)
+					if (playerSeen == true && checkPlayer.Length > 0 && canAttack == true)
 					{
-						currentState = EnemyState.FollowPlayer;
-						//print("Following after idling");
+						playerAwerness = playerAwernessHunting;
+						currentState = EnemyState.FollowPlayer;	
 					}
 					else
 					{
@@ -141,59 +168,37 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 				break;
 
 			case EnemyState.FollowPlayer:
-				//print("Get that mf");
 				isEating = false;
-				foreach (Collider2D collider in checkPlayer)
+				
+				if (playerSeen == true)
 				{
-					// Check if the collider belongs to the player
-					if (collider.CompareTag("Player"))
+					goBackCounter = 0; // Tym upewniam si�, �e Coroutine uruchomi si� tylko raz, troch� ni�ej
+					StopCoroutine(WaitBeforeReturning()); // Coroutine s� wykorzystywane do resetu r�nych cooldown�w
+					PlayerPos = playerTransform.position;
+				}
+				goToPosition(hitFront.collider, PlayerPos, 0.5f);
+				if (checkPlayerClose.Length > 0 && canAttack == true)
+				{
+					if (Random.Range(0,100) < 80)
 					{
-						playerAwerness = playerAwernessHunting;
-						goBackCounter = 0;
-						StopCoroutine(WaitBeforeReturning());
-						goToPosition(hitFront.collider, playerTransform.position, 0.5f);
-						/*if ((!facingRight && playerTransform.position.x > t.position.x - 0.5f) || (facingRight && playerTransform.position.x < t.position.x + 0.5f))
-						{
-							TurnAround();
-						} else if (canLightAttack == false)
-						{
-							currentState = EnemyState.Idle;
-						}
-						if (hitFront.collider == null || hitFront.collider == player)
-						{
-							Move(facingRight ? 1 : -1);
-						}
-						else if (hitFront.collider != player && !isJumping && isGrounded)
-						{
-							Jump();
-						}*/
+						currentState = EnemyState.LightAttack;
 					}
-					if (checkPlayerClose.Length > 0 && canAttack == true)
+					else
 					{
-						if (Random.Range(0,100) < 80)
-                        {
-                            currentState = EnemyState.LightAttack;
-                        }
-						else
-						{
-							currentState = EnemyState.HeavyAttack;
-						}
+						currentState = EnemyState.HeavyAttack;
 					}
 				}
-				if (checkPlayer.Length == 0 && goBackCounter == 0)
+				if (playerSeen == false && goBackCounter == 0) 
 				{
-					//print("Where'd he go?");
 					StartCoroutine(WaitBeforeReturning());
 					goBackCounter++;
 				}
 				break;
 
 			case EnemyState.ReturnToOriginalPosition:
-				//print("Fuck go back");
-				if (checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
-				{ 
+				if (playerSeen == true && checkPlayer.Length > 0 && checkPlayerClose.Length <= 0) 
+				{
 					currentState = EnemyState.FollowPlayer;
-					//print("Following instead of returning");
 				} else
 				{
 					goToPosition(hitFront.collider, originalPosition, 0);
@@ -204,36 +209,34 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 				}
 				break;
 			case EnemyState.LightAttack:
-				//print("Rattle'em boys!");
 				isEating = false;
-                if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
-                {
-                    TurnAround();
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x)) // Por�wnuj�c swoj� pozycj� do pozycji gracza, NPC wie kiedy gracz jest za nim i mo�e si� odwr�ci�
 				{
-					anim.SetBool("Idle", false);
-					anim.SetBool("Walk", false);
-					anim.SetBool("Attack1", true);
+					TurnAround();
+				}
+				if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				{
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
+					anim.SetTrigger("Attack1");
 				}
 				StopCoroutine(WaitBeforeReturning());
 				break;
-            case EnemyState.HeavyAttack:
-                //print("Rattle'em boys!");
-                isEating = false;
-                if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
-                {
-                    TurnAround();
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
-                {
-                    anim.SetBool("Idle", false);
-                    anim.SetBool("Walk", false);
-                    anim.SetBool("Attack2", true);
-                }
-                StopCoroutine(WaitBeforeReturning());
-                break;
-            case EnemyState.Dead:
+			case EnemyState.HeavyAttack:
+				isEating = false;
+				if ((!facingRight && playerTransform.position.x > t.position.x) || (facingRight && playerTransform.position.x < t.position.x))
+				{
+					TurnAround();
+				}
+				if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+				{
+					anim.ResetTrigger("Idle");
+					anim.ResetTrigger("Walk");
+					anim.SetTrigger("Attack2");
+				}
+				StopCoroutine(WaitBeforeReturning());
+				break;
+			case EnemyState.Dead:
 				StopAllCoroutines();
 				StartCoroutine(healthController.Despawn());
 				break;
@@ -241,47 +244,50 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 	}
 	void CheckGrounded()
 	{
-		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f, 0, 0), Vector2.down, raycastDistance);
+		raycastDistance = 0.1f;
+		RaycastHit2D hitDown = Physics2D.Raycast(transform.position + new Vector3(0.2f, 0, 0), Vector2.down, raycastDistance); // Raycasty hitDown sprawdzaj� czy NPC stoi na ziemi i czy jedna z jego n�g nie zwisa, co znaczy�oby, �e jest przed klifem
 		RaycastHit2D hitDown2 = Physics2D.Raycast(transform.position + new Vector3(-0.2f, 0, 0), Vector2.down, raycastDistance);
-		//print(hitDown.collider);
+		Debug.DrawLine(transform.position + new Vector3(0.2f, 0, 0), transform.position + (new Vector3(0.2f, 0, 0) + Vector3.down) * raycastDistance, Color.blue); 
+		Debug.DrawLine(transform.position + new Vector3(-0.2f, 0, 0), transform.position + (new Vector3(-0.2f, 0, 0) + Vector3.down) * raycastDistance, Color.blue); 
 		isGrounded = hitDown.collider != null || hitDown2.collider != null;
+		isHanging = (hitDown.collider == null && hitDown2.collider != null) || (hitDown.collider != null && hitDown2.collider == null);		
 	} 
 
 	void Move(int direction)
 	{
-		if (r2d.velocity.x > 0.01f || r2d.velocity.x < -0.01f)
+		if (r2d.linearVelocity.x > 0.01f || r2d.linearVelocity.x < -0.01f)
 		{
 			isEating = false;
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Idle", false);
-			anim.SetBool("Walk", true);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
+			anim.ResetTrigger("Idle");
+			anim.SetTrigger("Walk");
 		}
-		r2d.velocity = new Vector2(direction * maxSpeed, r2d.velocity.y);
+		r2d.linearVelocity = new Vector2(direction * maxSpeed, r2d.linearVelocity.y);
 	}
 
 	void TurnAround()
 	{
 		facingRight = !facingRight;
-		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z);
+		t.localScale = new Vector3(facingRight ? (-1 * t.localScale.x) : (-1 * t.localScale.x), t.localScale.y, t.localScale.z); // Odwracanie si� polega na negowaniu skali x, dzi�ki czemu odwracaj� si� tak�e kolizje
 	}
 
 	void Idle()
 	{
-		if (r2d.velocity.x < 0.01f || r2d.velocity.x > -0.01f)
+		if (r2d.linearVelocity.x < 0.01f || r2d.linearVelocity.x > -0.01f)
 		{
-			anim.SetBool("Attack1", false);
-			anim.SetBool("Attack2", false);
-			anim.SetBool("Walk", false);
-			if (isEating == true)
-            {
-                playerAwerness = playerAwernessEating;
-                anim.SetBool("Eating corpse", true);
+			anim.ResetTrigger("Attack1");
+			anim.ResetTrigger("Attack2");
+			anim.ResetTrigger("Walk");
+			if (isEating == true) // Pomimo tego, �e po powrocie NPC nigdy nie wr�ci do jedzenia ten if upewnia si�, �e pocz�tkowe zachowanie i animacja jedzenia nie zostan� nadpisane przez domy�lne zachowania
+			{
+				playerAwerness = playerAwernessEating;
+				anim.SetTrigger("Eating corpse");
 			} else if (isEating == false)
-            {
-                playerAwerness = playerAwernessIdle;
-                anim.SetBool("Idle", true);
-            }
+			{
+				playerAwerness = playerAwernessIdle;
+				anim.SetTrigger("Idle");
+			}
 		}
 	}
 	
@@ -291,39 +297,41 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			TurnAround();
 		}
-		if (frontCast == null || frontCast == player && ((!facingRight && t.position.x > destination.x - offset) || (facingRight && t.position.x < destination.x + offset)))
+		if ((!facingRight && t.position.x > destination.x - offset) || (facingRight && t.position.x < destination.x + offset))
 		{
 			Move(facingRight ? 1 : -1);
-		} else if (frontCast != player && !isJumping && isGrounded)
+		}
+		if ((frontCast != null && isJumping == false && isGrounded == true) || (isJumping == false && isGrounded == true && isHanging == true))
 		{
+			StopCoroutine(ResetJump());
 			Jump();
 		}
 	}
 
 	void Jump()
 	{
-		r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+		r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
 		Move(facingRight ? 1 : -1);
 		isJumping = true;
 		StartCoroutine(ResetJump());
 	}
 	IEnumerator ResetJump()
 	{
-		yield return new WaitForSeconds(0.5f); // Adjust jump cooldown as needed
+		yield return new WaitForSeconds(0.5f);
 		isJumping = false;
 	}
 	IEnumerator WaitBeforeReturning()
 	{
 		Idle();
-		yield return new WaitForSeconds(3f); // Adjust waiting time as needed
+		yield return new WaitForSeconds(3f);
 		currentState = EnemyState.ReturnToOriginalPosition;
 	}
-    IEnumerator AttackCooldown()
-    {
-        yield return new WaitForSeconds(1f); // Adjust cooldown as needed
-        canAttack = true;
-    }
-    void CheckForHit()
+	IEnumerator AttackCooldown()
+	{
+		yield return new WaitForSeconds(1f);
+		canAttack = true;
+	}
+	void CheckForHit() // Atak u�ywa Raycast�w na pozycji g�owy NPC do sprawdzenia trafienia. Te dwie funkcje s� uruchamiane kiedy animacja ataku dojdzie do odpowiednej klatki
 	{
 		Vector3 RaycastPos = new Vector3(t.position.x, t.position.y + 0.7f, t.position.z);
 		RaycastHit2D attackPlayer = Physics2D.Raycast(RaycastPos, facingRight ? Vector2.right : Vector2.left, 1, playerLayer);
@@ -333,12 +341,12 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			playerHealthController.TakeDamage(10);
 		}
-		anim.SetBool("Attack1", false);
+		anim.ResetTrigger("Attack1");
 		currentState = EnemyState.FollowPlayer;
-		anim.SetBool("Attack1", false);
+		anim.ResetTrigger("Attack1");
 		if (!anim.GetBool("Walk"))
 		{
-			anim.SetBool("Idle", true);
+			anim.SetTrigger("Idle");
 		}
 		StartCoroutine(AttackCooldown());
 	}
@@ -351,22 +359,22 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		if (attackPlayer.collider == player)
 		{
 			playerHealthController.TakeDamage(20);
-        }
-        anim.SetBool("Attack2", false);
-        currentState = EnemyState.FollowPlayer;
-        anim.SetBool("Attack2", false);
-        if (!anim.GetBool("Walk"))
-        {
-            anim.SetBool("Idle", true);
-        }
-        StartCoroutine(AttackCooldown());
-    }
+		}
+		anim.ResetTrigger("Attack2");
+		currentState = EnemyState.FollowPlayer;
+		anim.ResetTrigger("Attack2");
+		if (!anim.GetBool("Walk"))
+		{
+			anim.SetTrigger("Idle");
+		}
+		StartCoroutine(AttackCooldown());
+	}
 	public void SetState(string state)
 	{
 		if (state == "Idle")
-        {
-            currentState = EnemyState.Idle;
-        }
+		{
+			currentState = EnemyState.Idle;
+		}
 		if (state == "FollowPlayer") { 
 			currentState = EnemyState.FollowPlayer;
 		}
@@ -378,11 +386,11 @@ public class GhoulWalkingEnemyController : MonoBehaviour
 		{
 			currentState = EnemyState.LightAttack;
 		}
-        if (state == "HeavyAttack")
-        {
-            currentState = EnemyState.HeavyAttack;
-        }
-        if (state == "Dead")
+		if (state == "HeavyAttack")
+		{
+			currentState = EnemyState.HeavyAttack;
+		}
+		if (state == "Dead")
 		{
 			currentState = EnemyState.Dead;
 		}

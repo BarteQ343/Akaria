@@ -1,0 +1,3 @@
+animated objects sprite sheet block size:
+
+All in 32x32

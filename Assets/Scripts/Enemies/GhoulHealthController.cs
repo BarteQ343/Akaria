@@ -7,12 +7,12 @@ using UnityEngine;
 
 public class GhoulHealthController : MonoBehaviour
 {
-	// ¯eby nie wpisywaæ ogromnych liczb do skalowania przeciwników mo¿emy u¿yæ tych dwóch zmiennych do mno¿enia ich hp
+	// ï¿½eby nie wpisywaï¿½ ogromnych liczb do skalowania przeciwnikï¿½w moï¿½emy uï¿½yï¿½ tych dwï¿½ch zmiennych do mnoï¿½enia ich hp
 	[SerializeField]
 	private float startingHealth = 100;
 	[SerializeField]
 	private float healthMult = 1;
-	// T¹ zmienn¹ mo¿na zmniejszyæ, ¿eby zwiêkszyæ odpornoœæ, albo mo¿na zwiêkszyæ wartoœæ zmiennej, co zmniejszy odpornoœæ na dmg
+	// Tï¿½ zmiennï¿½ moï¿½na zmniejszyï¿½, ï¿½eby zwiï¿½kszyï¿½ odpornoï¿½ï¿½, albo moï¿½na zwiï¿½kszyï¿½ wartoï¿½ï¿½ zmiennej, co zmniejszy odpornoï¿½ï¿½ na dmg
 	[SerializeField]
 	private float defenceMult = 1;
 	private float health;
@@ -22,8 +22,7 @@ public class GhoulHealthController : MonoBehaviour
 	Rigidbody2D r2d;
 	GhoulWalkingEnemyController enemyController;
 	public string enemyType = "Ghoul";
-    // Start is called before the first frame update
-    void Start()
+	void Start()
 	{
 		enemyController = GetComponent<GhoulWalkingEnemyController>();
 		health = startingHealth * healthMult;
@@ -38,7 +37,7 @@ public class GhoulHealthController : MonoBehaviour
 		anim.SetBool("Idle", false);
 		anim.SetBool("Attack1", false);
 		anim.SetBool("Attack2", false);
-        CheckDeath();
+		CheckDeath();
 		int pushDirection;
 		if (enemyController.facingRight == true)
 		{
@@ -48,7 +47,7 @@ public class GhoulHealthController : MonoBehaviour
 		{
 			pushDirection = 3;
 		}
-		r2d.velocity += new Vector2(pushDirection, 0);
+		r2d.linearVelocity += new Vector2(pushDirection, 0);
 		Debug.Log("Ouch, I've only " + health + " left");
 	}
 	void OnTriggerEnter2D(Collider2D other)
@@ -60,7 +59,7 @@ public class GhoulHealthController : MonoBehaviour
 			anim.SetBool("Idle", false);
 			anim.SetBool("Attack1", false);
 			anim.SetBool("Attack2", false);
-            CheckDeath();
+			CheckDeath();
 			Debug.Log("Ded");
 		}
 	}
@@ -70,11 +69,11 @@ public class GhoulHealthController : MonoBehaviour
 		{
 			anim.SetBool("Die", true);
 		}
-        else
-        {
+		else
+		{
 			anim.SetBool("Take damage", true);
-        }
-    }
+		}
+	}
 	public IEnumerator Despawn()
 	{
 		yield return new WaitForSeconds(5f);

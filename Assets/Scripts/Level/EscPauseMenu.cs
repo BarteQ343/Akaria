@@ -15,11 +15,13 @@ public class EscPauseMenu : MonoBehaviour
 			{
 				pauseMenu.SetActive(true);
 				Time.timeScale = 0;
-			} else
+                Cursor.visible = true;
+            } else
 			{
 				pauseMenu.SetActive(false);
 				Time.timeScale = 1;
-			}
+                Cursor.visible = false;
+            }
 		}
 	}
 }

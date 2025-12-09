@@ -72,7 +72,7 @@ public class PlayerHealthController : MonoBehaviour
 		Cursor.visible = false;
 	}
 	public void TakeDamage(int damage) {
-		if (!_attack.attackIsHappening && !anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+		if (!_attack.attackIsHappening && !anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt") && gameObject.name == "Player")
 		{
 			anim.ResetTrigger("Stop");
 			anim.ResetTrigger("Run");
@@ -111,7 +111,7 @@ public class PlayerHealthController : MonoBehaviour
 				pushDirection = 1;
 			}
 		}
-		r2d.velocity += new Vector2(pushDirection, 0);
+		r2d.linearVelocity += new Vector2(pushDirection, 0);
 		healthBar.SetHealthValue((int)PlayerHealth, (int)maxHealth);
 		healthBar.SetHealth((int)Mathf.Abs((PlayerHealth / maxHealth) * 100));
 	}

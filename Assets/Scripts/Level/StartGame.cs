@@ -13,7 +13,7 @@ public class StartGame : MonoBehaviour
 	{
 		if (spriteToFade.alpha == 1 && counter > 0)
 		{
-			SceneManager.LoadScene("StartingPoint");
+			SceneManager.LoadScene("Level 1");
 		}
 	}
 	public void LoadFirstLevel()

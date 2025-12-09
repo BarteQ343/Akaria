@@ -112,7 +112,7 @@ namespace Ink.Parsed
                 _runtimeVarRef.name = null;
 
                 // Check for very specific writer error: getting read count and
-                // printing it as content rather than as a piece of logic
+                // Debug.Loging it as content rather than as a piece of logic
                 // e.g. Writing {myFunc} instead of {myFunc()}
                 var targetFlow = targetForCount as FlowBase;
                 if (targetFlow && targetFlow.isFunction) {
