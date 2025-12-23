@@ -70,7 +70,8 @@ public class HealthController : MonoBehaviour
 		{
 			anim.SetBool("Take damage", false);
 			anim.SetBool("Die", true);
-		}
+            GameObject.FindWithTag("AchievementMgr").GetComponent<EnemyAchievementManager>().UpdateVars("Enemy");
+        }
 	}
 	public IEnumerator Despawn()
 	{

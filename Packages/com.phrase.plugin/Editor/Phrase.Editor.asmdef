@@ -1,0 +1,31 @@
+{
+    "name": "Phrase.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Phrase.Runtime",
+        "Unity.Localization.Editor",
+        "Unity.Localization",
+        "Unity.ResourceManager",
+        "Unity.EditorCoroutines.Editor",
+        "Unity.Addressables.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Unity.Localization.ThirdParty.Editor.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "Unity",
+            "expression": "2020.3",
+            "define": "ENABLE_PROPERTY_VARIANTS"
+        }
+    ],
+    "noEngineReferences": false
+}

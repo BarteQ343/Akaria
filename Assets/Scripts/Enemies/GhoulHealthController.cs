@@ -28,7 +28,7 @@ public class GhoulHealthController : MonoBehaviour
 		health = startingHealth * healthMult;
 		anim = GetComponent<Animator>();
 		r2d = GetComponent<Rigidbody2D>();
-	}
+    }
 
 	public void TakeDamage(int damage)
 	{
@@ -60,14 +60,17 @@ public class GhoulHealthController : MonoBehaviour
 			anim.SetBool("Attack1", false);
 			anim.SetBool("Attack2", false);
 			CheckDeath();
+			AchievementManager.TryToUnlockAchievement(AchievementId.AchievementCrafty);
 			Debug.Log("Ded");
 		}
 	}
-	void CheckDeath()
+    void CheckDeath()
 	{
 		if (health <= 0)
 		{
 			anim.SetBool("Die", true);
+			AchievementManager.TryToUnlockAchievement(AchievementId.AchievementBrawler);
+			GameObject.FindWithTag("AchievementMgr").GetComponent<EnemyAchievementManager>().UpdateVars("Ghoul");
 		}
 		else
 		{

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e0f97614d49718669bde9e60c5f446e2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294442
+  packageName: Phrase - A better way to localize games
+  packageVersion: 1.2.2
+  assetPath: Packages/com.phrase.plugin/Editor/Phrase.Editor.asmdef
+  uploadId: 788360

@@ -1,0 +1,314 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8281844457598094559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.TextureLocalization
+  language: 22
+  _keys: []
+  _values: []
+--- !u!114 &-5862418614801501702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.TextureLocalization
+  language: 27
+  _keys: []
+  _values: []
+--- !u!114 &-5601446168055803463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.SpriteLocalization
+  language: 10
+  _keys: []
+  _values: []
+--- !u!114 &-5076231598965378731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.AudioClipLocalization
+  language: 22
+  _keys: []
+  _values: []
+--- !u!114 &-3958521790602148624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.StringLocalization
+  language: 22
+  _keys:
+  - "Pora\u017Cka"
+  - Odrodzenie
+  - "Wr\xF3\u0107 do menu"
+  - "Zwyci\u0119stwo!"
+  - Zagraj jeszcze raz
+  - "Wyjd\u017A do pulpitu"
+  - Gra wstrzymana
+  - "Wzn\xF3w"
+  - Ustawienia
+  - "Zapisz gr\u0119"
+  - "Wyjd\u017A z gry"
+  - "Powr\xF3t do menu"
+  - Wczytaj zapis
+  - "Pe\u0142ny ekran"
+  - Zastosuj
+  - "Opu\u015B\u0107 gr\u0119"
+  - Synchronizacja pionowa
+  - "Rozpocznij gr\u0119"
+  - "J\u0119zyki"
+  _values:
+  - "\u6557\u5317"
+  - "\u30EA\u30B9\u30DD\u30FC\u30F3"
+  - "\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"
+  - "\u52DD\u5229\uFF01"
+  - "\u3082\u3046\u4E00\u5EA6\u30D7\u30EC\u30A4"
+  - "\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\u306B\u623B\u308B"
+  - "\u30B2\u30FC\u30E0\u3092\u4E00\u6642\u505C\u6B62\u3057\u307E\u3057\u305F"
+  - "\u518D\u958B\u3059\u308B"
+  - "\u8A2D\u5B9A"
+  - "\u30B2\u30FC\u30E0\u3092\u4FDD\u5B58"
+  - "\u3084\u3081\u308B"
+  - "\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"
+  - "\u30ED\u30FC\u30C9\u4FDD\u5B58"
+  - "\u5168\u753B\u9762\u8868\u793A"
+  - "\u9069\u7528\u3059\u308B"
+  - "\u3084\u3081\u308B"
+  - "\u5782\u76F4\u540C\u671F"
+  - "\u30B2\u30FC\u30E0\u3092\u958B\u59CB"
+  - "\u8A00\u8A9E"
+--- !u!114 &-3281568060130728682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.SpriteLocalization
+  language: 27
+  _keys: []
+  _values: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73bb5ce7f7716844832c8201896d8a8, type: 3}
+  m_Name: OCLSetup
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.LocalizationSetup
+  defaultLanguage: 27
+  languages: 0a00000016000000
+  active: 1
+  forceLanguage: 1
+  forcedLanguage: 27
+  useDefaultLanguageForNullValues: 1
+--- !u!114 &1051278599238301944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.StringLocalization
+  language: 27
+  _keys:
+  - "Pora\u017Cka"
+  - Odrodzenie
+  - "Wr\xF3\u0107 do menu"
+  - "Zwyci\u0119stwo!"
+  - Zagraj jeszcze raz
+  - "Wyjd\u017A do pulpitu"
+  - Gra wstrzymana
+  - "Wzn\xF3w"
+  - Ustawienia
+  - "Zapisz gr\u0119"
+  - "Wyjd\u017A z gry"
+  - "Powr\xF3t do menu"
+  - Wczytaj zapis
+  - "Pe\u0142ny ekran"
+  - Zastosuj
+  - "Opu\u015B\u0107 gr\u0119"
+  - Synchronizacja pionowa
+  - "Rozpocznij gr\u0119"
+  - "J\u0119zyki"
+  _values:
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+--- !u!114 &2709773253655978536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.SpriteLocalization
+  language: 22
+  _keys: []
+  _values: []
+--- !u!114 &3511096076280662824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.StringLocalization
+  language: 10
+  _keys:
+  - "Pora\u017Cka"
+  - Odrodzenie
+  - "Wr\xF3\u0107 do menu"
+  - "Zwyci\u0119stwo!"
+  - Zagraj jeszcze raz
+  - "Wyjd\u017A do pulpitu"
+  - Gra wstrzymana
+  - "Wzn\xF3w"
+  - Ustawienia
+  - "Zapisz gr\u0119"
+  - "Wyjd\u017A z gry"
+  - "Powr\xF3t do menu"
+  - Wczytaj zapis
+  - "Pe\u0142ny ekran"
+  - Zastosuj
+  - "Opu\u015B\u0107 gr\u0119"
+  - Synchronizacja pionowa
+  - "Rozpocznij gr\u0119"
+  - "J\u0119zyki"
+  _values:
+  - Defeat
+  - Respawn
+  - Back to menu
+  - Victory!
+  - Play again
+  - Quit to desktop
+  - Game paused
+  - Resume
+  - Settings
+  - Save game
+  - Quit
+  - Back to menu
+  - Load save
+  - Fullscreen
+  - Apply
+  - Quit
+  - VSync
+  - Start game
+  - Languages
+--- !u!114 &4840328704778331323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.AudioClipLocalization
+  language: 10
+  _keys: []
+  _values: []
+--- !u!114 &5429187149575241920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.TextureLocalization
+  language: 10
+  _keys: []
+  _values: []
+--- !u!114 &6338831101129541027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneClickLocalization.Core.Localization.AudioClipLocalization
+  language: 27
+  _keys: []
+  _values: []

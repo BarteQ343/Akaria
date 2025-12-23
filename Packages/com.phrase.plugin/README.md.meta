@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5c600a72c523bbe58bab2a2e1bd5d7ae
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294442
+  packageName: Phrase - A better way to localize games
+  packageVersion: 1.2.2
+  assetPath: Packages/com.phrase.plugin/README.md
+  uploadId: 788360

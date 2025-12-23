@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73bb5ce7f7716844832c8201896d8a8, type: 3}
+  m_Name: DemoSetup
+  m_EditorClassIdentifier: 
+  defaultLanguage: 10
+  languages: 0e0000000f000000
+  active: 1
+  forceLanguage: 0
+  forcedLanguage: 10
+  useDefaultLanguageForNullValues: 0
+--- !u!114 &114009977947089822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 15
+  _keys:
+  - {fileID: 8300000, guid: 531eb634c2b53b444bfa2cc5e78ec1d9, type: 3}
+  _values:
+  - {fileID: 8300000, guid: e024bd6a8b7ee5e4ba9b4583414d000b, type: 3}
+--- !u!114 &114048182162301064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 14
+  _keys:
+  - {fileID: 2800000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 2800000, guid: 0fe3e745367075340870f9a1a1d40275, type: 3}
+--- !u!114 &114079673342716136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 15
+  _keys:
+  - {fileID: 2800000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 2800000, guid: 80af19dd9484cfb4b8835cb6ce431e21, type: 3}
+--- !u!114 &114252677526434164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 10
+  _keys:
+  - {fileID: 8300000, guid: 531eb634c2b53b444bfa2cc5e78ec1d9, type: 3}
+  _values:
+  - {fileID: 0}
+--- !u!114 &114274152267187412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 15
+  _keys:
+  - Test GUI
+  - "localized text\nwith line return\n\tand tab"
+  - Localized text with param ${1} and param ${2}
+  - another localized text
+  - localized text
+  _values:
+  - Test-GUI
+  - "Lokalisierter Text\nmit Zeilenr\xFCckgabe\n\tund Tab"
+  - Lokalisierten Text mit Param ${1} und Param ${2}
+  - lokalisierter text
+  - ein weiterer lokalisierter text
+--- !u!114 &114293612542675814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 14
+  _keys:
+  - {fileID: 21300000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 21300000, guid: 0fe3e745367075340870f9a1a1d40275, type: 3}
+--- !u!114 &114309786313490974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 10
+  _keys:
+  - {fileID: 21300000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 0}
+--- !u!114 &114638990188273756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 10
+  _keys:
+  - localized text
+  - another localized text
+  - Localized text with param ${1} and param ${2}
+  - "localized text\nwith line return\n\tand tab"
+  - Test GUI
+  _values:
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+  - '[NULL VALUE OCL]'
+--- !u!114 &114725240113672838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65455c6a955f574cb9a5782b684ba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 14
+  _keys:
+  - Test GUI
+  - "localized text\nwith line return\n\tand tab"
+  - Localized text with param ${1} and param ${2}
+  - another localized text
+  - localized text
+  _values:
+  - Test interface
+  - "Texte localis\xE9\navec retour \xE0 la ligne\n\tet tabulation"
+  - "Texte localis\xE9 avec param\xE8tre ${1} et param\xE8tre ${2}"
+  - "Un autre texte localis\xE9"
+  - "Texte localis\xE9"
+--- !u!114 &114725325724736820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959ee81a805b9104ea1703156c9f2401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 15
+  _keys:
+  - {fileID: 21300000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 21300000, guid: 80af19dd9484cfb4b8835cb6ce431e21, type: 3}
+--- !u!114 &114812157891963294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e92a1d88f16f8468cd1f7a1cd7d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 10
+  _keys:
+  - {fileID: 2800000, guid: 5cdf292cacae83846a0de0f41a10798a, type: 3}
+  _values:
+  - {fileID: 0}
+--- !u!114 &114929389302901772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc13542c2ba47429c61ae440aa22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 14
+  _keys:
+  - {fileID: 8300000, guid: 531eb634c2b53b444bfa2cc5e78ec1d9, type: 3}
+  _values:
+  - {fileID: 8300000, guid: fcca556c87c19ed4a97b01f4bf21f83f, type: 3}

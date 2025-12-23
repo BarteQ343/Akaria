@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 00fe47546c5d3ef1cba5a5e4c799c030
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294442
+  packageName: Phrase - A better way to localize games
+  packageVersion: 1.2.2
+  assetPath: Packages/com.phrase.plugin/Editor/SerializedPropertyExtensionMethods.cs
+  uploadId: 788360

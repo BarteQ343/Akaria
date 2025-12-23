@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class PlayerHealthController : MonoBehaviour
 	public Animator DeathBackground;
 	public GameObject DeathScreen;
 	PlayerController playerController;
+	public bool hasDied = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -46,6 +48,7 @@ public class PlayerHealthController : MonoBehaviour
 		{
 			anim.ResetTrigger("Hurt");
 			anim.SetTrigger("Die");
+			hasDied = true;
 		}
 		if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
 		{
@@ -123,6 +126,7 @@ public class PlayerHealthController : MonoBehaviour
 			healthBar.SetHealth(0);
 			healthBar.SetHealthValue((int)PlayerHealth, (int)maxHealth);
 			Debug.Log("Ded");
+			AchievementManager.TryToUnlockAchievement(AchievementId.AchievementNoSwim);
 		}
 		if (other.CompareTag("Food"))
 		{
@@ -130,6 +134,7 @@ public class PlayerHealthController : MonoBehaviour
 			healthBar.SetHealthValue((int)PlayerHealth, (int)maxHealth);
 			healthBar.SetHealth((int)Mathf.Abs((PlayerHealth / maxHealth) * 100));
 			Destroy(other.transform.gameObject);
+			AchievementManager.TryToUnlockAchievement(AchievementId.AchievementTasty);
 		}
 	}
 	public void ShowDeathMessage()
@@ -139,4 +144,8 @@ public class PlayerHealthController : MonoBehaviour
 		DeathBackground.SetTrigger("Start");
 		Cursor.visible = true;
 	}
+    public bool getHasDied()
+    {
+        return hasDied;
+    }
 }

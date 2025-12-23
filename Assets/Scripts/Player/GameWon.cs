@@ -20,6 +20,18 @@ public class GameWon : MonoBehaviour
 	{
 		if (other.GetComponent<BoxCollider2D>() == GameEnder)
 		{
+			if(GetComponent<PlayerHealthController>().getHasDied() == false)
+			{
+				AchievementManager.TryToUnlockAchievement(AchievementId.AchievementNoDie);
+			}
+			if (GameObject.FindWithTag("AchievementMgr").GetComponent<EnemyAchievementManager>().GetHasKilled() == false)
+			{
+				AchievementManager.TryToUnlockAchievement(AchievementId.AchievementPacifist);
+			}
+			if (GetComponent<PlayerHealthController>().GetHealth() <= 10)
+			{
+				AchievementManager.TryToUnlockAchievement(AchievementId.AchievementLowHP);
+			}
 			r2d.constraints = RigidbodyConstraints2D.FreezeAll;
 			ShowEndScreen();
 		}
