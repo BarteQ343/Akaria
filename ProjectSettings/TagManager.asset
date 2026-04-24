@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Food
   - Ghoul
@@ -44,3 +44,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 640734763
+    locked: 0
+  - name: BackDecor
+    uniqueID: 541503295
+    locked: 0
+  - name: Player
+    uniqueID: 1490061411
+    locked: 0
+  - name: ForeDecor
+    uniqueID: 107257991
+    locked: 0
+  - name: Foreground
+    uniqueID: 2059666863
+    locked: 0
+  - name: ForeDecor +
+    uniqueID: 1278234257
+    locked: 0
+  m_RenderingLayers:
+  - Default

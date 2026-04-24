@@ -8429,9 +8429,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3136759966130041616, guid: 2889bc97958c4774f8fb86af7b1157ef, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136759966130041616, guid: 2889bc97958c4774f8fb86af7b1157ef, type: 3}
+      propertyPath: DeathScreen
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136759966130041616, guid: 2889bc97958c4774f8fb86af7b1157ef, type: 3}
       propertyPath: DeathTrigger
       value: 
       objectReference: {fileID: 212859031}
+    - target: {fileID: 3136759966130041616, guid: 2889bc97958c4774f8fb86af7b1157ef, type: 3}
+      propertyPath: DeathBackground
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3136759966130041616, guid: 2889bc97958c4774f8fb86af7b1157ef, type: 3}
       propertyPath: LevelStartPoint
       value: 
